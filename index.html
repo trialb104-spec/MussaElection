@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أحمد السيد موسى - طريقنا واحد</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* تعريف خط Tajawal ليكون الخط الأساسي للجاذبية والقوة */
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+        
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: #f7f7f7;
         }
 
-        /* تحديد ألوان النادي (الأخضر الداكن والذهبي) */
-        .color-primary { background-color: #006633; } /* أخضر الاتحاد */
-        .color-accent { color: #FFD700; } /* نص ذهبي */
-        .bg-accent { background-color: #FFD700; } /* خلفية ذهبية */
-        .border-accent { border-color: #FFD700; } /* حدود ذهبية */
-        .text-primary-dark { color: #004d26; } /* أخضر داكن للنص */
+        .color-primary { background-color: #006633; } 
+        .color-accent { color: #FFD700; } 
+        .bg-accent { background-color: #FFD700; } 
+        .border-accent { border-color: #FFD700; } 
+        .text-primary-dark { color: #004d26; } 
 
-        /* === 1. تأثير نبض الشعار (Slogan Pulse) === */
         @keyframes slogan-pop {
             0%, 100% { transform: scale(1) translateY(0); opacity: 0.8; }
             50% { transform: scale(1.05) translateY(-2px); opacity: 1; }
@@ -31,7 +28,6 @@
             text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
         }
 
-        /* === 2. تأثير ظهور العناصر (Fade-in-Up) === */
         @keyframes fade-in-up {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -41,7 +37,6 @@
             opacity: 0; 
         }
 
-        /* === 3. الإطار الذهبي لصور المرشح والإعلانات الفخمة === */
         .golden-frame {
             border: 5px solid #FFD700;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.5);
@@ -51,7 +46,6 @@
             transform: scale(1.03);
         }
 
-        /* === 4. تصميم زر الأكوردون والتفاعلات (الكتل التفاعلية) === */
         .block-card-header {
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s;
@@ -72,7 +66,6 @@
             padding-bottom: 1.5rem;
         }
 
-        /* === 5. تأثير التحويم على قوائم البيانات === */
         .list-item-hover-effect {
             transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
         }
@@ -82,7 +75,6 @@
             background-color: #f0fdf4; 
         }
         
-        /* === 6. تأثير نبض زر الدعوة للعمل === */
         @keyframes pulse-cta {
             0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
@@ -92,7 +84,6 @@
             animation: pulse-cta 2s infinite;
         }
 
-        /* === 7. تصميم شارة المرشح (Candidate Badge) === */
         @keyframes shine-badge {
             0%, 100% { filter: brightness(1) drop-shadow(0 0 2px rgba(255, 215, 0, 0.5)); }
             50% { filter: brightness(1.2) drop-shadow(0 0 4px rgba(255, 215, 0, 0.9)); }
@@ -101,7 +92,6 @@
             animation: shine-badge 3s infinite ease-in-out;
         }
 
-        /* === 8. تأثير نبض لنص الموعد الجديد === */
         @keyframes text-pulse {
             0% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
             50% { transform: scale(1.02); opacity: 0.9; text-shadow: 0 0 10px rgba(255, 215, 0, 0.9); }
@@ -109,6 +99,11 @@
         }
         .animate-text-pulse {
             animation: text-pulse 2.5s infinite ease-in-out;
+        }
+        
+        .bg-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 215, 0, 0.15) 1px, transparent 0);
+            background-size: 20px 20px;
         }
     </style>
 </head>
@@ -133,40 +128,41 @@
 
     <main class="max-w-4xl mx-auto p-6 space-y-12">
 
-        <section class="bg-white p-6 rounded-2xl shadow-xl border-b-4 border-color-primary animate-fade-in-up text-center space-y-6" style="animation-delay: 200ms;">
-            <h2 class="text-3xl font-extrabold text-color-primary mb-4 animate-text-pulse">
-                ✨ موعدنا الأسطوري يقترب! ✨
-            </h2>
-            <p class="text-xl text-gray-700 leading-relaxed animate-text-pulse">
-                ندعوكم لتاريخٍ لا يُنسى في مسيرة نادي الاتحاد السكندري!
-                <br>
-                صوتكم هو مستقبلنا المشرق، ومشاركتكم هي قوة الاتحاد.
-            </p>
-            
-            <div class="bg-gradient-to-r from-yellow-300 to-amber-500 text-gray-900 p-6 rounded-xl shadow-inner border-4 border-white animate-text-pulse">
-                <p class="text-2xl md:text-3xl font-extrabold mb-3 flex items-center justify-center gap-3">
-                    <span class="text-4xl">🗓️</span>
-                    <span>الجمعة، 22 نوفمبر 2025</span>
-                </p>
-                <p class="text-2xl md:text-3xl font-extrabold mb-3 flex items-center justify-center gap-3">
-                    <span class="text-4xl">⏰</span>
-                    <span>الساعة السادسة مساءً</span>
-                </p>
-                <p class="text-xl md:text-2xl font-bold flex items-center justify-center gap-3 text-primary-dark">
-                    <span class="text-4xl">📍</span>
-                    <span>أمام البوابة الخلفية لنادي الاتحاد - فرع الشاطبي</span>
-                </p>
+        <section class="animate-fade-in-up" style="animation-delay: 200ms;">
+            <div class="max-w-2xl mx-auto relative overflow-hidden bg-gradient-to-r from-green-900 to-green-800 text-white p-5 rounded-2xl shadow-xl border-2 border-yellow-400/50 text-center transform hover:scale-[1.01] transition-transform duration-300">
+                <div class="absolute inset-0 bg-pattern opacity-20"></div>
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-yellow-500 rounded-full blur-2xl opacity-10"></div>
+                
+                <div class="relative z-10 flex flex-col items-center justify-center space-y-3">
+                    <h2 class="text-lg md:text-xl font-bold text-yellow-400 tracking-wide">
+                        انتخابات نادى الاتحاد السكندري
+                    </h2>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm ring-1 ring-yellow-400/40 rounded-full px-6 py-2 shadow-lg">
+                        <span class="text-xl md:text-2xl font-black text-white drop-shadow-md flex items-center gap-2">
+                            ✋ صوتك أمانة
+                        </span>
+                    </div>
+        
+                    <p class="text-sm md:text-base font-medium text-yellow-50/80">
+                        شارك بقرارك فى مستقبل ناديك
+                    </p>
+                    
+                    <div class="flex justify-center gap-3 pt-1">
+                        <span class="text-xl animate-bounce" style="animation-delay: 0.1s;">🗳️</span>
+                        <span class="text-xl animate-bounce" style="animation-delay: 0.2s;">💚</span>
+                        <span class="text-xl animate-bounce" style="animation-delay: 0.3s;">🇪🇬</span>
+                    </div>
+                </div>
             </div>
-
-
         </section>
 
         <section class="bg-white p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-3xl border-t-8 border-accent animate-fade-in-up" style="animation-delay: 400ms;">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-1 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-l pb-6 lg:pb-0 border-gray-200">
-                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg"
-                          alt="صورة المرشح أحمد السيد موسى"
-                          class="w-48 h-48 rounded-full object-cover golden-frame mb-4">
+                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg" 
+                         alt="صورة المرشح أحمد السيد موسى" 
+                         class="w-48 h-48 rounded-full object-cover golden-frame mb-4">
                     <h2 class="text-3xl font-extrabold text-gray-900">أحمد السيد موسى</h2>
                     <p class="text-xl font-medium text-gray-700 mt-1">
                         اسم الشهرة: <span class="text-accent font-bold">موسى</span>
@@ -296,8 +292,8 @@
                 </h2>
                 <div class="w-full">
                     <img src="https://i.ibb.co/GfnQW6VH/1.jpg" 
-                          alt="صورة إعلان حملة المرشح أحمد السيد موسى - طريقنا واحد" 
-                          class="w-full h-auto rounded-xl shadow-xl golden-frame transition-transform duration-500 object-cover">
+                         alt="صورة إعلان حملة المرشح أحمد السيد موسى - طريقنا واحد" 
+                         class="w-full h-auto rounded-xl shadow-xl golden-frame transition-transform duration-500 object-cover">
                 </div>
             </div>
         </section>
@@ -360,12 +356,32 @@
                         <h4 class="text-xl font-bold mt-4 text-green-700">أولًا: صندوق دعم الأتحاد</h4>
                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
                             <li class="list-item-hover-effect p-1 rounded-lg">إنشاء صندوق تبرعات بشفافية كاملة.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">وضع أسماء الداعمين على لوحة شرف.</li>
                             <li class="list-item-hover-effect p-1 rounded-lg">حفل سنوي لتكريم الداعمين.</li>
                         </ul>
                         <h4 class="text-xl font-bold mt-4 text-green-700">ثانيًا: إعادة تشغيل الأصول غير المستغلة</h4>
                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                            <li class="list-item-hover-effect p-1 rounded-lg">تحويل الأصول “الخاملة” إلى مصادر دخل.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">حصر شامل لكل أصل غير مستغل وتحويله لمصدر دخل.</li>
                         </ul>
+                        <h4 class="text-xl font-bold mt-4 text-green-700">ثالثًا: إنشاء شركات تابعة للنادي بالشراكة</h4>
+                        <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                            <li class="list-item-hover-effect p-1 rounded-lg">شركة للتسويق الرياضي.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">شركة لإدارة الأكاديميات والمدارس الرياضية.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">شركة للملابس والمنتجات الرسمية.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">شركة لإدارة الإعلانات والرعاية.</li>
+                        </ul>
+                        <h4 class="text-xl font-bold mt-4 text-green-700">رابعًا: تطوير منظومة الرعاية</h4>
+                        <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                            <li class="list-item-hover-effect p-1 rounded-lg">جذب رعاة محترفين لكل الألعاب وتفعيل الرعايات داخل الملاعب.</li>
+                        </ul>
+                         <h4 class="text-xl font-bold mt-4 text-green-700">خامسًا: سياسة توزيع الصلاحيات</h4>
+                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                             <li class="list-item-hover-effect p-1 rounded-lg">لكل ملف مسؤول.. ولكل 3 شهور تقرير شامل (إدارة شفافة قابلة للمحاسبة).</li>
+                         </ul>
+                         <h4 class="text-xl font-bold mt-4 text-green-700">سادسًا: الاستخدام الأمثل للموارد</h4>
+                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                             <li class="list-item-hover-effect p-1 rounded-lg">تخصيص نسبة ثابتة من اشتراكات الأعضاء الجدد لتطوير المنشآت وليس للصرف اليومي.</li>
+                         </ul>
                     </div>
                 </div>
 
@@ -380,10 +396,17 @@
                             <li class="list-item-hover-effect p-1 rounded-lg">الدخول والخروج بالباركود.</li>
                             <li class="list-item-hover-effect p-1 rounded-lg">حجز الخدمات الحكومية، ودفع الاشتراكات.</li>
                             <li class="list-item-hover-effect p-1 rounded-lg">تقييم المدربين ومتابعة الأبناء في فرق الناشئين.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">عرض أنشطة جميع اللجان.</li>
+                        </ul>
+                        <h4 class="text-xl font-bold mt-4 text-green-700">٢) المنصات الإعلامية</h4>
+                        <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                            <li class="list-item-hover-effect p-1 rounded-lg">تفعيل الإعلام الرقمي والسوشيال ميديا.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">إنشاء قناة اليوتيوب الرسمية.</li>
                         </ul>
                         <h4 class="text-xl font-bold mt-4 text-green-700">٣) بوابات إلكترونية</h4>
                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
                             <li class="list-item-hover-effect p-1 rounded-lg">منع دخول غير الأعضاء، وضبط حالات الإيقاف إلكترونيًا.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">بيان كثافة الأعضاء في الفرعين.</li>
                         </ul>
                     </div>
                 </div>
@@ -395,10 +418,13 @@
                     </div>
                     <div class="accordion-content bg-gray-50">
                         <ul class="list-disc list-inside space-y-3 mt-4 mr-4 rtl:ml-4 text-gray-700">
-                            <li class="list-item-hover-effect p-1 rounded-lg">إنشاء حضانة الأطفال بأسعار رمزية.</li>
-                            <li class="list-item-hover-effect p-1 rounded-lg">التعاقد مع شركة نقل خاصة (بروموكود) للأعضاء.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">ندوات تثقيفية لدمج ذوي الهمم.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">تطوير حضانة الأطفال بأسعار رمزية.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">التعاقد مع شركة نقل خاصة (بروموكود) للأعضاء من وإلى الفرعين.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">منتدى ربع سنوي لأعضاء النادي لعرض مشاكلهم.</li>
                             <li class="list-item-hover-effect p-1 rounded-lg">تطوير الكافيهات والمطاعم ومراقبة الجودة.</li>
-                            <li class="list-item-hover-effect p-1 rounded-lg">توفير دورات مجانية داخل النادي من أبنائه.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">فرص تشغيل صيفي لأبناء الأعضاء.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">فتح باب التطوع لتقديم دورات مجانية داخل النادي.</li>
                         </ul>
                     </div>
                 </div>
@@ -409,13 +435,24 @@
                         <span class="arrow-icon transition-transform duration-300 transform">▼</span>
                     </div>
                     <div class="accordion-content bg-gray-50">
-                        <h4 class="text-xl font-bold mt-4 text-green-700">٢) الاهتمام بالناشئين</h4>
+                        <h4 class="text-xl font-bold mt-4 text-green-700">١) منظومة تقييم مستقلة</h4>
                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                            <li class="list-item-hover-effect p-1 rounded-lg">ادماجهم في الفريق الأول بشكل تصاعدي لتقليل الاحتراف.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">إدارة تقييم رياضي مستقلة بمعايير واضحة.</li>
+                        </ul>
+                        <h4 class="text-xl font-bold mt-4 text-green-700">٢) الاهتمام بالناشئين والأكاديميات</h4>
+                        <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                            <li class="list-item-hover-effect p-1 rounded-lg">الناشئ هو رأس المال: الاعتماد عليهم لتقليل الاحتراف.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">التوسع في الأكاديميات خارج النادي كمصدر دخل واكتشاف مواهب.</li>
+                        </ul>
+                        <h4 class="text-xl font-bold mt-4 text-green-700">٤) الرعاية</h4>
+                        <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                            <li class="list-item-hover-effect p-1 rounded-lg">لجنة متخصصة للبحث عن راعي للفريق الأول في كل الألعاب.</li>
                         </ul>
                         <h4 class="text-xl font-bold mt-4 text-green-700">٥) كرة القدم: فصل النشاط</h4>
                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
                             <li class="list-item-hover-effect p-1 rounded-lg">تأسيس شركة لكرة القدم طبقًا لقانون الرياضة (النادي يمتلك 51%).</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">تمويل مستقل بعيدًا عن ميزانية النادي.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">مضاعفة ميزانية الكرة دون إرهاق النادي.</li>
                         </ul>
                     </div>
                 </div>
@@ -427,9 +464,10 @@
                     </div>
                     <div class="accordion-content bg-gray-50">
                         <ul class="list-disc list-inside space-y-3 mt-4 mr-4 rtl:ml-4 text-gray-700">
-                            <li class="list-item-hover-effect p-1 rounded-lg">تعاقدات مع المستشفيات والمعامل والصيدليات بخصومات حقيقية.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">تعاقدات مع المستشفيات والمعامل والصيدليات بخصومات حقيقية ومتابعة جادة.</li>
                             <li class="list-item-hover-effect p-1 rounded-lg">ندوات تغذية رياضية.</li>
                             <li class="list-item-hover-effect p-1 rounded-lg">تطوير العيادة الصحية بالتعاون مع وزارة الصحة.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">زيادة القوافل الطبية.</li>
                         </ul>
                     </div>
                 </div>
@@ -442,7 +480,8 @@
                     <div class="accordion-content bg-gray-50">
                         <h4 class="text-xl font-bold mt-4 text-green-700">أولًا: زيادة الإيرادات</h4>
                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                            <li class="list-item-hover-effect p-1 rounded-lg">معارض دورية داخل النادي وتأجير الساحات للإعلانات.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">معارض دورية داخل النادي وتأجير الساحات والبوابات للإعلانات.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">براند الملابس الرياضية وحق استخدام الشعار.</li>
                         </ul>
                         <h4 class="text-xl font-bold mt-4 text-green-700">ثانيًا: خفض التكاليف</h4>
                         <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
@@ -493,8 +532,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-
-            // تشغيل تأثيرات الظهور عند تحميل الصفحة
             const sections = document.querySelectorAll('.animate-fade-in-up');
             sections.forEach(section => {
                 section.style.opacity = '0';
@@ -503,7 +540,6 @@
                 }, 10);
             });
 
-            // لوجيك الكتل التفاعلية (Accordion Blocks Logic)
             const accordionHeaders = document.querySelectorAll('.block-card-header');
 
             accordionHeaders.forEach(header => {
@@ -513,7 +549,6 @@
                     const arrow = item.querySelector('.arrow-icon');
                     const isOpen = item.classList.contains('accordion-open');
 
-                    // إغلاق جميع الأقسام الأخرى المفتوحة
                     document.querySelectorAll('.accordion-item').forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.classList.remove('accordion-open');
@@ -522,14 +557,12 @@
                         }
                     });
 
-                    // فتح أو إغلاق القسم الحالي
                     if (isOpen) {
                         item.classList.remove('accordion-open');
                         content.style.maxHeight = 0;
                         arrow.style.transform = 'rotate(0deg)';
                     } else {
                         item.classList.add('accordion-open');
-                        // تعيين الارتفاع الفعلي للمحتوى
                         content.style.maxHeight = content.scrollHeight + "px";
                         arrow.style.transform = 'rotate(180deg)';
                     }
