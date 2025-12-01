@@ -1,4 +1,5 @@
-// Interactive Priorities Logic
+// --- 1. Interactive Priorities Logic ---
+// (Must be outside DOMContentLoaded to work with onclick in HTML)
 function showPriority(type, element) {
     // Remove active class from all buttons
     document.querySelectorAll('.priority-btn').forEach(btn => {
@@ -28,6 +29,7 @@ function showPriority(type, element) {
             break;
     }
     
+    // Animation for content change
     contentDiv.style.opacity = 0;
     setTimeout(() => {
         contentDiv.innerHTML = content;
@@ -37,6 +39,7 @@ function showPriority(type, element) {
     }, 200);
 }
 
+// --- 2. Scanning System Logic ---
 let isScanning = false;
 const initialStatus = "طريقنا واحد...و رقمنا واحد - اضغط للفحص";
 const scanMessages = [
@@ -100,7 +103,10 @@ function startScanning() {
     }, 4000); 
 }
 
+// --- 3. Main DOM Logic (Accordion, Countdown, Counter) ---
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // A. Animations on Load
     const sections = document.querySelectorAll('.animate-fade-in-up');
     sections.forEach(section => {
         section.style.opacity = '0';
@@ -109,8 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10);
     });
 
+    // B. Accordion Functionality
     const accordionHeaders = document.querySelectorAll('.block-card-header');
-
     accordionHeaders.forEach(header => {
         header.addEventListener('click', () => {
             const item = header.closest('.accordion-item');
@@ -118,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const arrow = item.querySelector('.arrow-icon');
             const isOpen = item.classList.contains('accordion-open');
 
+            // Close others
             document.querySelectorAll('.accordion-item').forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('accordion-open');
@@ -126,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            // Toggle current
             if (isOpen) {
                 item.classList.remove('accordion-open');
                 content.style.maxHeight = 0;
@@ -138,8 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // FIX: Set Countdown to Cairo Time (UTC+2)
-    // 2025-12-26T00:00:00+02:00
+    // C. Countdown Timer (Cairo Time)
     const electionDate = new Date("2025-12-26T00:00:00+02:00").getTime();
     const countdownElement = document.getElementById("countdown");
 
@@ -175,10 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
             countdownElement.innerHTML = `<div class="col-span-4 text-2xl font-extrabold text-accent bg-white/10 p-4 rounded-lg">انطلقت الانتخابات! صوتك الآن هو الحسم!</div>`;
         }
     };
-
     updateCountdown();
     setInterval(updateCountdown, 1000);
     
+    // D. Lightbox Logic
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImage = document.getElementById('lightbox-image');
     const galleryImages = document.querySelectorAll('.photo-grid img');
@@ -202,32 +209,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Initialize status display text
-    document.getElementById('status-display').textContent = initialStatus;
+    const statusDisplay = document.getElementById('status-display');
+    if(statusDisplay) statusDisplay.textContent = initialStatus;
 
-    // --- GLOBAL VISITOR COUNTER (External API) ---
+    // --- E. GLOBAL VISITOR COUNTER (UPDATED & FIXED) ---
     const counterElement = document.getElementById('visitor-count');
     
-    // We define a unique ID for your election campaign
-    const namespace = 'ahmed-mussa-election-2025-alex'; 
-    const key = 'homepage-visits';
+    // We are using counterapi.dev which is more reliable than the previous one.
+    // Namespace: mussa-campaign-2025
+    // Key: visits
+    const apiUrl = 'https://api.counterapi.dev/v1/mussa-campaign-2025/visits/up';
 
-    // Call the free API
-    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-        .then(response => response.json())
-        .then(data => {
-            if (counterElement) {
-                counterElement.textContent = data.value.toLocaleString();
+    if (counterElement) {
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Display the count
+                counterElement.textContent = data.count.toLocaleString();
                 
-                // Add a small pop animation
+                // Pop animation
                 counterElement.style.transition = "transform 0.3s ease";
                 counterElement.style.transform = "scale(1.3)";
                 setTimeout(() => {
                     counterElement.style.transform = "scale(1)";
                 }, 300);
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching count:', error);
-            if (counterElement) counterElement.textContent = "100+"; // Fallback
-        });
+            })
+            .catch(error => {
+                console.error('Error fetching count:', error);
+                // Simple fallback so it doesn't look broken
+                counterElement.textContent = "..."; 
+            });
+    }
 });
