@@ -14,11 +14,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+        
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: #f7f7f7;
+            /* DEFAULT PADDING (Modified for better responsiveness) */
             padding-top: 6.5rem;
         }
+
+        /* --- START OF FIXES --- */
+
+        /* 1. Fix for Mobile View (Phones) */
+        /* The header stacks vertically on mobile, making it taller. We need more padding-top on the body. */
+        @media (max-width: 639px) {
+            body {
+                padding-top: 11rem !important; /* Increased space to prevent "Decision Day" from merging with header */
+            }
+        }
+
+        /* 2. Fix for Tablet View (Between Phone and Desktop) */
+        /* Prevents the slogan from merging with the name/logo */
+        @media (min-width: 640px) and (max-width: 1024px) {
+            header .slogan-animate {
+                font-size: 0.9rem !important; /* Smaller text size for tablet */
+                line-height: 1.3;
+                white-space: normal; /* Allow text to wrap if needed */
+                max-width: 40%; /* Ensure it doesn't take more than 40% of the width */
+            }
+            header h1 {
+                font-size: 1.1rem; /* Slightly adjust name size on tablet */
+            }
+        }
+        /* --- END OF FIXES --- */
+
         @media (min-width: 1024px) {
             body {
                 padding-top: 8rem;
@@ -78,8 +106,8 @@
         .list-item-hover-effect:hover {
             transform: translateX(5px) scale(1.01);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            background-color: #f0fdf4;
-         }
+            background-color: #f0fdf4; 
+        }
         @keyframes pulse-cta {
             0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
@@ -173,9 +201,9 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 215, 0, 0.6);
             transition: all 0.3s ease;
         }
-        .game-card-creative:hover {
-             transform: translateY(-5px) scale(1.01);
-             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 215, 0, 0.9);
+        .game-card-creative:hover { 
+            transform: translateY(-5px) scale(1.01); 
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 215, 0, 0.9);
         }
         .game-title {
             text-shadow: 2px 2px #000;
@@ -261,9 +289,10 @@
             </p>
 
             <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 mt-4 bg-primary-dark/30 p-4 rounded-xl border border-accent/50">
-                
+            
             </div>
         </section>
+
         
         <section class="animate-fade-in-up bg-white p-6 rounded-2xl shadow-2xl border-t-8 border-color-primary" style="animation-delay: 200ms;">
             <h2 class="text-2xl font-extrabold text-color-primary text-center mb-6">
@@ -294,8 +323,7 @@
                     <span id="hitech-icon" class="text-6xl text-accent hitech-title">
                         🛰️
                     </span>
-                    <h2 class="hitech-title text-3xl md:text-4xl font-extrabold">
-قريبا: اعرف لجنتك الانتخابية 
+                    <h2 class="hitech-title text-3xl md:text-4xl font-extrabold">قريبا: اعرف لجنتك الانتخابية 
                     </h2>
                 </div>
                 
@@ -316,13 +344,14 @@
                 </button>
             </div>
         </section>
+
         
         <section class="bg-white p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-3xl border-t-8 border-accent animate-fade-in-up" style="animation-delay: 500ms;">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-1 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-l pb-6 lg:pb-0 border-gray-200">
-                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg"
-                          alt="صورة المرشح أحمد السيد موسى"
-                          class="w-48 h-48 rounded-full object-cover golden-frame mb-4">
+                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg" 
+                         alt="صورة المرشح أحمد السيد موسى" 
+                         class="w-48 h-48 rounded-full object-cover golden-frame mb-4">
                     <h2 class="text-3xl font-extrabold text-gray-900">أحمد السيد موسى</h2>
                     <p class="text-xl font-medium text-gray-700 mt-1">
                         اسم الشهرة: <span class="text-accent font-bold">موسى</span>
@@ -343,6 +372,7 @@
                             <span class="text-2xl ml-2 rtl:mr-2">🥉</span> بكالوريوس تجارة – جامعة الإسكندرية – قسم محاسبة
                         </li>
                     </ul>
+
                     <h3 class="text-2xl font-bold flex items-center pt-4 text-color-primary">
                         👨‍👩‍👧‍👦 البيانات الشخصية:
                     </h3>
@@ -359,6 +389,7 @@
                 </div>
             </div>
         </section>
+
         <section class="grid md:grid-cols-2 gap-8 animate-fade-in-up" style="animation-delay: 600ms;">
             <div class="bg-white p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-3xl border-t-8 border-accent/70">
                 <h3 class="text-2xl font-bold flex items-center mb-6 text-color-primary">
@@ -382,6 +413,7 @@
                     </li>
                 </ul>
             </div>
+
             <div class="bg-white p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-3xl border-t-8 border-accent/70">
                 <h3 class="text-2xl font-bold flex items-center mb-6 text-color-primary">
                     🤝 الأعمال التطوعية والمناصب المجتمعية:
@@ -408,6 +440,7 @@
                 </ul>
             </div>
         </section>
+
         
         <section class="bg-white p-8 rounded-2xl shadow-2xl space-y-10 animate-fade-in-up" style="animation-delay: 800ms;">
             <div class="border-b pb-6 border-gray-200">
@@ -439,6 +472,7 @@
                 </button>
             </div>
         </section>
+
         
         <section class="animate-fade-in-up" style="animation-delay: 900ms;">
             <div class="bg-white p-4 rounded-2xl shadow-2xl border-t-8 border-color-primary">
@@ -446,12 +480,13 @@
                     📢 طريقنا واحد ...... مكسبنا واحد
                 </h2>
                 <div class="w-full">
-                    <img src="https://i.ibb.co/GfnQW6VH/1.jpg"
-                           alt="صورة إعلان حملة المرشح أحمد السيد موسى - طريقنا واحد"
-                           class="w-full h-auto rounded-xl shadow-xl golden-frame transition-transform duration-500 object-cover">
+                    <img src="https://i.ibb.co/GfnQW6VH/1.jpg" 
+                          alt="صورة إعلان حملة المرشح أحمد السيد موسى - طريقنا واحد" 
+                          class="w-full h-auto rounded-xl shadow-xl golden-frame transition-transform duration-500 object-cover">
                 </div>
             </div>
         </section>
+
         
         <section class="bg-white p-8 rounded-2xl shadow-2xl space-y-10 animate-fade-in-up" style="animation-delay: 1000ms;">
             <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-6">
@@ -460,6 +495,7 @@
             <p class="text-lg text-gray-700 border-b pb-4">
                 يظل نادي الأتحاد السكندري كيانًا رياضيًا واجتماعيًا وثقافيًا عريقًا… يستحق إدارة واعية، ومؤسسات محترفة، ورؤية واضحة تجعل النادي قادرًا على النمو، وعلى تقديم خدمات تليق بتاريخ الأجيال التي بنَت هذا الصرح العظيم. وترشحي ليس بحثًا عن منصب… بل مسؤولية والتزام تجاه الأعضاء، وحرص على بناء نادي مستدام… يعتمد على موارد قوية، وإدارة اقتصادية، وخدمة ترتقي بالطموح.
             </p>
+
             <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-6 pt-4">
                 🔰 ثانيًا: أسباب الترشح
             </h2>
@@ -481,11 +517,13 @@
                 </li>
             </ul>
         </section>
+
         
         <section class="bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-color-primary animate-fade-in-up" style="animation-delay: 1200ms;">
             <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-8">
                 🔰 رابعًا: ملفات البرنامج الانتخابي
             </h2>
+
             <div class="mb-8 p-6 bg-yellow-50 rounded-xl border border-accent shadow-inner">
                 <h3 class="text-2xl font-bold text-gray-800 mb-3">
                     🔰 ثالثًا: الهدف العام للبرنامج
@@ -497,6 +535,7 @@
                     ✔️ التفسير: النادي يجب أن يعمل بفكر اقتصادي مؤسسي محترف، مش فقط كمكان يصرف، بل كمنشأة تستطيع إنتاج موارد وتنميتها.
                 </p>
             </div>
+
             <div id="accordion-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
@@ -516,6 +555,7 @@
                         </ul>
                     </div>
                 </div>
+
                 
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
@@ -535,6 +575,7 @@
                         </ul>
                     </div>
                 </div>
+
                 
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
@@ -551,6 +592,7 @@
                         </ul>
                     </div>
                 </div>
+
                 
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
@@ -588,6 +630,7 @@
                         </ul>
                     </div>
                 </div>
+
                 
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
@@ -603,6 +646,7 @@
                         </ul>
                     </div>
                 </div>
+
                 
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
@@ -620,6 +664,7 @@
                         </ul>
                     </div>
                 </div>
+
                 
                 <div class="md:col-span-2 mt-8 bg-white p-6 rounded-xl shadow-2xl border-t-8 border-accent">
                     <h3 class="text-2xl font-bold text-color-primary flex items-center mb-4">
@@ -638,6 +683,7 @@
                 </div>
             </div>
         </section>
+
         
         <section class="animate-fade-in-up" style="animation-delay: 1400ms;">
             <div class="bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent">
@@ -687,14 +733,18 @@
                 </p>
             </div>
         </section>
+
     </main>
+
     <footer class="color-primary text-white text-center p-4 mt-12">
         <p>© 2025 - أحمد السيد موسى. برنامج انتخابي لخدمة الاتحاد السكندري</p>
     </footer>
+
     <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex justify-center items-center p-4 hidden" onclick="closeLightbox()">
         <img id="lightbox-image" src="" alt="صورة مكبرة" class="max-w-full max-h-full block shadow-2xl rounded-lg" onclick="event.stopPropagation()">
         <button class="absolute top-4 right-4 text-white text-4xl font-bold p-2 transition duration-300 hover:text-accent" onclick="closeLightbox()">×</button>
     </div>
+
     <script>
         let isScanning = false;
         const initialStatus = "طريقنا واحد...و رقمنا واحد - اضغط للفحص";
@@ -755,7 +805,7 @@
                     progressBar.style.animation = 'none';
                     progressBar.style.width = '100%';
                 }, 4000); 
-                
+            
             }, 4000); 
         }
 
