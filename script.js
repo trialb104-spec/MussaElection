@@ -203,4 +203,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize status display text
     document.getElementById('status-display').textContent = initialStatus;
+
+    // --- GLOBAL VISITOR COUNTER (External API) ---
+    const counterElement = document.getElementById('visitor-count');
+    
+    // We define a unique ID for your election campaign
+    const namespace = 'ahmed-mussa-election-2025-alex'; 
+    const key = 'homepage-visits';
+
+    // Call the free API
+    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+        .then(response => response.json())
+        .then(data => {
+            if (counterElement) {
+                counterElement.textContent = data.value.toLocaleString();
+                
+                // Add a small pop animation
+                counterElement.style.transition = "transform 0.3s ease";
+                counterElement.style.transform = "scale(1.3)";
+                setTimeout(() => {
+                    counterElement.style.transform = "scale(1)";
+                }, 300);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching count:', error);
+            if (counterElement) counterElement.textContent = "100+"; // Fallback
+        });
 });
