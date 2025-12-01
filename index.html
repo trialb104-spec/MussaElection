@@ -245,6 +245,19 @@
             opacity: 0.6;
             cursor: not-allowed;
         }
+        
+        /* New Styles for Interactive Sections */
+        .priority-btn {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .priority-btn.active-priority {
+            background-color: #006633;
+            color: white;
+            border-color: #FFD700;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -443,7 +456,7 @@
             </div>
         </section>
 
-        <!-- NEW SECTION: TIMELINE -->
+        <!-- TIMELINE SECTION -->
         <section class="animate-fade-in-up bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent" style="animation-delay: 700ms;">
             <h2 class="text-3xl font-extrabold text-color-primary text-center mb-10">
                 ⏳ مسيرة من العطاء والنجاح
@@ -520,6 +533,35 @@
             </div>
         </section>
 
+        <!-- [NEW] CREATIVE SECTION 1: Interactive Priorities -->
+        <section class="animate-fade-in-up bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent text-center mt-8 mb-8" style="animation-delay: 850ms;">
+            <h2 class="text-3xl font-extrabold text-color-primary mb-6">💡 اختر أولوياتك.. وشاهد الحل</h2>
+            <p class="text-gray-600 mb-8 font-medium">ما هو الملف الذي يشغل بالك؟ اضغط على الأيقونة لتعرف تعهدنا المباشر:</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center" onclick="showPriority('sports', this)">
+                    <span class="text-4xl mb-2">⚽</span>
+                    <span class="font-bold text-gray-800">الرياضة</span>
+                </div>
+                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center" onclick="showPriority('family', this)">
+                    <span class="text-4xl mb-2">👨‍👩‍👧‍👦</span>
+                    <span class="font-bold text-gray-800">الأسرة والطفل</span>
+                </div>
+                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center" onclick="showPriority('digital', this)">
+                    <span class="text-4xl mb-2">📱</span>
+                    <span class="font-bold text-gray-800">الخدمات الرقمية</span>
+                </div>
+                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center" onclick="showPriority('health', this)">
+                    <span class="text-4xl mb-2">🩺</span>
+                    <span class="font-bold text-gray-800">الرعاية الصحية</span>
+                </div>
+            </div>
+            
+            <div id="priority-content" class="mt-6 p-6 bg-green-50 rounded-xl border-2 border-dashed border-green-300 text-xl font-bold text-green-800 transition-all shadow-inner">
+                👈 اضغط على أي أيقونة أعلاه لتعرف خطتنا!
+            </div>
+        </section>
+
         
         <section class="animate-fade-in-up" style="animation-delay: 900ms;">
             <div class="bg-white p-4 rounded-2xl shadow-2xl border-t-8 border-color-primary">
@@ -581,6 +623,34 @@
                 <p class="mt-4 text-lg font-medium text-gray-600">
                     ✔️ التفسير: النادي يجب أن يعمل بفكر اقتصادي مؤسسي محترف، مش فقط كمكان يصرف، بل كمنشأة تستطيع إنتاج موارد وتنميتها.
                 </p>
+            </div>
+
+            <!-- [NEW] CREATIVE SECTION 2: 100 Days Plan -->
+            <div class="bg-[#1a472a] text-white p-6 md:p-8 rounded-xl shadow-2xl mb-12 border-4 border-accent relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full translate-x-10 -translate-y-10"></div>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-center mb-8 text-accent flex items-center justify-center gap-2">
+                    <span>🚀</span> خطة الـ 100 يوم الأولى
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
+                        <div class="text-4xl mb-2">1️⃣</div>
+                        <h4 class="text-xl font-bold text-accent mb-2">الشهر الأول: تدقيق</h4>
+                        <p class="text-sm md:text-base text-gray-200">مراجعة شاملة لكافة العقود الحالية ووقف أي هدر مالي فوراً، وتشكيل لجنة الحكماء.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
+                        <div class="text-4xl mb-2">2️⃣</div>
+                        <h4 class="text-xl font-bold text-accent mb-2">الشهر الثاني: إطلاق</h4>
+                        <p class="text-sm md:text-base text-gray-200">البدء في تنفيذ التطبيق الرقمي (App) وتفعيل بوابات الدخول الإلكترونية التجريبية.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
+                        <div class="text-4xl mb-2">3️⃣</div>
+                        <h4 class="text-xl font-bold text-accent mb-2">الشهر الثالث: تطوير</h4>
+                        <p class="text-sm md:text-base text-gray-200">افتتاح منطقة الخدمات الجديدة (الحضانة والمطاعم) بعد إعادة هيكلتها لخدمة الأعضاء.</p>
+                    </div>
+                </div>
             </div>
 
             <div id="accordion-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -731,8 +801,6 @@
             </div>
         </section>
 
-        <!-- Testimonials Section REMOVED -->
-
         
         <section class="animate-fade-in-up" style="animation-delay: 1400ms;">
             <div class="bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent">
@@ -823,6 +891,45 @@
     </div>
 
     <script>
+        // Interactive Priorities Logic
+        function showPriority(type, element) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.priority-btn').forEach(btn => {
+                btn.classList.remove('active-priority', 'bg-green-100');
+                btn.classList.add('bg-gray-50');
+            });
+            
+            // Add active class to clicked button
+            element.classList.remove('bg-gray-50');
+            element.classList.add('active-priority', 'bg-green-100');
+            
+            const contentDiv = document.getElementById('priority-content');
+            let content = "";
+            
+            switch(type) {
+                case 'sports':
+                    content = "⚽ تأسيس شركة كرة القدم لإدارة محترفة، وتطوير فرق الناشئين لتكون النواة الحقيقية للفريق الأول.";
+                    break;
+                case 'family':
+                    content = "👨‍👩‍👧‍👦 إنشاء حضانة أطفال بأسعار رمزية، وتطوير منطقة العائلات لضمان الراحة والخصوصية.";
+                    break;
+                case 'digital':
+                    content = "📱 تطبيق إلكتروني شامل (App) لحجز الملاعب، دفع الاشتراكات، ومتابعة أخبار النادي لحظة بلحظة.";
+                    break;
+                case 'health':
+                    content = "🩺 تعاقدات طبية حصرية بخصومات حقيقية مع كبرى المستشفيات والصيدليات للأعضاء وأسرهم.";
+                    break;
+            }
+            
+            contentDiv.style.opacity = 0;
+            setTimeout(() => {
+                contentDiv.innerHTML = content;
+                contentDiv.style.opacity = 1;
+                contentDiv.style.backgroundColor = '#f0fdf4';
+                contentDiv.style.borderColor = '#006633';
+            }, 200);
+        }
+
         let isScanning = false;
         const initialStatus = "طريقنا واحد...و رقمنا واحد - اضغط للفحص";
         const scanMessages = [
