@@ -1,20 +1,210 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أحمد السيد موسى | مرشح رقم 1 فوق السن | نادي الاتحاد السكندري - طريقنا واحد</title>
-    
-    <meta name="description" content="البرنامج الانتخابي للمرشح أحمد السيد موسى، مرشح فوق السن لنادي الاتحاد السكندري. رؤية للاستدامة، التحول الرقمي، وتفعيل دور العضو.">
-    <meta property="og:title" content="أحمد السيد موسى | مرشح رقم 1 فوق السن | نادي الاتحاد السكندري - طريقنا واحد">
-    <meta property="og:description" content="رؤية طموحة لمستقبل نادي الاتحاد السكندري: إدارة مسؤولة، استثمار، وخدمة أعضاء بمعايير احترافية.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
+    <meta name="description" content="البرنامج الانتخابي للمرشح أحمد السيد موسى، مرشح فوق السن لنادي الاتحاد السكندري.">
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f7f7f7;
+            padding-top: 6.5rem; /* Default for mobile */
+        }
+
+        /* Responsive Padding Fixes */
+        @media (max-width: 639px) {
+            body { padding-top: 11rem !important; }
+        }
+        @media (min-width: 640px) and (max-width: 1024px) {
+            header .slogan-animate {
+                font-size: 0.9rem !important;
+                line-height: 1.3;
+                white-space: normal;
+                max-width: 40%; 
+            }
+            header h1 { font-size: 1.1rem; }
+        }
+        @media (min-width: 1024px) {
+            body { padding-top: 8rem; }
+        }
+
+        /* Colors & Branding */
+        .color-primary { background-color: #006633; }
+        .color-accent { color: #FFD700; }
+        .bg-accent { background-color: #FFD700; }
+        .border-accent { border-color: #FFD700; }
+        .text-primary-dark { color: #004d26; }
+        .text-color-primary { color: #006633; }
+
+        /* Animations */
+        @keyframes slogan-pop {
+            0%, 100% { transform: scale(1) translateY(0); opacity: 0.8; }
+            50% { transform: scale(1.05) translateY(-2px); opacity: 1; }
+        }
+        .slogan-animate {
+            animation: slogan-pop 3s infinite ease-in-out;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+        }
+
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            /* Ensures element is visible if JS fails to set opacity, 
+               but animation runs if supported */
+            animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0; 
+        }
+
+        /* Golden Frame & Images */
+        .golden-frame {
+            border: 5px solid #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .golden-frame:hover { transform: scale(1.03); }
+
+        /* Accordion */
+        .block-card-header {
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        .block-card-header:hover {
+            background-color: #008040;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            padding: 0 1.5rem;
+        }
+        .accordion-open .accordion-content {
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
+        }
+
+        /* List Items */
+        .list-item-hover-effect {
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+        }
+        .list-item-hover-effect:hover {
+            transform: translateX(5px) scale(1.01);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f0fdf4; 
+        }
+
+        /* Badges & CTA */
+        @keyframes shine-badge {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 2px rgba(255, 215, 0, 0.5)); }
+            50% { filter: brightness(1.2) drop-shadow(0 0 4px rgba(255, 215, 0, 0.9)); }
+        }
+        .badge-shine { animation: shine-badge 3s infinite ease-in-out; }
+
+        @keyframes pulse-cta {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+        .cta-pulse-animate { animation: pulse-cta 2s infinite; }
+
+        /* Election Day Card (Countdown) */
+        @keyframes countdown-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 20px rgba(0, 102, 51, 0.5); }
+            50% { box-shadow: 0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(0, 102, 51, 0.8); }
+        }
+        .election-date-card {
+            animation: countdown-glow 3s infinite ease-in-out;
+            background: linear-gradient(145deg, #006633 10%, #004d26 90%);
+        }
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #FFD700;
+            line-height: 1;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .countdown-label { font-size: 1rem; font-weight: 500; color: #ffffff; }
+
+        /* Photo Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+        .photo-grid img {
+            width: 100%; height: 220px; object-fit: cover;
+            border-radius: 0.75rem; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid #FFD700; cursor: pointer;
+        }
+        .photo-grid img:hover { transform: scale(1.05); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); }
+        @media (min-width: 640px) { .photo-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); } }
+
+        /* Lightbox */
+        #lightbox-modal { transition: opacity 0.3s ease; opacity: 0; display: none; }
+        .lightbox-open { opacity: 1 !important; display: flex !important; }
+        #lightbox-image { max-width: 90%; max-height: 90%; object-fit: contain; }
+
+        /* Game & HiTech */
+        .game-card-creative {
+            background: linear-gradient(160deg, #004d26 0%, #006633 60%, #008040 100%);
+            border: 5px solid #FFD700;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 215, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+        .game-card-creative:hover { transform: translateY(-5px) scale(1.01); }
+        
+        .hitech-card {
+            background-color: #1a1a1a; border: 3px solid #006633; box-shadow: 0 0 20px #006633;
+            color: #f0fdf4; transition: all 0.4s ease;
+        }
+        @keyframes scan-animation { 0% { background-position: right; } 100% { background-position: left; } }
+        .scan-bar {
+            height: 10px;
+            background: linear-gradient(90deg, #006633 5%, #FFD700 50%, #006633 95%);
+            background-size: 200% 100%;
+            filter: drop-shadow(0 0 3px #FFD700);
+            border-radius: 5px;
+        }
+        .hitech-button {
+            border: 2px solid #FFD700; box-shadow: 0 0 10px #FFD700;
+            background: #006633; color: #FFD700; transition: all 0.2s;
+        }
+        .hitech-button:hover:not(:disabled) {
+            background: #FFD700; color: #006633; box-shadow: 0 0 15px #FFD700;
+        }
+
+        /* Priorities & Quiz */
+        .priority-btn { transition: all 0.3s ease; cursor: pointer; }
+        .priority-btn.active-priority {
+            background-color: #006633; color: white; border-color: #FFD700;
+            transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .quiz-option-btn {
+            background-color: white; border: 2px solid #e5e7eb; color: #374151;
+            padding: 1rem; border-radius: 0.75rem; text-align: right;
+            transition: all 0.2s ease; cursor: pointer; font-weight: 600; font-size: 1.1rem;
+        }
+        .quiz-option-btn:hover:not(:disabled) {
+            border-color: #006633; background-color: #f0fdf4; transform: translateX(-5px);
+        }
+        .quiz-option-btn.correct {
+            background-color: #d1fae5 !important; border-color: #059669 !important; color: #065f46 !important;
+        }
+        .quiz-option-btn.wrong {
+            background-color: #fee2e2 !important; border-color: #dc2626 !important; color: #991b1b !important;
+        }
+        .quiz-option-btn:disabled { cursor: default; }
+    </style>
 </head>
 <body class="text-gray-800">
     <header class="fixed top-0 right-0 left-0 color-primary text-white p-4 shadow-2xl z-50">
@@ -23,12 +213,10 @@
                 <img src="https://i.ibb.co/N658QcKw/111111.jpg" alt="شعار نادي الاتحاد السكندري" class="h-12 w-12 rounded-full border-2 border-white object-cover shadow-lg flex-shrink-0">
                 <div class="flex flex-col sm:flex-row items-center space-x-3 rtl:space-x-reverse border-r-2 rtl:border-r-0 rtl:border-l-2 pr-3 rtl:pl-3 rtl:pr-0 border-white min-w-0">
                     <h1 class="text-xl font-bold flex-shrink-0">أحمد السيد موسى</h1>
-                    
                     <span class="bg-accent text-primary-dark text-sm font-extrabold px-3 py-1 rounded-full shadow-lg badge-shine transform -translate-y-[1px] flex items-center space-x-1 rtl:space-x-reverse flex-shrink-0 mt-1 sm:mt-0">
-                        <span class="text-lg font-extrabold whitespace-nowrap">مرشح رقم (1)</span> 
+                        <span class="text-lg font-extrabold whitespace-nowrap">مرشح لعضوية مجلس الادارة رقم (1)</span> 
                         <span class="text-xs font-bold text-color-primary bg-white px-2 py-0.5 rounded-full shadow-inner border border-primary-dark/20 flex-shrink-0 whitespace-nowrap">فوق السن</span>
                     </span>
-                    
                 </div>
             </div>
             <div class="text-center font-extrabold text-lg sm:text-2xl text-accent p-1 rounded-lg slogan-animate flex-shrink-0">
@@ -38,23 +226,22 @@
     </header>
 
     <main class="max-w-4xl mx-auto p-6 space-y-12">
+        
         <section class="p-6 rounded-2xl shadow-xl border-b-4 border-accent animate-fade-in-up election-date-card text-white text-center space-y-4" style="animation-delay: 100ms;">
             <h2 class="text-3xl font-extrabold text-accent mb-4">
                 📢 يوم الحسم! انتخابات نادي الاتحاد السكندري
             </h2>
-
             <div class="bg-white/10 p-4 rounded-xl shadow-inner border-2 border-accent/70">
                 <p class="text-2xl md:text-3xl font-extrabold mb-3 flex items-center justify-center gap-3 text-white">
                     <span class="text-4xl md:text-5xl">🗳️</span>
                     <span>26 ديسمبر 2025</span>
                 </p>
             </div>
-
             <p class="text-xl font-medium mt-4">
                 صوتك أمانة، ومستقبل النادي في يدك. يتبقى على يوم الانتخابات:
             </p>
-
             <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 mt-4 bg-primary-dark/30 p-4 rounded-xl border border-accent/50">
+                <p>جاري تحميل العداد...</p>
             </div>
         </section>
 
@@ -73,7 +260,6 @@
                     <span class="text-3xl md:text-4xl shrink-0">🎮</span>
                     <span>"رحلة موسى": اللعبة الانتخابية!</span>
                 </h2>
-
                 <p class="text-xl font-medium text-gray-200 leading-relaxed border-t border-b border-white/20 py-3">
                     انطلق في مغامرة تفاعلية داخل رؤيتنا! اختبر معرفتك بالملفات، وتعرف على خطتنا الاستثمارية للمستقبل المستدام لنادي الاتحاد.
                 </p>
@@ -89,22 +275,17 @@
                     <span id="hitech-icon" class="text-6xl text-accent hitech-title">
                         🛰️
                     </span>
-                    <h2 class="hitech-title text-3xl md:text-4xl font-extrabold">قريبا: اعرف لجنتك الانتخابية 
-                    </h2>
+                    <h2 class="hitech-title text-3xl md:text-4xl font-extrabold">قريبا: اعرف لجنتك الانتخابية </h2>
                 </div>
-                
                 <div id="status-display" class="bg-black border border-green-500 p-3 rounded-lg text-lg font-mono text-green-400">
                     "طريقنا واحد...و رقمنا واحد" - اضغط للفحص
                 </div>
-                
                 <div class="w-full h-2 rounded-full mb-4">
                     <div id="progress-bar" class="scan-bar"></div>
                 </div>
-
                 <p class="text-lg font-medium text-gray-300">
                     منصة العضوية الرقمية قيد التشغيل التجريبي. اضغط على الزر لتحديث حالة النظام لمعرفة موعد الإطلاق:
                 </p>
-
                 <button id="scan-button" onclick="startScanning()" class="hitech-button w-full md:w-3/5 px-8 py-3 font-extrabold rounded-full text-xl">
                     بدء فحص النظام 📡
                 </button>
@@ -114,9 +295,7 @@
         <section class="bg-white p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-3xl border-t-8 border-accent animate-fade-in-up" style="animation-delay: 500ms;">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-1 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-l pb-6 lg:pb-0 border-gray-200">
-                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg" 
-                         alt="صورة المرشح أحمد السيد موسى" 
-                         class="w-48 h-48 rounded-full object-cover golden-frame mb-4">
+                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg" alt="صورة المرشح أحمد السيد موسى" class="w-48 h-48 rounded-full object-cover golden-frame mb-4">
                     <h2 class="text-3xl font-extrabold text-gray-900">أحمد السيد موسى</h2>
                     <p class="text-xl font-medium text-gray-700 mt-1">
                         اسم الشهرة: <span class="text-accent font-bold">موسى</span>
@@ -137,7 +316,6 @@
                             <span class="text-2xl ml-2 rtl:mr-2">🥉</span> بكالوريوس تجارة – جامعة الإسكندرية – قسم محاسبة
                         </li>
                     </ul>
-
                     <h3 class="text-2xl font-bold flex items-center pt-4 text-color-primary">
                         👨‍👩‍👧‍👦 البيانات الشخصية:
                     </h3>
@@ -178,7 +356,6 @@
                     </li>
                 </ul>
             </div>
-
             <div class="bg-white p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-3xl border-t-8 border-accent/70">
                 <h3 class="text-2xl font-bold flex items-center mb-6 text-color-primary">
                     🤝 الأعمال التطوعية والمناصب المجتمعية:
@@ -211,7 +388,6 @@
                 ⏳ مسيرة من العطاء والنجاح
             </h2>
             <div class="relative border-r-4 border-green-200 mr-4 rtl:mr-4 rtl:border-r-4 rtl:border-l-0">
-                
                 <div class="mb-8 flex items-center w-full">
                     <div class="w-8 h-8 absolute -mr-4 bg-accent rounded-full border-4 border-white shadow-lg"></div>
                     <div class="mr-8 w-full">
@@ -222,7 +398,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="mb-8 flex items-center w-full">
                     <div class="w-8 h-8 absolute -mr-4 bg-accent rounded-full border-4 border-white shadow-lg"></div>
                     <div class="mr-8 w-full">
@@ -233,7 +408,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="mb-8 flex items-center w-full">
                     <div class="w-8 h-8 absolute -mr-4 bg-accent rounded-full border-4 border-white shadow-lg"></div>
                     <div class="mr-8 w-full">
@@ -244,7 +418,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -282,7 +455,6 @@
         <section class="animate-fade-in-up bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent text-center mt-8 mb-8" style="animation-delay: 850ms;">
             <h2 class="text-3xl font-extrabold text-color-primary mb-6">💡 اختر أولوياتك.. وشاهد الحل</h2>
             <p class="text-gray-600 mb-8 font-medium">ما هو الملف الذي يشغل بالك؟ اضغط على الأيقونة لتعرف تعهدنا المباشر:</p>
-            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center" onclick="showPriority('sports', this)">
                     <span class="text-4xl mb-2">⚽</span>
@@ -301,7 +473,6 @@
                     <span class="font-bold text-gray-800">الرعاية الصحية</span>
                 </div>
             </div>
-            
             <div id="priority-content" class="mt-6 p-6 bg-green-50 rounded-xl border-2 border-dashed border-green-300 text-xl font-bold text-green-800 transition-all shadow-inner">
                 👈 اضغط على أي أيقونة أعلاه لتعرف خطتنا!
             </div>
@@ -313,9 +484,7 @@
                     📢 طريقنا واحد ...... مكسبنا واحد
                 </h2>
                 <div class="w-full">
-                    <img src="https://i.ibb.co/GfnQW6VH/1.jpg" 
-                         alt="صورة إعلان حملة المرشح أحمد السيد موسى - طريقنا واحد" 
-                         class="w-full h-auto rounded-xl shadow-xl golden-frame transition-transform duration-500 object-cover">
+                    <img src="https://i.ibb.co/GfnQW6VH/1.jpg" alt="صورة إعلان حملة المرشح أحمد السيد موسى - طريقنا واحد" class="w-full h-auto rounded-xl shadow-xl golden-frame transition-transform duration-500 object-cover">
                 </div>
             </div>
         </section>
@@ -357,7 +526,7 @@
 
             <div class="mb-8 p-6 bg-yellow-50 rounded-xl border border-accent shadow-inner">
                 <h3 class="text-2xl font-bold text-gray-800 mb-3">
-                    🔰 ثالثًا: الهدف العام للبرنامج
+                    🔰  الهدف العام للبرنامج
                 </h3>
                 <blockquote class="text-xl italic font-serif text-green-800 bg-yellow-100 p-3 rounded-lg border-r-4 rtl:border-l-4 border-green-600">
                     “نادي الأتحاد هيئة خاصة ذات نفع عام، تدير أموالها وأنشطتها بطريقة استثمارية تحقق موارد مستدامة للنادي.”
@@ -381,7 +550,7 @@
                     <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
                         <div class="text-4xl mb-2">2️⃣</div>
                         <h4 class="text-xl font-bold text-accent mb-2">الشهر الثاني: إطلاق</h4>
-                        <p class="text-sm md:text-base text-gray-200">البدء في تنفيذ التطبيق الرقمي (App) وتفعيل بوابات الدخول الإلكترونية التجريبية.</p>
+                        <p class="text-sm md:text-base text-gray-200">حصر كافة مشاكل القطاعات المختلفة للالعاب تمهيدا لتطويرها .</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
                         <div class="text-4xl mb-2">3️⃣</div>
@@ -392,7 +561,6 @@
             </div>
 
             <div id="accordion-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
                         <span>💵 1) الموارد والاستثمار</span>
@@ -410,7 +578,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
                         <span>📱 2) التحول الرقمي</span>
@@ -429,7 +596,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
                         <span>🏘️ 3) الاجتماعي والخدمي</span>
@@ -445,7 +611,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
                         <span>🟫 4) الملف الرياضي</span>
@@ -482,7 +647,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
                         <span>❤️ 5) الصحي</span>
@@ -497,7 +661,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
                     <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
                         <span>📈 6) المالي</span>
@@ -568,7 +731,6 @@
         <section class="animate-fade-in-up bg-gradient-to-r from-[#006633] to-[#004d26] p-8 md:p-12 rounded-3xl shadow-2xl text-center relative overflow-hidden" style="animation-delay: 1500ms;">
             <div class="absolute top-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-x-10 -translate-y-10"></div>
             <div class="absolute bottom-0 right-0 w-48 h-48 bg-[#FFD700] opacity-10 rounded-full translate-x-10 translate-y-10"></div>
-
             <div class="relative z-10 space-y-6">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-white">
                     🤝 كن شريكاً في التغيير!
@@ -576,16 +738,78 @@
                 <p class="text-lg text-green-100 max-w-2xl mx-auto">
                     الحملة ليست فردية، بل هي جهد جماعي لكل محب للاتحاد. إذا كنت تؤمن برؤيتنا، انضم لفريق المتطوعين أو شارك البرنامج مع أصدقائك.
                 </p>
-                
                 <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
                     <a href="https://wa.me/201550550646" target="_blank" class="px-8 py-4 bg-[#FFD700] text-[#004d26] font-bold text-xl rounded-full shadow-lg hover:bg-white hover:text-[#006633] transition duration-300 transform hover:-translate-y-1 inline-block">
                         📞 تواصل معنا عبر واتساب
                     </a>
-                    
                     <a href="https://wa.me/?text=اقرأ%20البرنامج%20الانتخابي%20للمرشح%20أحمد%20السيد%20موسى%0Ahttps://trialb104-spec.github.io/MussaElection/" target="_blank" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-xl rounded-full hover:bg-white hover:text-[#006633] transition duration-300 inline-block">
                         📤 شارك البرنامج الانتخابي
                     </a>
                 </div>
+            </div>
+        </section>
+
+        <section id="quiz-section" class="animate-fade-in-up bg-white p-6 md:p-8 rounded-2xl shadow-2xl border-t-8 border-accent relative" style="animation-delay: 1550ms;">
+            <div class="text-center space-y-4 mb-6">
+                <h2 class="text-3xl font-extrabold text-color-primary flex items-center justify-center gap-2">
+                    <span>🧠</span> مسابقة العباقرة: تاريخ الاتحاد
+                </h2>
+                <p class="text-lg text-gray-600">
+                    هل أنت مشجع حقيقي؟ جاوب على أسئلة في تاريخ زعيم الثغر واكتشف مستوى تشجيعك!
+                </p>
+            </div>
+
+            <div id="quiz-start-screen" class="text-center py-8">
+                <div class="text-6xl mb-4">🏆</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">جاهز للتحدي؟</h3>
+                <p class="text-gray-600 mb-6">سيتم اختيار أسئلة عشوائية لاختبار معلوماتك.</p>
+                <button onclick="startQuiz()" class="px-10 py-4 bg-accent text-primary-dark font-extrabold text-xl rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition transform cta-pulse-animate">
+                    ابدأ المسابقة الآن
+                </button>
+            </div>
+
+            <div id="quiz-interface" class="hidden">
+                <div class="mb-6">
+                    <div class="flex justify-between text-sm font-bold text-gray-600 mb-1">
+                        <span id="question-counter">سؤال 1 من 25</span>
+                        <span id="score-display">النقاط: 0</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden border border-gray-300">
+                        <div id="quiz-progress-bar" class="bg-gradient-to-r from-green-600 to-green-400 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-inner min-h-[300px] flex flex-col justify-center">
+                    <h3 id="question-text" class="text-2xl font-bold text-center text-gray-800 mb-8 leading-relaxed">
+                        جاري تحميل السؤال...
+                    </h3>
+                    <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        </div>
+                </div>
+            </div>
+
+            <div id="quiz-continue-modal" class="hidden absolute inset-0 bg-white/95 z-20 flex flex-col items-center justify-center rounded-2xl p-6 text-center backdrop-blur-sm">
+                <div class="text-5xl mb-4">🔥</div>
+                <h3 class="text-3xl font-extrabold text-color-primary mb-2">أحسنت يا بطل!</h3>
+                <p class="text-xl text-gray-700 mb-6 font-medium">أنهيت 25 سؤال بنجاح. هل تريد إثبات أنك "عبقري الاتحاد" وتكمل للـ 50؟</p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                    <button onclick="continueQuiz()" class="px-8 py-3 bg-accent text-primary-dark font-bold rounded-full shadow-lg hover:scale-105 transition">
+                        نعم، كمل التحدي (لـ 50) 💪
+                    </button>
+                    <button onclick="finishQuizEarly()" class="px-8 py-3 bg-gray-200 text-gray-700 font-bold rounded-full hover:bg-gray-300 transition">
+                        اكتفي بالنتيجة الحالية 🛑
+                    </button>
+                </div>
+            </div>
+
+            <div id="quiz-result-screen" class="hidden text-center py-8">
+                <div id="result-icon" class="text-7xl mb-4">🎉</div>
+                <h3 class="text-3xl font-extrabold text-color-primary mb-2">النتيجة النهائية</h3>
+                <p id="final-score-text" class="text-4xl font-black text-accent drop-shadow-md mb-4">0 / 25</p>
+                <p id="result-message" class="text-xl text-gray-700 mb-8 font-medium">رسالة النتيجة...</p>
+                <button onclick="startQuiz()" class="px-8 py-3 border-2 border-color-primary text-color-primary font-bold rounded-full hover:bg-color-primary hover:text-white transition">
+                    🔄 إعادة المحاولة
+                </button>
             </div>
         </section>
 
@@ -605,19 +829,347 @@
                 </p>
             </div>
         </section>
-
     </main>
 
     <footer class="color-primary text-white text-center p-6 mt-12 space-y-4">
         <p>© 2025 - أحمد السيد موسى. برنامج انتخابي لخدمة الاتحاد السكندري</p>
-        
-         </footer>
+    </footer>
 
     <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex justify-center items-center p-4 hidden" onclick="closeLightbox()">
         <img id="lightbox-image" src="" alt="صورة مكبرة" class="max-w-full max-h-full block shadow-2xl rounded-lg" onclick="event.stopPropagation()">
         <button class="absolute top-4 right-4 text-white text-4xl font-bold p-2 transition duration-300 hover:text-accent" onclick="closeLightbox()">×</button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // --- 1. Interactive Priorities Logic ---
+        function showPriority(type, element) {
+            document.querySelectorAll('.priority-btn').forEach(btn => {
+                btn.classList.remove('active-priority', 'bg-green-100');
+                btn.classList.add('bg-gray-50');
+            });
+            element.classList.remove('bg-gray-50');
+            element.classList.add('active-priority', 'bg-green-100');
+            
+            const contentDiv = document.getElementById('priority-content');
+            let content = "";
+            
+            switch(type) {
+                case 'sports': content = "⚽ تأسيس شركة كرة القدم لإدارة محترفة، وتطوير فرق الناشئين لتكون النواة الحقيقية للفريق الأول."; break;
+                case 'family': content = "👨‍👩‍👧‍👦 إنشاء حضانة أطفال بأسعار رمزية، وتطوير منطقة العائلات لضمان الراحة والخصوصية."; break;
+                case 'digital': content = "📱 تطبيق إلكتروني شامل (App) لحجز الملاعب، دفع الاشتراكات، ومتابعة أخبار النادي لحظة بلحظة."; break;
+                case 'health': content = "🩺 تعاقدات طبية حصرية بخصومات حقيقية مع كبرى المستشفيات والصيدليات للأعضاء وأسرهم."; break;
+            }
+            contentDiv.style.opacity = 0;
+            setTimeout(() => {
+                contentDiv.innerHTML = content;
+                contentDiv.style.opacity = 1;
+                contentDiv.style.backgroundColor = '#f0fdf4';
+                contentDiv.style.borderColor = '#006633';
+            }, 200);
+        }
+
+        // --- 2. Scanning System Logic ---
+        let isScanning = false;
+        const initialStatus = "طريقنا واحد...و رقمنا واحد - اضغط للفحص";
+        const scanMessages = [
+            "جاري التأكد: من قيمة العضو (أولوية قصوى)",
+            "تحليل: مبدأ الشفافية والحوكمة",
+            "ربط: صوتك بالقرار (اكتمل 60%)",
+            "إعادة ضبط: منظومة النادي المستدام",
+            "قريباً جداً: الإعلان عن موعد المنصة الرقمية"
+        ];
+
+        function startScanning() {
+            if (isScanning) return;
+            isScanning = true;
+            const scanButton = document.getElementById('scan-button');
+            const statusBar = document.getElementById('status-display');
+            const progressBar = document.getElementById('progress-bar');
+            
+            scanButton.disabled = true;
+            scanButton.textContent = 'جاري الفحص... يرجى الانتظار';
+            statusBar.textContent = scanMessages[0];
+            progressBar.style.animation = 'scan-animation 1.5s infinite linear';
+            progressBar.style.width = '100%';
+
+            let messageIndex = 0;
+            const scanInterval = setInterval(() => {
+                messageIndex++;
+                if (messageIndex < scanMessages.length) {
+                    statusBar.textContent = scanMessages[messageIndex];
+                } else {
+                    clearInterval(scanInterval);
+                }
+            }, 800);
+
+            setTimeout(() => {
+                progressBar.style.animation = 'none';
+                progressBar.style.width = '100%';
+                statusBar.style.backgroundColor = '#FFD700';
+                statusBar.style.color = '#004d26';
+                statusBar.style.fontWeight = 'bold';
+                statusBar.style.textShadow = 'none';
+                statusBar.textContent = '✔️ صوتك أمانة: المنصة ستنطلق قريباً جداً!';
+                scanButton.textContent = 'تم التحديث بنجاح! 🚀';
+                setTimeout(() => {
+                    isScanning = false;
+                    scanButton.disabled = false;
+                    scanButton.textContent = 'بدء فحص النظام 📡';
+                    statusBar.textContent = initialStatus;
+                    statusBar.style.backgroundColor = 'black';
+                    statusBar.style.color = '#38a169'; 
+                    statusBar.style.fontWeight = 'normal';
+                    progressBar.style.animation = 'none';
+                    progressBar.style.width = '100%';
+                }, 4000); 
+            }, 4000); 
+        }
+
+        // --- 3. QUIZ LOGIC (Full 50 Questions) ---
+        const quizData = [
+            { q: "في أي عام تأسس نادي الاتحاد لأول مرة؟", options: ["1906", "1910", "1912", "1914"], correct: 0 },
+            { q: "في أي عام استقر الاسم الرسمي 'نادي الاتحاد السكندري' بعد الاندماجات؟", options: ["1908", "1912", "1914", "1920"], correct: 2 },
+            { q: "ما هو اللقب الشهير الذي يُطلق على نادي الاتحاد؟", options: ["القلعة الخضراء", "سيد البلد – زعيم الثغر", "أسياد المتوسط", "أخضر الدلتا"], correct: 1 },
+            { q: "ما هي ألوان نادي الاتحاد الرسمية؟", options: ["الأحمر والأبيض", "الأخضر والأبيض", "الأزرق والأبيض", "الأصفر والأسود"], correct: 1 },
+            { q: "كم مرة فاز الاتحاد السكندري ببطولة كأس مصر؟", options: ["4 مرات", "5 مرات", "6 مرات", "7 مرات"], correct: 2 },
+            { q: "ما الملعب الرئيسي الذي يخوض عليه الاتحاد مبارياته الرسمية؟", options: ["استاد برج العرب", "استاد الإسكندرية", "استاد القاهرة", "استاد المقاولون"], correct: 1 },
+            { q: "أين كانت أول أرض يمارس عليها الاتحاد نشاطه عام 1906؟", options: ["الشاطبي", "رأس التين", "سموحة", "محطة الرمل"], correct: 1 },
+            { q: "من هو النادي الذي اندمج مع الاتحاد عام 1912؟", options: ["نادي الأولمبي", "نادي الترام", "نادي الأبطال المتحدين", "نادي الفيكتوري"], correct: 2 },
+            { q: "هل يعتبر الاتحاد السكندري من أقدم أندية مصر؟", options: ["نعم", "لا", "ربما", "غير معروف"], correct: 0 },
+            { q: "في أي مدينة يقع نادي الاتحاد السكندري؟", options: ["القاهرة", "بورسعيد", "الإسكندرية", "السويس"], correct: 2 },
+            { q: "ما هو شعار النادي من حيث الألوان؟", options: ["أخضر بخطوط بيضاء", "أبيض بخطوط حمراء", "أزرق بخطوط ذهبية", "أخضر وأسود"], correct: 0 },
+            { q: "هل يشارك نادي الاتحاد في الدوري الممتاز لكرة القدم؟", options: ["نعم", "لا", "أحياناً", "انسحب"], correct: 0 },
+            { q: "في أي منطقة يوجد المقر التاريخي للنادي؟", options: ["سيدي جابر", "محطة الرمل", "الشاطبي", "سموحة"], correct: 2 },
+            { q: "ما هو النظام الذي اتُّبع في بدايات النادي؟", options: ["نادي خاص مغلق", "نادي شعبي مفتوح لأهالي الإسكندرية", "نادي عسكري", "نادي تابع لوزارة المعارف"], correct: 1 },
+            { q: "أي من هذه الألعاب تُعتبر من أبرز ألعاب الاتحاد بخلاف كرة القدم؟", options: ["كمال الأجسام", "كرة السلة", "الجمباز", "التنس"], correct: 1 },
+            { q: "ماذا يرمز اللون الأخضر في شعار النادي؟", options: ["البحر", "القوة", "الروح القتالية والانتماء", "التاريخ"], correct: 2 },
+            { q: "في أي عام حصل الاتحاد على مقره في الشاطبي؟", options: ["1914", "1929", "1935", "1942"], correct: 1 },
+            { q: "من هو الجمهور الملقّب بـ 'العياشة'؟", options: ["جمهور كرة السلة", "جمهور النادي المتحمس", "رابطة مشجعي الدرجة الأولى", "رابطة قدامى اللاعبين"], correct: 1 },
+            { q: "ما هي الرياضة التي حقق فيها الاتحاد بطولات عربية وإفريقية متعددة؟", options: ["كرة اليد", "السباحة", "كرة السلة", "الكرة الطائرة"], correct: 2 },
+            { q: "ما هي أكثر صفة يشتهر بها جمهور الاتحاد؟", options: ["الهدوء", "قلة الحضور", "الإخلاص والانتماء الشديد", "التشجيع الإلكتروني فقط"], correct: 2 },
+            { q: "من هو النادي الذي نشأت معه أولى منافسات الاتحاد في بدايات القرن العشرين؟", options: ["نادي الترام", "نادي الأولمبي", "نادي السكة", "نادي فاروق"], correct: 0 },
+            { q: "أي فرع يُعتبر الأقدم في تاريخ نادي الاتحاد؟", options: ["فرع سموحة", "فرع برج العرب", "فرع الشاطبي", "فرع المنتزه"], correct: 2 },
+            { q: "ما هي الرياضة التي اشتهر بها الاتحاد وحقق فيها بطولات عربية؟", options: ["كرة اليد", "كرة السلة", "الكرة الطائرة", "الهوكي"], correct: 1 },
+            { q: "أي من هذه الألقاب مرتبط بجمهور الاتحاد؟", options: ["ملوك الأرض", "القلعة الصفراء", "سيد البلد", "النسور الخضراء"], correct: 2 },
+            { q: "ما هو أول مقر مؤقت استخدمه النادي عام 1906؟", options: ["منطقة الشاطبي", "منطقة رأس التين", "شارع فؤاد", "محطة الرمل"], correct: 1 },
+            { q: "أين يقع الاستاد الذي يستضيف مباريات الاتحاد الرسمية؟", options: ["سموحة", "الشاطبي", "محرم بك", "الأزاريطة"], correct: 2 },
+            { q: "أي من هذه الألعاب تُعد من الألعاب الجماهيرية داخل النادي؟", options: ["التنس", "السباحة", "كرة السلة", "الدراجات"], correct: 2 },
+            { q: "ما سبب تميز الاتحاد بشعبية كبيرة في الإسكندرية؟", options: ["كثرة النجوم الأجانب", "جماهيريته التاريخية", "تأسيسه كفرع لوزارة الرياضة", "مشاركته الدائمة في البطولات القارية"], correct: 1 },
+            { q: "أي من هذه البطولات لم يحققها نادي الاتحاد؟", options: ["كأس مصر", "الدوري المصري الممتاز", "بطولات عربية في السلة", "بطولة الجمهورية للشباب"], correct: 1 },
+            { q: "من أشهر نجوم كرة السلة الذين لعبوا للاتحاد؟", options: ["إسماعيل أحمد", "محمد صلاح", "هيثم فاروق", "حازم إمام"], correct: 0 },
+            { q: "ما العام الذي اعتُبر نقطة تحول في استقرار النادي إداريًا بعد الاندماجات؟", options: ["1906", "1914", "1920", "1930"], correct: 1 },
+            { q: "ما هو اللون الأساسي لزي الفريق الأول لكرة القدم؟", options: ["الأبيض", "الأزرق", "الأخضر", "الأسود"], correct: 2 },
+            { q: "من هو الخصم الذي يُعد من أبرز منافسي الاتحاد تاريخيًا؟", options: ["الأهلي", "الزمالك", "الأولمبي", "إنبي"], correct: 2 },
+            { q: "ما هي الصفة المشتركة بين جماهير الاتحاد؟", options: ["الهدوء الشديد", "الحضور القليل", "الانتماء القوي والدعم المتواصل", "الاقتصار على متابعة الفريق تلفزيونيًا"], correct: 2 },
+            { q: "أي من هذه الرياضات تعتبر من الألعاب الأساسية في النادي؟", options: ["الكاراتيه", "الفروسية", "الريشة الطائرة", "الرجبي"], correct: 0 },
+            { q: "في أي منطقة يقع المبنى الاجتماعي الرئيسي للنادي؟", options: ["الإبراهيمية", "الشاطبي", "الأزاريطة", "أبو قير"], correct: 1 },
+            { q: "ما هي أشهر أغنية لجمهور الاتحاد في المدرجات؟", options: ["يا أغلى اسم في الوجود", "أيوه أيوه الاتحاد", "شجع فريقك", "نادي النجوم"], correct: 1 },
+            { q: "ماذا يمثل الاتحاد السكندري لمدينة الإسكندرية؟", options: ["نادٍ اجتماعي فقط", "مؤسسة تعليمية", "رمز رياضي وتاريخي للمدينة", "منشأة حكومية"], correct: 2 },
+            { q: "أي من هؤلاء يُعد من الإداريين المؤثرين في تاريخ النادي؟", options: ["محمد علي", "محمد حيدر", "حسن الشاذلي", "عبد الحميد دمير"], correct: 3 },
+            { q: "ما الذي يميز نادي الاتحاد عن باقي أندية الإسكندرية؟", options: ["الأصغر سنًا", "الأكثر جماهيرية وتاريخًا", "الأقل مشاركة في البطولات", "النادي المخصص للعبة واحدة"], correct: 1 },
+            { q: "ما هو اللقب الشعبي للاعبي الاتحاد؟", options: ["رجال الأخضر", "الأسود الخضراء", "فرسان الساحل", "الملوك"], correct: 0 },
+            { q: "أي من هذه الألعاب حقق فيها الاتحاد بطولات على مستوى مصر؟", options: ["كرة السلة", "السباحة", "التجديف", "النوكر"], correct: 0 },
+            { q: "أي من الشخصيات التالية ارتبط اسمها بجمهور الاتحاد؟", options: ["عادل شكل", "محمد رمضان", "أبو تريكة", "شوبير"], correct: 0 },
+            { q: "في أي حقبة ازدهر نشاط النادي بشكل كبير؟", options: ["السبعينيات والثمانينيات", "الأربعينيات فقط", "الخمسينيات فقط", "التسعينيات فقط"], correct: 0 },
+            { q: "أي من الألعاب التالية لها قطاع قوي داخل النادي؟", options: ["المصارعة", "الجمباز", "كرة السلة", "الغطس"], correct: 2 },
+            { q: "ما هي أكثر مباراة يتذكرها جمهور الاتحاد تاريخيًا؟", options: ["الفوز على الزمالك في الكأس", "الفوز على الأهلي في الدوري", "الفوز على الأولمبي بالديربي", "جميع ما سبق"], correct: 3 },
+            { q: "أي من هذه الميزات يفتخر بها أعضاء النادي؟", options: ["قلة الأنشطة", "الانتماء العائلي للنادي", "غياب التاريخ", "عدم وجود ألعاب جماعية"], correct: 1 },
+            { q: "ما الذي يميز الاتحاد عن أندية القاهرة؟", options: ["أقل حضور جماهيري", "يتمتع بجمهور شعبي أصيل", "لا يمتلك ألعابًا جماعية", "يعتمد على لاعبين أجانب فقط"], correct: 1 },
+            { q: "ما هي أكثر لعبة تجذب جماهير الاتحاد إلى الصالة المغطاة؟", options: ["كرة اليد", "الكرة الطائرة", "كرة السلة", "الاسكواش"], correct: 2 },
+            { q: "ماذا يعني لقب “زعيم الثغر”؟", options: ["زعيم أندية البحر الأحمر", "زعيم محافظة الإسكندرية", "زعيم أندية وجه قبلي", "زعيم أندية الصعيد"], correct: 1 }
+        ];
+
+        let shuffledQuestions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let currentMaxQuestions = 25; // Default Limit
+
+        function startQuiz() {
+            shuffledQuestions = [...quizData].sort(() => 0.5 - Math.random());
+            currentQuestionIndex = 0;
+            score = 0;
+            currentMaxQuestions = 25; 
+
+            document.getElementById('quiz-start-screen').classList.add('hidden');
+            document.getElementById('quiz-result-screen').classList.add('hidden');
+            document.getElementById('quiz-interface').classList.remove('hidden');
+            document.getElementById('quiz-continue-modal').classList.add('hidden');
+            
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const questionData = shuffledQuestions[currentQuestionIndex];
+            const qCounter = document.getElementById('question-counter');
+            const qText = document.getElementById('question-text');
+            const optionsContainer = document.getElementById('options-container');
+            const progressBar = document.getElementById('quiz-progress-bar');
+            const scoreDisplay = document.getElementById('score-display');
+
+            qCounter.textContent = `سؤال ${currentQuestionIndex + 1} من ${currentMaxQuestions}`;
+            scoreDisplay.textContent = `النقاط: ${score}`;
+            
+            const progressPercent = ((currentQuestionIndex) / currentMaxQuestions) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+
+            qText.textContent = questionData.q;
+            optionsContainer.innerHTML = '';
+
+            questionData.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option-btn';
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(index, btn, questionData.correct);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIndex, btn, correctIndex) {
+            const buttons = document.querySelectorAll('.quiz-option-btn');
+            buttons.forEach(b => b.disabled = true);
+
+            if (selectedIndex === correctIndex) {
+                btn.classList.add('correct');
+                score++;
+            } else {
+                btn.classList.add('wrong');
+                buttons[correctIndex].classList.add('correct');
+            }
+
+            document.getElementById('score-display').textContent = `النقاط: ${score}`;
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex === 25 && currentMaxQuestions === 25) {
+                    showContinueModal();
+                } else if (currentQuestionIndex < currentMaxQuestions) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function showContinueModal() {
+            document.getElementById('quiz-continue-modal').classList.remove('hidden');
+        }
+
+        function continueQuiz() {
+            document.getElementById('quiz-continue-modal').classList.add('hidden');
+            currentMaxQuestions = 50; 
+            showQuestion();
+        }
+
+        function finishQuizEarly() {
+            document.getElementById('quiz-continue-modal').classList.add('hidden');
+            showResult();
+        }
+
+        function showResult() {
+            document.getElementById('quiz-interface').classList.add('hidden');
+            document.getElementById('quiz-result-screen').classList.remove('hidden');
+
+            const finalScoreText = document.getElementById('final-score-text');
+            const resultMsg = document.getElementById('result-message');
+            const resultIcon = document.getElementById('result-icon');
+
+            finalScoreText.textContent = `${score} / ${currentMaxQuestions}`;
+            const percentage = (score / currentMaxQuestions) * 100;
+
+            if (percentage >= 90) {
+                resultIcon.textContent = "👑";
+                resultMsg.textContent = "أنت مشجع أسطوري! تعرف كل تفصيلة في تاريخ زعيم الثغر.";
+            } else if (percentage >= 70) {
+                resultIcon.textContent = "👏";
+                resultMsg.textContent = "ممتاز! معلوماتك قوية جداً عن النادي.";
+            } else if (percentage >= 50) {
+                resultIcon.textContent = "👍";
+                resultMsg.textContent = "جيد، لكن محتاج تراجع التاريخ شوية.";
+            } else {
+                resultIcon.textContent = "😅";
+                resultMsg.textContent = "شكلك لسه جديد في التشجيع، جرب تاني!";
+            }
+        }
+
+        // --- 4. Main DOM Logic (Animations, Accordion, Countdown, Lightbox) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Fix Fade In
+            const sections = document.querySelectorAll('.animate-fade-in-up');
+            sections.forEach(section => {
+                // Ensure opacity is set to 1 shortly after load to make content appear
+                setTimeout(() => { section.style.opacity = '1'; }, 50);
+            });
+
+            // Accordion
+            const accordionHeaders = document.querySelectorAll('.block-card-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.closest('.accordion-item');
+                    const content = item.querySelector('.accordion-content');
+                    const arrow = item.querySelector('.arrow-icon');
+                    const isOpen = item.classList.contains('accordion-open');
+                    document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('accordion-open');
+                            otherItem.querySelector('.accordion-content').style.maxHeight = 0;
+                            otherItem.querySelector('.arrow-icon').style.transform = 'rotate(0deg)';
+                        }
+                    });
+                    if (isOpen) {
+                        item.classList.remove('accordion-open');
+                        content.style.maxHeight = 0;
+                        arrow.style.transform = 'rotate(0deg)';
+                    } else {
+                        item.classList.add('accordion-open');
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        arrow.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Countdown Timer
+            const electionDate = new Date("2025-12-26T00:00:00+02:00").getTime();
+            const countdownElement = document.getElementById("countdown");
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const distance = electionDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (distance > 0) {
+                    countdownElement.innerHTML = `
+                        <div class="text-center p-2 rounded-lg bg-white/10 shadow-md"><div class="countdown-number">${days}</div><div class="countdown-label">يوم</div></div>
+                        <div class="text-center p-2 rounded-lg bg-white/10 shadow-md"><div class="countdown-number">${hours}</div><div class="countdown-label">ساعة</div></div>
+                        <div class="text-center p-2 rounded-lg bg-white/10 shadow-md"><div class="countdown-number">${minutes}</div><div class="countdown-label">دقيقة</div></div>
+                        <div class="text-center p-2 rounded-lg bg-white/10 shadow-md"><div class="countdown-number">${seconds}</div><div class="countdown-label">ثانية</div></div>
+                    `;
+                } else {
+                    countdownElement.innerHTML = `<div class="col-span-4 text-2xl font-extrabold text-accent bg-white/10 p-4 rounded-lg">انطلقت الانتخابات! صوتك الآن هو الحسم!</div>`;
+                }
+            };
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Lightbox
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const galleryImages = document.querySelectorAll('.photo-grid img');
+            galleryImages.forEach(img => {
+                img.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    lightboxImage.src = img.src;
+                    lightboxModal.classList.remove('hidden');
+                    setTimeout(() => { lightboxModal.classList.add('lightbox-open'); }, 10);
+                });
+            });
+            window.closeLightbox = function() {
+                lightboxModal.classList.remove('lightbox-open');
+                setTimeout(() => { lightboxModal.classList.add('hidden'); }, 300);
+            }
+        });
+    </script>
 </body>
 </html>
