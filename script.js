@@ -1,4 +1,4 @@
-// --- 1. Interactive Priorities Logic (Updated for 5 Topics) ---
+// --- 1. Interactive Priorities Logic (Updated for 7 Topics) ---
 function showPriority(type, element) {
     document.querySelectorAll('.priority-btn').forEach(btn => {
         btn.classList.remove('active-priority', 'bg-green-100');
@@ -10,12 +10,29 @@ function showPriority(type, element) {
     const contentDiv = document.getElementById('priority-content');
     let content = "";
     
+    // Content mapped from the Accordion Section
     switch(type) {
-        case 'sports': content = "⚽ تأسيس شركة كرة القدم لإدارة محترفة، وتطوير فرق الناشئين لتكون النواة الحقيقية للفريق الأول."; break;
-        case 'family': content = "👨‍👩‍👧‍👦 إنشاء حضانة أطفال بأسعار رمزية، وتطوير منطقة العائلات لضمان الراحة والخصوصية."; break;
-        case 'digital': content = "📱 تطبيق إلكتروني شامل (App) لحجز الملاعب، دفع الاشتراكات، ومتابعة أخبار النادي لحظة بلحظة."; break;
-        case 'health': content = "🩺 تعاقدات طبية حصرية بخصومات حقيقية مع كبرى المستشفيات والصيدليات للأعضاء وأسرهم."; break;
-        case 'complaints': content = "📩 لجنة حكماء مخصصة لاستقبال الشكاوى والمقترحات والعمل على حلها فوراً لضمان صوت العضو."; break;
+        case 'investment': 
+            content = "💵 إنشاء صندوق دعم الاتحاد، وإعادة تشغيل الأصول غير المستغلة لتحويلها إلى مصادر دخل حقيقية."; 
+            break;
+        case 'digital': 
+            content = "📱 تطبيق إلكتروني شامل للأعضاء (App) لدفع الاشتراكات، وحجز الخدمات، مع بوابات دخول ذكية."; 
+            break;
+        case 'social': 
+            content = "🏘️ إنشاء حضانة أطفال بسعر رمزي، توفير شركة نقل خاصة للأعضاء، وتطوير المطاعم ومراقبة الجودة."; 
+            break;
+        case 'sports': 
+            content = "🟫 تأسيس شركة كرة القدم باستقلال مالي، وتطوير قطاع الناشئين ليكون المصدر الرئيسي للفريق الأول."; 
+            break;
+        case 'health': 
+            content = "❤️ تعاقدات طبية حصرية بخصومات حقيقية مع كبرى المستشفيات، وتطوير العيادة بالتعاون مع وزارة الصحة."; 
+            break;
+        case 'financial': 
+            content = "📈 زيادة الإيرادات عبر المعارض وتأجير الساحات، مع خفض التكاليف بمراجعة دقيقة للعقود ووقف الهدر."; 
+            break;
+        case 'complaints': 
+            content = "📩 تفعيل لجنة الحكماء كجهة مستقلة لاستقبال شكاوى ومقترحات الأعضاء وضمان وصول صوتهم للإدارة."; 
+            break;
     }
     contentDiv.style.opacity = 0;
     setTimeout(() => {
@@ -140,13 +157,13 @@ const quizData = [
 let shuffledQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
-let currentMaxQuestions = 10; // Modified to start with 10
+let currentMaxQuestions = 10; 
 
 function startQuiz() {
     shuffledQuestions = [...quizData].sort(() => 0.5 - Math.random());
     currentQuestionIndex = 0;
     score = 0;
-    currentMaxQuestions = 10; // Reset to 10
+    currentMaxQuestions = 10; 
 
     document.getElementById('quiz-start-screen').classList.add('hidden');
     document.getElementById('quiz-result-screen').classList.add('hidden');
@@ -167,7 +184,6 @@ function showQuestion() {
     qCounter.textContent = `سؤال ${currentQuestionIndex + 1} من ${currentMaxQuestions}`;
     scoreDisplay.textContent = `النقاط: ${score}`;
     
-    // Progress bar is relative to current batch size for better UX
     const progressPercent = ((currentQuestionIndex % 10) / 10) * 100;
     progressBar.style.width = `${progressPercent}%`;
 
@@ -200,7 +216,6 @@ function checkAnswer(selectedIndex, btn, correctIndex) {
     setTimeout(() => {
         currentQuestionIndex++;
         
-        // Logic for stopping every 10 questions
         if (currentQuestionIndex === currentMaxQuestions) {
             if (currentMaxQuestions < 50) {
                 showContinueModal();
@@ -219,7 +234,7 @@ function showContinueModal() {
 
 function continueQuiz() {
     document.getElementById('quiz-continue-modal').classList.add('hidden');
-    currentMaxQuestions += 10; // Increase limit by 10
+    currentMaxQuestions += 10;
     showQuestion();
 }
 
@@ -260,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fix Fade In
     const sections = document.querySelectorAll('.animate-fade-in-up');
     sections.forEach(section => {
-        // Ensure opacity is set to 1 shortly after load to make content appear
         setTimeout(() => { section.style.opacity = '1'; }, 50);
     });
 
