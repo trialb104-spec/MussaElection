@@ -100,7 +100,27 @@ function startScanning() {
     }, 4000); 
 }
 
-// --- 3. QUIZ LOGIC (Batched 10 Questions) ---
+// --- 3. Share Campaign Logic (NEW) ---
+function shareCampaign() {
+    const shareData = {
+        title: 'أحمد السيد موسى - طريقنا واحد',
+        text: 'اقرأ البرنامج الانتخابي للمرشح أحمد السيد موسى',
+        url: 'https://trialb104-spec.github.io/MussaElection/'
+    };
+
+    // Use native share API if available (mobile/modern browsers)
+    if (navigator.share) {
+        navigator.share(shareData)
+            .then(() => console.log('Shared successfully'))
+            .catch((err) => console.log('Error sharing:', err));
+    } else {
+        // Fallback to WhatsApp for desktop/older browsers
+        const text = encodeURIComponent(shareData.text + " " + shareData.url);
+        window.open(`https://wa.me/?text=${text}`, '_blank');
+    }
+}
+
+// --- 4. QUIZ LOGIC (Batched 10 Questions) ---
 const quizData = [
     { q: "في أي عام تأسس نادي الاتحاد لأول مرة؟", options: ["1906", "1910", "1912", "1914"], correct: 0 },
     { q: "في أي عام استقر الاسم الرسمي 'نادي الاتحاد السكندري' بعد الاندماجات؟", options: ["1908", "1912", "1914", "1920"], correct: 2 },
@@ -269,7 +289,7 @@ function showResult() {
     }
 }
 
-// --- 4. Main DOM Logic (Animations, Accordion, Countdown, Lightbox) ---
+// --- 5. Main DOM Logic (Animations, Accordion, Countdown, Lightbox) ---
 document.addEventListener('DOMContentLoaded', () => {
     
     // Fix Fade In
