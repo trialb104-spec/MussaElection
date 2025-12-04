@@ -7,8 +7,9 @@ body {
 }
 
 /* Responsive Padding Fixes & Header Adjustments */
+/* زيادة الحشوة العلوية (Padding-top) للموبايل لمنع التداخل */
 @media (max-width: 639px) {
-    body { padding-top: 13rem !important; }
+    body { padding-top: 19rem !important; } 
     header .slogan-animate {
         font-size: 0.8rem !important;
         margin-top: 0.5rem;
@@ -16,8 +17,9 @@ body {
     }
 }
 
+/* زيادة الحشوة العلوية (Padding-top) للتابلت لمنع التداخل */
 @media (min-width: 640px) and (max-width: 1024px) {
-    body { padding-top: 10rem !important; }
+    body { padding-top: 15rem !important; }
     header .slogan-animate {
         font-size: 0.9rem !important;
         line-height: 1.3;
