@@ -1,4 +1,27 @@
-// --- 1. Interactive Priorities Logic (Updated for 7 Topics) ---
+// --- 1. PROMO CODE COPY FUNCTION ---
+function copyPromoCode() {
+    const promoCode = document.getElementById('promo-text').textContent;
+    const feedback = document.getElementById('copy-feedback');
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(promoCode).then(() => {
+        // Show feedback animation
+        feedback.style.opacity = '1';
+        feedback.textContent = 'تم نسخ الكود بنجاح! ✅';
+        
+        // Hide feedback after 2 seconds
+        setTimeout(() => {
+            feedback.style.opacity = '0';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        feedback.style.opacity = '1';
+        feedback.style.color = 'red';
+        feedback.textContent = 'فشل النسخ، حاول يدوياً';
+    });
+}
+
+// --- 2. Interactive Priorities Logic ---
 function showPriority(type, element) {
     document.querySelectorAll('.priority-btn').forEach(btn => {
         btn.classList.remove('active-priority', 'bg-green-100');
@@ -43,7 +66,7 @@ function showPriority(type, element) {
     }, 200);
 }
 
-// --- 2. Scanning System Logic ---
+// --- 3. Scanning System Logic ---
 let isScanning = false;
 const initialStatus = "طريقنا واحد...و رقمنا واحد - اضغط للفحص";
 const scanMessages = [
@@ -100,7 +123,7 @@ function startScanning() {
     }, 4000); 
 }
 
-// --- 3. Share Campaign Logic (NEW) ---
+// --- 4. Share Campaign Logic ---
 function shareCampaign() {
     const shareData = {
         title: 'أحمد السيد موسى - طريقنا واحد',
@@ -108,19 +131,17 @@ function shareCampaign() {
         url: 'https://trialb104-spec.github.io/MussaElection/'
     };
 
-    // Use native share API if available (mobile/modern browsers)
     if (navigator.share) {
         navigator.share(shareData)
             .then(() => console.log('Shared successfully'))
             .catch((err) => console.log('Error sharing:', err));
     } else {
-        // Fallback to WhatsApp for desktop/older browsers
         const text = encodeURIComponent(shareData.text + " " + shareData.url);
         window.open(`https://wa.me/?text=${text}`, '_blank');
     }
 }
 
-// --- 4. QUIZ LOGIC (Batched 10 Questions) ---
+// --- 5. QUIZ LOGIC (Batched 10 Questions) ---
 const quizData = [
     { q: "في أي عام تأسس نادي الاتحاد لأول مرة؟", options: ["1906", "1910", "1912", "1914"], correct: 0 },
     { q: "في أي عام استقر الاسم الرسمي 'نادي الاتحاد السكندري' بعد الاندماجات؟", options: ["1908", "1912", "1914", "1920"], correct: 2 },
@@ -193,6 +214,11 @@ function startQuiz() {
 }
 
 function showQuestion() {
+    if (currentQuestionIndex >= shuffledQuestions.length) {
+        showResult();
+        return;
+    }
+
     const questionData = shuffledQuestions[currentQuestionIndex];
     const qCounter = document.getElementById('question-counter');
     const qText = document.getElementById('question-text');
@@ -220,14 +246,19 @@ function showQuestion() {
 
 function checkAnswer(selectedIndex, btn, correctIndex) {
     const buttons = document.querySelectorAll('.quiz-option-btn');
-    buttons.forEach(b => b.disabled = true);
+    buttons.forEach(b => {
+        b.disabled = true; 
+        b.onclick = null; 
+    });
 
     if (selectedIndex === correctIndex) {
         btn.classList.add('correct');
         score++;
     } else {
         btn.classList.add('wrong');
-        buttons[correctIndex].classList.add('correct');
+        if (buttons[correctIndex]) {
+            buttons[correctIndex].classList.add('correct');
+        }
     }
 
     document.getElementById('score-display').textContent = `النقاط: ${score}`;
@@ -236,7 +267,7 @@ function checkAnswer(selectedIndex, btn, correctIndex) {
         currentQuestionIndex++;
         
         if (currentQuestionIndex === currentMaxQuestions) {
-            if (currentMaxQuestions < 50) {
+            if (currentQuestionIndex < shuffledQuestions.length) {
                 showContinueModal();
             } else {
                 showResult();
@@ -253,7 +284,13 @@ function showContinueModal() {
 
 function continueQuiz() {
     document.getElementById('quiz-continue-modal').classList.add('hidden');
-    currentMaxQuestions += 10;
+    
+    if ((currentMaxQuestions + 10) > shuffledQuestions.length) {
+        currentMaxQuestions = shuffledQuestions.length;
+    } else {
+        currentMaxQuestions += 10;
+    }
+    
     showQuestion();
 }
 
@@ -271,7 +308,11 @@ function showResult() {
     const resultIcon = document.getElementById('result-icon');
 
     finalScoreText.textContent = `${score} / ${currentQuestionIndex}`;
-    const percentage = (score / currentQuestionIndex) * 100;
+    
+    let percentage = 0;
+    if(currentQuestionIndex > 0) {
+        percentage = (score / currentQuestionIndex) * 100;
+    }
 
     if (percentage >= 90) {
         resultIcon.textContent = "👑";
@@ -288,7 +329,7 @@ function showResult() {
     }
 }
 
-// --- 5. Main DOM Logic (Animations, Accordion, Countdown, Lightbox) ---
+// --- 6. Main DOM Logic (Animations, Accordion, Countdown, Lightbox) ---
 document.addEventListener('DOMContentLoaded', () => {
     
     // Fix Fade In
