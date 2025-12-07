@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رحلة موسى – الاتحاد السكندري | البرنامج التفاعلي</title>
+  
+  <meta name="description" content="رحلة موسى – الاتحاد السكندري: شارك في صناعة القرار لنادي الاتحاد السكندري. برنامج انتخابي تفاعلي للمرشح أحمد السيد موسى (مرشح رقم 1).">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+    :root {
+      /* Al Ittihad Alexandria Palette */
+      --color-green-dark: #003d1d;
+      --color-green-mid: #006430;
+      --color-green-light: #16a34a;
+      --color-gold: #FFD700;
+      --color-gold-hover: #ffea70;
+      --color-white: #ffffff;
+      --color-glass: rgba(0, 40, 20, 0.85);
+      --color-glass-border: rgba(255, 215, 0, 0.2);
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+      --shadow-gold: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      outline: none;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      /* Stadium Atmosphere Background */
+      background:
+        radial-gradient(circle at 10% 20%, rgba(22, 163, 74, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+        linear-gradient(135deg, #002a14 0%, #004d25 100%);
+      color: var(--color-white);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* Main App Container */
+    .app {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      width: 1200px;
+      max-width: 100%;
+      min-height: 750px;
+      background: var(--color-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--color-glass-border);
+      border-radius: 30px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* --- SIDEBAR DESIGN --- */
+    .sidebar {
+      background: linear-gradient(180deg, rgba(0, 60, 30, 0.6) 0%, rgba(0, 20, 10, 0.9) 100%);
+      padding: 30px 25px;
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+
+    .candidate-profile {
+      text-align: center;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Avatar & Profile */
+    .avatar-frame {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--color-gold), var(--color-green-dark));
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+      position: relative;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #003d1d;
+    }
+
+    /* --- NEW CANDIDATE BADGE STYLE --- */
+    .vote-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid var(--color-gold);
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      /* Spacing before name */
+      position: relative;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+      animation: pulseGold 2s infinite;
+      cursor: default;
+      transition: transform 0.3s;
+    }
+
+    .vote-badge:hover {
+      transform: scale(1.05);
+      background: rgba(255, 215, 0, 0.2);
+    }
+
+    @keyframes pulseGold {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 0 6px rgba(255, 215, 0, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+      }
+    }
+
+    .vote-num {
+      background: var(--color-gold);
+      color: #003d1d;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .vote-txt {
+      color: var(--color-gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ---------------------------------- */
+    .candidate-name {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--color-gold);
+      margin-bottom: 5px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .candidate-role {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    /* Campaign Banner Image */
+    .campaign-banner {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .campaign-banner:hover {
+      transform: scale(1.02);
+      border-color: var(--color-gold);
+    }
+
+    .bio-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 5px;
+      margin-top: 5px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 15px; /* Add margin before the new button */
+    }
+
+    .bio-scroll h3 {
+      color: var(--color-gold);
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .bio-scroll ul {
+      list-style: none;
+      padding-right: 10px;
+    }
+
+    .bio-scroll li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .bio-scroll li::before {
+      content: "•";
+      color: var(--color-gold);
+      position: absolute;
+      right: -12px;
+    }
+
+    .bio-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .bio-scroll::-webkit-scrollbar-thumb {
+      background: var(--color-green-light);
+      border-radius: 4px;
+    }
+
+    /* --- NEW RETURN BUTTON STYLE --- */
+    .return-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, var(--color-green-light) 0%, var(--color-green-mid) 100%);
+      color: var(--color-white);
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(22, 163, 74, 0.5);
+      transition: all 0.3s ease;
+      border: 1px solid var(--color-green-light);
+    }
+
+    .return-btn:hover {
+      background: linear-gradient(90deg, var(--color-green-mid) 0%, var(--color-green-light) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px var(--color-gold);
+    }
+
+    .return-btn-icon {
+      font-size: 18px;
+      color: var(--color-gold);
+    }
+
+    /* --- MAIN CONTENT DESIGN --- */
+    .main-area {
+      padding: 30px 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Header & Progress */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-branding {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header-logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+      background: #fff;
+      border-radius: 12px;
+      padding: 2px;
+    }
+
+    .app-title {
+      font-size: 26px;
+      font-weight: 900;
+      background: linear-gradient(to left, #fff, var(--color-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-green-light), var(--color-gold));
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 0 10px var(--color-green-light);
+    }
+
+    /* Game Card */
+    .game-card {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 30px;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .question-area {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .level-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      background: var(--color-gold);
+      color: #000;
+      font-weight: 800;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .scenario-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-white);
+    }
+
+    .scenario-desc {
+      font-size: 15px;
+      color: #ccc;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      border-right: 3px solid var(--color-gold);
+    }
+
+    /* Options Styling */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 20px;
+      border-radius: 12px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      text-align: right;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option-btn:hover {
+      background: rgba(255, 215, 0, 0.1);
+      border-color: var(--color-gold);
+      transform: translateX(-5px);
+    }
+
+    .option-btn.selected {
+      background: linear-gradient(135deg, var(--color-gold), #e6c200);
+      color: #003d1d;
+      border-color: var(--color-gold);
+      font-weight: 700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+
+    .option-btn.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .xp-tag {
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0.7;
+    }
+
+    .option-btn.selected .xp-tag {
+      opacity: 1;
+      color: #000;
+    }
+
+    /* Visual Side Panel */
+    .visual-panel {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .icon-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--color-green-light), var(--color-green-dark));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .icon-emoji {
+      font-size: 40px;
+      margin-bottom: 5px;
+    }
+
+    .icon-label {
+      font-size: 12px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .score-display {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .score-val {
+      font-size: 24px;
+      color: var(--color-gold);
+      font-weight: 800;
+      display: block;
+    }
+
+    .score-lbl {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .feedback-area {
+      margin-top: 15px;
+      min-height: 40px;
+      font-size: 14px;
+      color: #e0e0e0;
+    }
+
+    .feedback-area span {
+      color: var(--color-gold);
+      font-weight: 700;
+    }
+
+    .actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-primary {
+      background: var(--color-gold);
+      color: #003d1d;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: var(--shadow-gold);
+      transition: transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      background: var(--color-gold-hover);
+    }
+
+    .btn-primary:disabled {
+      background: #555;
+      color: #888;
+      box-shadow: none;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .summary {
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .summary.active {
+      display: block;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .summary-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .summary-card h3 {
+      color: var(--color-gold);
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(0, 100, 48, 0.5);
+      border: 1px solid var(--color-green-light);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin: 3px;
+    }
+
+    /* --- MOBILE RESPONSIVE UPDATES --- */
+    @media (max-width: 900px) {
+      body {
+        align-items: flex-start;
+        /* Allows scrolling from top */
+        padding-top: 10px;
+      }
+
+      .app {
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: visible;
+        /* Enable scroll on mobile */
+        border-radius: 0;
+      }
+
+      /* Show Sidebar on Mobile (Top Section) */
+      .sidebar {
+        display: flex;
+        /* Changed from none to flex */
+        width: 100%;
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        height: auto;
+      }
+
+      /* Reduce Sidebar clutter on mobile */
+      .campaign-banner {
+        display: none;
+      }
+
+      /* Hide the banner image to save space */
+      .bio-scroll {
+        max-height: 180px;
+        /* Limit bio height */
+        margin-bottom: 15px;
+      }
+
+      .main-area {
+        padding: 20px 15px;
+      }
+
+      .header-branding .header-logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .game-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .visual-panel {
+        flex-direction: row;
+        padding: 10px;
+        margin-bottom: 20px;
+        order: -1;
+        /* Move score above question */
+      }
+
+      .icon-circle {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+      }
+
+      .icon-emoji {
+        font-size: 24px;
+      }
+
+      .icon-label {
+        display: none;
+      }
+    }
+    </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="candidate-profile">
+      <div class="avatar-frame">
+        <img src="https://i.ibb.co/39KNrsgF/photo.jpg" alt="Moussa" class="profile-img">
+      </div>
+      <div style="text-align:center; margin-bottom: 5px;">
+        <div class="candidate-name" style="font-size: 28px; margin-bottom: 2px;">د. أحمد السيد موسى</div>
+        <div class="candidate-role" style="font-size: 15px; margin-bottom: 15px; color: var(--color-gold);">مرشح رقم 1 فوق السن</div>
+      </div>
+      
+      <div class="vote-badge">
+        <span class="vote-num">1</span>
+        <span class="vote-txt">مرشح رقم (1) فوق السن</span>
+      </div>
+      </div>
+    <img src="https://i.ibb.co/GfnQW6VH/1.jpg" alt="Campaign Slogan" class="campaign-banner">
+    <div class="bio-scroll">
+      <h3>الرؤية والهدف:</h3>
+      <p>برنامج انتخابي تفاعلي يضعك في مقعد المسؤولية. قراراتك اليوم تحدد مستقبل النادي غداً.</p>
+      <h3>نبذة مختصرة:</h3>
+      <ul>
+        <li>دكتوراه إدارة أعمال - موارد بشرية</li>
+        <li>خبرة إدارة البيانات في WE</li>
+        <li>عضو مجلس صندوق الولاء</li>
+        <li>شريك مؤسس - لافانا ناتشورال</li>
+      </ul>
+      <p style="margin-top:15px; font-size:12px; opacity:0.6;">صوتي هو صوت الأعضاء، من أجل شفافية واستدامة.</p>
+    </div>
+
+    <a href="https://trialb104-spec.github.io/MussaElection/" class="return-btn">
+        <span class="return-btn-icon">🏠</span>
+        <span>الرجوع لصفحة الناخب الرئيسية</span>
+    </a>
+
+  </aside>
+  <main class="main-area">
+    <header class="top-header">
+      <div class="header-branding">
+        <img src="https://i.ibb.co/RkTMLMDr/image.jpg" alt="Al Ittihad Logo" class="header-logo">
+        <div>
+          <div class="app-title">رحلة موسى</div>
+          <div style="font-size:13px; opacity:0.8;">شارك في صناعة القرار داخل سيد البلد</div>
+        </div>
+      </div>
+      <div style="text-align:left; min-width: 150px;">
+        <div style="font-size:12px; opacity:0.7;">نقاط القيادة (XP)</div>
+        <div style="font-size:24px; font-weight:900; color:var(--color-gold);" id="xpTotal">0</div>
+      </div>
+    </header>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressFill"></div>
+    </div>
+    <div style="text-align:left; font-size:11px; margin-top:5px; opacity:0.6;" id="progressText">0%</div>
+    <section id="levelSection" class="game-card">
+      <div class="question-column">
+        <div class="question-area">
+          <div class="level-badge" id="levelTag">LEVEL 1</div>
+          <h2 class="scenario-title" id="levelTitle">تحميل...</h2>
+          <div class="scenario-desc" id="scenarioText"></div>
+          <div class="options-grid" id="optionsContainer">
+          </div>
+          <div class="feedback-area" id="feedbackText"></div>
+          <div class="actions">
+            <button id="nextBtn" class="btn-primary" disabled>التالي</button>
+            <button id="resetBtn" class="btn-ghost">إعادة</button>
+          </div>
+        </div>
+      </div>
+      <div class="visual-column">
+        <div class="visual-panel">
+          <div class="icon-circle">
+            <div class="icon-emoji" id="orbIcon">💼</div>
+            <div class="icon-label" id="orbLabel">الموارد</div>
+          </div>
+          <div class="score-display">
+            <span class="score-lbl">نقاط الملف</span>
+            <span class="score-val" id="xpCurrentLevel">0</span>
+          </div>
+          <div style="margin-top:15px; font-size:12px; text-align:center; color:var(--color-gold);" id="badgeHint">
+            الشارة المتاحة:<br><strong>المستثمر الذكي</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="summarySection" class="summary">
+      <div style="text-align:center; margin-bottom:20px;">
+        <h2 style="color:var(--color-gold); margin-bottom:10px;">نهاية الرحلة</h2>
+        <p>هكذا يبدو مستقبل نادي الاتحاد السكندري برؤية واعية.</p>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <h3>النتيجة النهائية</h3>
+          <p>حصلت على <strong id="summaryXp" style="color:var(--color-gold);">0</strong> نقطة.</p>
+          <p style="font-size:13px; margin-top:5px; opacity:0.8;">كل نقطة تمثل خطوة نحو الاستدامة وتطوير النادي.</p>
+        </div>
+        <div class="summary-card">
+          <h3>الشارات المكتسبة</h3>
+          <div id="badgeList" style="display:flex; flex-wrap:wrap;"></div>
+        </div>
+        <div class="summary-card"
+          style="grid-column: 1 / -1; background:rgba(0,0,0,0.3); border-color:var(--color-gold);">
+          <h3>كلمة من موسى</h3>
+          <p>"التغيير ليس مجرد شعارات، بل قرارات مدروسة. اختياراتك اليوم أثبتت أنك شريك في المسؤولية."</p>
+          <button class="btn-primary" id="playAgainBtn" style="margin-top:15px; width:100%;">ابدأ الرحلة مرة أخرى</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script>
+  // --- Game Data (Same Logic) ---
+  const levels = [
+    {
+      id: "resources",
+      title: "ملف تنمية الموارد",
+      icon: "💼",
+      badgeName: "المستثمر الذكي",
+      scenario: "<strong>المشهد:</strong> أصول النادي غير مستغلة بالشكل الأمثل. كيف نحقق عائداً يليق باسم الاتحاد؟",
+      options: [
+        { text: "تأسيس شركة استثمارية تابعة للنادي لإدارة الأصول باحترافية.", xp: 120, feedback: "تفكير استراتيجي! هذا يضمن عائداً مستداماً للنادي." },
+        { text: "تأجير المساحات بعقود قصيرة الأجل.", xp: 70, feedback: "حل مؤقت جيد، لكننا نبحث عن استدامة طويلة المدى." },
+        { text: "تجنب المخاطرة.", xp: -40, feedback: "الجمود يعني الخسارة في عالم الاستثمار الحديث." }
+      ]
+    },
+    {
+      id: "digital",
+      title: "التحول الرقمي",
+      icon: "📱",
+      badgeName: "النادي الذكي",
+      scenario: "<strong>المشهد:</strong> تكدس الأعضاء على البوابات وصعوبة في تجديد الاشتراكات.",
+      options: [
+        { text: "إطلاق تطبيق 'Ittihad App' للخدمات المتكاملة والبوابات الذكية.", xp: 110, feedback: "ممتاز! هذا يوفر وقت الأعضاء ويحفظ كرامتهم." },
+        { text: "زيادة عدد موظفي الأمن والبوابات.", xp: 50, feedback: "حل تقليدي مكلف ولا يواكب التطور التكنولوجي." },
+        { text: "الاستمرار بالنظام الورقي الحالي.", xp: -30, feedback: "هذا يعيق تطور النادي ويزيد معاناة الأعضاء." }
+      ]
+    },
+    {
+      id: "social",
+      title: "الملف الاجتماعي",
+      icon: "🤝",
+      badgeName: "صوت الأعضاء",
+      scenario: "<strong>المشهد:</strong> شكوى متكررة من غياب التواصل بين المجلس والأعضاء.",
+      options: [
+        { text: "تفعيل 'مجلس الحكماء' وعمل لقاء دوري مفتوح مع الأعضاء.", xp: 130, feedback: "الشفافية هي أساس الثقة. أحسنت الاختيار." },
+        { text: "وضع صندوق شكاوى عند البوابة.", xp: 40, feedback: "وسيلة قديمة قد لا يقرأها أحد." },
+        { text: "تجاهل الشكاوى الفردية.", xp: -50, feedback: "الأعضاء هم أصحاب النادي الحقيقيون، تجاهلهم خطأ جسيم." }
+      ]
+    },
+    {
+      id: "sports",
+      title: "قطاع الناشئين",
+      icon: "⚽",
+      badgeName: "مصنع النجوم",
+      scenario: "<strong>المشهد:</strong> موهبة شابة في النادي، وعرض خارجي ضعيف.",
+      options: [
+        { text: "تصعيد اللاعب للفريق الأول بعقد محترف وحمايته.", xp: 125, feedback: "الناشئون هم كنز النادي ومستقبله." },
+        { text: "بيعه فوراً لأي نادي يدفع.", xp: 20, feedback: "مكسب سريع لكنه خسارة فنية كبيرة." },
+        { text: "إعارته بدون متابعة.", xp: 40, feedback: "قد يعود وقد لا يعود، قرار فيه مخاطرة." }
+      ]
+    },
+    {
+      id: "health",
+      title: "الخدمات الطبية",
+      icon: "🏥",
+      badgeName: "درع الأمان",
+      scenario: "<strong>المشهد:</strong> الحاجة لتطوير العيادة الطبية لخدمة الأعضاء واللاعبين.",
+      options: [
+        { text: "شراكة مع مستشفيات كبرى وتطوير شامل للعيادة.", xp: 115, feedback: "صحة العضو واللاعب خط أحمر." },
+        { text: "التعاقد مع صيدلية خارجية فقط.", xp: 50, feedback: "بداية جيدة لكنها غير كافية." },
+        { text: "الإبقاء على الإسعافات الأولية فقط.", xp: -45, feedback: "لا يليق بحجم نادي الاتحاد السكندري." }
+      ]
+    },
+    {
+      id: "finance",
+      title: "الإدارة المالية",
+      icon: "💰",
+      badgeName: "الحوكمة",
+      scenario: "<strong>المشهد:</strong> ضغط مالي على الميزانية. كيف نتصرف؟",
+      options: [
+        { text: "ترشيد النفقات ومراجعة عقود الرعاية لزيادة الدخل.", xp: 135, feedback: "هذه هي الإدارة الرشيدة. تعظيم الدخل وليس فقط تقليل الصرف." },
+        { text: "رفع قيمة الاشتراك على الأعضاء.", xp: -20, feedback: "الحل الأسهل ولكنه يثقل كاهل الأعضاء." },
+        { text: "إلغاء الألعاب الفردية.", xp: -60, feedback: "الاتحاد قلعة رياضية شاملة، إلغاء الألعاب يمحو تاريخاً." }
+      ]
+    }
+  ];
+  // --- Game Engine ---
+  let state = {
+    idx: 0,
+    totalXP: 0,
+    levelXP: 0,
+    completed: 0,
+    selections: {}
+  };
+
+  // UI References
+  const ui = {
+    levelSection: document.getElementById("levelSection"),
+    summarySection: document.getElementById("summarySection"),
+    levelTag: document.getElementById("levelTag"),
+    levelTitle: document.getElementById("levelTitle"),
+    scenario: document.getElementById("scenarioText"),
+    options: document.getElementById("optionsContainer"),
+    feedback: document.getElementById("feedbackText"),
+    orbIcon: document.getElementById("orbIcon"),
+    orbLabel: document.getElementById("orbLabel"),
+    xpLevel: document.getElementById("xpCurrentLevel"),
+    badgeHint: document.getElementById("badgeHint"),
+    nextBtn: document.getElementById("nextBtn"),
+    xpTotal: document.getElementById("xpTotal"),
+    bar: document.getElementById("progressFill"),
+    barText: document.getElementById("progressText"),
+    summaryXp: document.getElementById("summaryXp"),
+    badgeList: document.getElementById("badgeList")
+  };
+
+  function init() {
+    state = { idx: 0, totalXP: 0, levelXP: 0, completed: 0, selections: {} };
+    ui.summarySection.classList.remove("active");
+    ui.levelSection.style.display = "grid";
+    ui.xpTotal.innerText = "0";
+    updateProgress();
+    renderLevel();
+  }
+
+  function renderLevel() {
+    const level = levels[state.idx];
+
+    // Animation Reset
+    ui.levelSection.style.animation = 'none';
+    ui.levelSection.offsetHeight; /* trigger reflow */
+    ui.levelSection.style.animation = 'fadeIn 0.5s ease-out';
+
+    ui.levelTag.innerText = `LEVEL ${state.idx + 1}`;
+    ui.levelTitle.innerText = level.title;
+    ui.scenario.innerHTML = level.scenario;
+    ui.orbIcon.innerText = level.icon;
+    ui.orbLabel.innerText = level.title.replace("ملف", "").trim();
+    ui.xpLevel.innerText = "0";
+    ui.badgeHint.innerHTML = `الشارة: <strong>${level.badgeName}</strong>`;
+    ui.feedback.innerHTML = "";
+    ui.nextBtn.disabled = true;
+    ui.nextBtn.innerText = state.idx === levels.length - 1 ? "إظهار النتائج" : "التالي";
+
+    ui.options.innerHTML = "";
+    level.options.forEach((opt, i) => {
+      const btn = document.createElement("button");
+      btn.className = "option-btn";
+      btn.innerHTML = `
+        <span style="flex:1; margin-left:10px;">${opt.text}</span>
+        <span class="xp-tag">${opt.xp > 0 ? "+" : ""}${opt.xp} XP</span>
+      `;
+      btn.onclick = () => selectOption(i, btn, opt);
+      ui.options.appendChild(btn);
+    });
+  }
+
+  function selectOption(index, btn, option) {
+    Array.from(ui.options.children).forEach(b => {
+      b.classList.remove("selected");
+      b.classList.add("disabled");
+    });
+    btn.classList.add("selected");
+    btn.classList.remove("disabled");
+
+    const level = levels[state.idx];
+
+    if (!state.selections[state.idx]) {
+      state.completed++;
+    }
+
+    state.selections[state.idx] = { xp: option.xp, badge: level.badgeName, max: Math.max(...level.options.map(o => o.xp)) };
+
+    let calcTotal = 0;
+    Object.values(state.selections).forEach(s => calcTotal += s.xp);
+    state.totalXP = calcTotal;
+    state.levelXP = option.xp;
+
+    ui.xpLevel.innerText = option.xp;
+    ui.xpTotal.innerText = state.totalXP;
+    ui.feedback.innerHTML = `<span>تحليل القرار:</span> ${option.feedback}`;
+    ui.nextBtn.disabled = false;
+
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const pct = Math.round((state.completed / levels.length) * 100);
+    ui.bar.style.width = `${pct}%`;
+    ui.barText.innerText = `${pct}% مكتمل`;
+  }
+
+  ui.nextBtn.onclick = () => {
+    if (state.idx < levels.length - 1) {
+      state.idx++;
+      renderLevel();
+    } else {
+      showSummary();
+    }
+  };
+
+  function showSummary() {
+    ui.levelSection.style.display = "none";
+    ui.summarySection.classList.add("active");
+    ui.summaryXp.innerText = state.totalXP;
+
+    ui.badgeList.innerHTML = "";
+    levels.forEach((lvl, i) => {
+      const sel = state.selections[i];
+      if (sel && sel.xp === sel.max) {
+        ui.badgeList.innerHTML += `
+          <div class="badge-pill">
+            <span>${lvl.icon}</span>
+            <span>${lvl.badgeName}</span>
+          </div>
+        `;
+      }
+    });
+
+    if (ui.badgeList.innerHTML === "") {
+      ui.badgeList.innerHTML = "<span style='opacity:0.6; font-size:12px;'>لم تحصل على شارات، لكن مشاركتك هي الأهم!</span>";
+    }
+  }
+
+  document.getElementById("resetBtn").onclick = init;
+  document.getElementById("playAgainBtn").onclick = init;
+
+  init();
+</script>
+</body>
+</html>
