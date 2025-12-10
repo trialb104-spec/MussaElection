@@ -818,3 +818,51 @@ body {
     letter-spacing: 1px;
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
+/* --- LIVE MANIFESTO SECTION CREATIVE CSS --- */
+
+.live-manifesto-card {
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.4s ease;
+    background-size: 200% 200%;
+    animation: gradient-shift 10s ease infinite;
+}
+
+.live-manifesto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -5px rgba(0, 102, 51, 0.4);
+    border-color: #FFD700;
+}
+
+/* Gradient Background Animation */
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Pulse Rings (Radar Effect) */
+@keyframes ping-slow {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.4; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+.animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping-slower {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.2; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+}
+.animate-ping-slower {
+    animation: ping-slower 5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Badge Pulse */
+@keyframes live-dot {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+.live-dot-animate {
+    animation: live-dot 1.5s infinite;
+}
