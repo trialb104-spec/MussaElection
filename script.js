@@ -1,3 +1,37 @@
+// --- 0. NEW TAB SWITCHING LOGIC ---
+function switchTab(tabName) {
+    // 1. Hide all content sections
+    document.querySelectorAll('.tab-content-section').forEach(section => {
+        section.classList.add('hidden');
+    });
+
+    // 2. Remove active state from all buttons
+    document.querySelectorAll('.nav-tab').forEach(btn => {
+        btn.classList.remove('active-tab');
+    });
+
+    // 3. Show specific content
+    const contentId = 'content-' + tabName;
+    const contentEl = document.getElementById(contentId);
+    if(contentEl) {
+        contentEl.classList.remove('hidden');
+        // Reset animation to play again
+        contentEl.style.animation = 'none';
+        contentEl.offsetHeight; /* trigger reflow */
+        contentEl.style.animation = 'fade-in-up 0.8s ease-out forwards';
+    }
+
+    // 4. Set active button
+    const btnId = 'btn-' + tabName;
+    const btnEl = document.getElementById(btnId);
+    if(btnEl) {
+        btnEl.classList.add('active-tab');
+    }
+
+    // 5. Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 // --- 1. PROMO CODE COPY FUNCTION ---
 function copyPromoCode() {
     const promoCode = document.getElementById('promo-text').textContent;

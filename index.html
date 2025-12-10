@@ -1,750 +1,1160 @@
-
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أحمد السيد موسى | مرشح رقم 1 فوق السن | نادي الاتحاد السكندري - طريقنا واحد</title>
-    <meta name="description" content="البرنامج الانتخابي للمرشح أحمد السيد موسى، مرشح فوق السن لنادي الاتحاد السكندري.">
+    <meta name="description" content="البرنامج الانتخابي للمرشح أحمد السيد موسى.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-gray-800">
-    
-    <header class="fixed top-0 right-0 left-0 color-primary text-white p-4 shadow-2xl z-50">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 rtl:space-x-reverse w-full md:w-auto justify-center md:justify-start">
+
+    <header class="fixed top-0 right-0 left-0 color-primary text-white shadow-2xl z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center p-3 pb-2">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 rtl:space-x-reverse w-full md:w-auto justify-center md:justify-start">
                 <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                    <img src="https://i.ibb.co/RkTMLMDr/image.jpg" alt="شعار النادي" border="0" class="h-16 w-16 rounded-full border-2 border-white object-cover shadow-lg flex-shrink-0">
-                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg" alt="صورة المرشح" class="h-16 w-16 rounded-full border-2 border-white object-cover shadow-lg flex-shrink-0">
+                    <img src="https://i.ibb.co/RkTMLMDr/image.jpg" alt="شعار النادي" border="0" class="h-12 w-12 md:h-16 md:w-16 rounded-full border-2 border-white object-cover shadow-lg flex-shrink-0">
+                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg" alt="صورة المرشح" class="h-12 w-12 md:h-16 md:w-16 rounded-full border-2 border-white object-cover shadow-lg flex-shrink-0">
                 </div>
                 <div class="flex flex-col items-center sm:items-start text-center sm:text-right border-t sm:border-t-0 sm:border-r-2 rtl:border-r-0 rtl:border-l-2 pt-2 sm:pt-0 pr-0 sm:pr-3 rtl:pl-3 rtl:pr-0 border-white min-w-0">
-                    <h1 class="text-xl sm:text-2xl font-bold">أحمد السيد موسى</h1>
-                    <div class="bg-accent text-primary-dark font-extrabold px-3 py-1 rounded-lg shadow-lg badge-shine mt-1 flex flex-col sm:flex-row items-center gap-1">
-                        <span class="text-sm sm:text-lg whitespace-normal sm:whitespace-nowrap leading-tight">مرشح لعضوية مجلس الادارة رقم (1)</span> 
-                        <span class="text-xs font-bold text-color-primary bg-white px-2 py-0.5 rounded-full shadow-inner border border-primary-dark/20 whitespace-nowrap">فوق السن</span>
+                    <h1 class="text-base sm:text-2xl font-bold">أحمد السيد موسى</h1>
+                    <div class="bg-accent text-primary-dark font-extrabold px-2 py-1 rounded-lg shadow-lg badge-shine mt-1 flex flex-col sm:flex-row items-center gap-1">
+                        <span class="text-xs sm:text-lg whitespace-nowrap leading-tight">مرشح مجلس الادارة رقم (1)</span> 
+                        <span class="text-[10px] sm:text-xs font-bold text-color-primary bg-white px-2 py-0.5 rounded-full shadow-inner border border-primary-dark/20 whitespace-nowrap">فوق السن</span>
                     </div>
                 </div>
             </div>
-            <div class="text-center font-extrabold text-lg sm:text-2xl text-accent p-1 rounded-lg slogan-animate flex-shrink-0">
+            <div class="text-center font-extrabold text-xs sm:text-xl md:text-2xl text-accent p-1 rounded-lg slogan-animate flex-shrink-0 mt-2 md:mt-0">
                 “طريقنا واحد… مكسبنا واحد...و رقمنا واحد”
+            </div>
+        </div>
+
+        <div class="w-full bg-black/30 backdrop-blur-md border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-2 py-2 flex items-center justify-between gap-2">
+                
+                <nav class="flex items-center gap-2 overflow-x-auto no-scrollbar w-full sm:justify-center p-1 mask-linear">
+                    <button onclick="switchTab('home')" id="btn-home" class="nav-tab active-tab flex-shrink-0">
+                        <i class="fas fa-home ml-1"></i> الصفحة الرئيسية
+                    </button>
+                    <button onclick="switchTab('swimming')" id="btn-swimming" class="nav-tab flex-shrink-0">
+                        <i class="fas fa-swimmer ml-1"></i> رؤيتي للسباحة
+                    </button>
+                    <button onclick="switchTab('gymnastics')" id="btn-gymnastics" class="nav-tab flex-shrink-0">
+                        <i class="fas fa-medal ml-1"></i> رؤيتي للجمباز
+                    </button>
+                </nav>
+
+                <a href="https://www.facebook.com/share/17gE2QzPpr/" target="_blank" class="fb-creative-btn flex-shrink-0 ml-1 group relative">
+                    <div class="absolute inset-0 bg-white rounded-full opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                    <i class="fab fa-facebook text-4xl text-white drop-shadow-md group-hover:text-[#1877F2] bg-white/10 rounded-full transition-colors duration-300"></i>
+                </a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto p-6 space-y-12">
+    <main class="max-w-4xl mx-auto p-4 md:p-6 space-y-12">
         
-        <section class="p-6 rounded-2xl shadow-xl border-b-4 border-accent animate-fade-in-up election-date-card text-white text-center space-y-4" style="animation-delay: 100ms;">
-            <h2 class="text-3xl font-extrabold text-accent mb-4">
-                📢 يوم الحسم! انتخابات نادي الاتحاد السكندري
-            </h2>
-            <div class="bg-white/10 p-4 rounded-xl shadow-inner border-2 border-accent/70">
-                <p class="text-2xl md:text-3xl font-extrabold mb-3 flex items-center justify-center gap-3 text-white">
-                    <span class="text-4xl md:text-5xl">🗳️</span>
-                    <span>26 ديسمبر 2025</span>
-                </p>
-            </div>
-            <p class="text-xl font-medium mt-4">
-                صوتك أمانة، ومستقبل النادي في يدك. يتبقى على يوم الانتخابات:
-            </p>
-            <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 mt-4 bg-primary-dark/30 p-4 rounded-xl border border-accent/50">
-                <p>جاري تحميل العداد...</p>
-            </div>
-        </section>
-
-        <section class="animate-fade-in-up bg-white p-6 rounded-2xl shadow-2xl border-t-8 border-color-primary" style="animation-delay: 150ms;">
-            <h2 class="text-2xl font-extrabold text-color-primary text-center mb-6">
-                🎶 الاستماع إلى الأغنية الانتخابية
-            </h2>
-            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/kero-youhans/whatsapp-audio-2025-11-13-at&color=%23006633&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
-            </iframe>
-        </section>
-
-        <section class="animate-fade-in-up announcement-card rounded-2xl shadow-2xl p-6 md:p-8 text-center text-white" style="animation-delay: 200ms;">
-            <div class="relative z-10 flex flex-col items-center gap-4">
-                <div class="bg-white/20 p-3 rounded-full animate-bounce">
-                    <span class="text-4xl">📢</span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-black text-accent drop-shadow-md">
-                    دعوة عامة للندوة
-                </h2>
-                <div class="bg-black/30 p-6 rounded-xl border border-white/30 backdrop-blur-sm w-full max-w-2xl">
-                    <p class="text-xl md:text-2xl font-bold mb-4 leading-relaxed">
-                        ندعوكم لحضور ندوة مفتوحة لمناقشة البرنامج الانتخابي<br>
-                        والرد على كافة استفسارات الأعضاء
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                        <div class="flex items-center justify-center gap-2 bg-white/10 p-3 rounded-lg">
-                            <span class="text-2xl">🗓️</span>
-                            <span class="text-lg font-bold">يوم السبت ١٣-١٢</span>
-                        </div>
-                        <div class="flex items-center justify-center gap-2 bg-white/10 p-3 rounded-lg">
-                            <span class="text-2xl">🕗</span>
-                            <span class="text-lg font-bold">الساعة ٨ مساءً</span>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex items-center justify-center gap-2 bg-accent/20 p-3 rounded-lg border border-accent">
-                        <span class="text-2xl">📍</span>
-                        <span class="text-xl font-extrabold text-accent">بفرع الشاطبي - اللاندسكيب</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-        <section class="animate-fade-in-up mt-8 mb-8 relative group" style="animation-delay: 250ms;">
-            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#004d26] to-black rounded-3xl shadow-2xl transform skew-y-1 -z-10 border-4 border-[#FFD700]"></div>
+        <div id="content-home" class="tab-content-section animate-fade-in-up">
             
-            <div class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-10 border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden">
-                
-                <div class="absolute top-0 right-0 w-64 h-64 bg-[#FFD700] rounded-full filter blur-[100px] opacity-10 pointer-events-none"></div>
+            <section class="p-6 rounded-2xl shadow-xl border-b-4 border-accent animate-fade-in-up election-date-card text-white text-center space-y-4" style="animation-delay: 100ms;">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-accent mb-4">
+                    📢 يوم الحسم! انتخابات نادي الاتحاد السكندري
+                </h2>
+                <div class="bg-white/10 p-4 rounded-xl shadow-inner border-2 border-accent/70">
+                    <p class="text-xl md:text-3xl font-extrabold mb-3 flex items-center justify-center gap-3 text-white">
+                        <span class="text-3xl md:text-5xl">🗳️</span>
+                        <span>26 ديسمبر 2025</span>
+                    </p>
+                </div>
+                <p class="text-lg md:text-xl font-medium mt-4">
+                    صوتك أمانة، ومستقبل النادي في يدك. يتبقى على يوم الانتخابات:
+                </p>
+                <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 mt-4 bg-primary-dark/30 p-2 md:p-4 rounded-xl border border-accent/50">
+                    <p>جاري تحميل العداد...</p>
+                </div>
+            </section>
 
-                <div class="flex-1 text-center lg:text-right space-y-5 z-10 w-full">
-                    <div class="flex items-center justify-center lg:justify-start gap-4 mb-2">
-                        <div class="bg-white p-3 rounded-xl shadow-lg inline-block transform transition hover:scale-105">
-                            <img src="https://i.ibb.co/FL0T6zgm/Zed.png" alt="Zed Logo" class="h-10 md:h-12 object-contain">
-                        </div>
-                        <span class="text-white/80 font-bold text-sm bg-black/30 px-3 py-1 rounded-full border border-white/10">فى انتظاركم</span>
+            <section class="animate-fade-in-up bg-white p-6 rounded-2xl shadow-2xl border-t-8 border-color-primary" style="animation-delay: 150ms;">
+                <h2 class="text-xl md:text-2xl font-extrabold text-color-primary text-center mb-6">
+                    🎶 الاستماع إلى الأغنية الانتخابية
+                </h2>
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/kero-youhans/whatsapp-audio-2025-11-13-at&color=%23006633&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
+                </iframe>
+            </section>
+
+            <section class="animate-fade-in-up announcement-card rounded-2xl shadow-2xl p-6 md:p-8 text-center text-white" style="animation-delay: 200ms;">
+                <div class="relative z-10 flex flex-col items-center gap-4">
+                    <div class="bg-white/20 p-3 rounded-full animate-bounce">
+                        <span class="text-4xl">📢</span>
                     </div>
-
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-white leading-tight drop-shadow-lg">
-                        عشان تقدر تيجي الندوة و اجتماع الجمعية العمومية بسهولة..
+                    <h2 class="text-2xl md:text-4xl font-black text-accent drop-shadow-md">
+                        دعوة عامة للندوة
                     </h2>
-                    
-                    <p class="text-lg md:text-xl text-gray-200 font-medium leading-relaxed">
-                        عشان كده عملنالك <span class="bg-[#FFD700] text-[#004d26] px-2 py-0.5 rounded font-black text-2xl mx-1 shadow-glow inline-block transform -rotate-2">خصم 60%</span> 
-                        من يوم الندوة و حتي ٣١-١ لأعضاء نادي الاتحاد من وإلى النادي (الفرعين) عبر Zed’s.
+                    <div class="bg-black/30 p-4 md:p-6 rounded-xl border border-white/30 backdrop-blur-sm w-full max-w-2xl">
+                        <p class="text-lg md:text-2xl font-bold mb-4 leading-relaxed">
+                            ندعوكم لحضور ندوة مفتوحة لمناقشة البرنامج الانتخابي<br>
+                            والرد على كافة استفسارات الأعضاء
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                            <div class="flex items-center justify-center gap-2 bg-white/10 p-3 rounded-lg">
+                                <span class="text-2xl">🗓️</span>
+                                <span class="text-lg font-bold">يوم السبت ١٣-١٢</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 bg-white/10 p-3 rounded-lg">
+                                <span class="text-2xl">🕗</span>
+                                <span class="text-lg font-bold">الساعة ٨ مساءً</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-center gap-2 bg-accent/20 p-3 rounded-lg border border-accent">
+                            <span class="text-2xl">📍</span>
+                            <span class="text-xl font-extrabold text-accent">بفرع الشاطبي - اللاندسكيب</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section class="animate-fade-in-up mt-8 mb-8 relative group" style="animation-delay: 250ms;">
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#004d26] to-black rounded-3xl shadow-2xl transform skew-y-1 -z-10 border-4 border-[#FFD700]"></div>            
+                <div class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-10 border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 overflow-hidden">                    
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-[#FFD700] rounded-full filter blur-[100px] opacity-10 pointer-events-none"></div>
+                    <div class="flex-1 text-center lg:text-right space-y-5 z-10 w-full">
+                        <div class="flex items-center justify-center lg:justify-start gap-4 mb-2">
+                            <div class="bg-white p-3 rounded-xl shadow-lg inline-block transform transition hover:scale-105">
+                                <img src="https://i.ibb.co/FL0T6zgm/Zed.png" alt="Zed Logo" class="h-10 md:h-12 object-contain">
+                            </div>
+                            <span class="text-white/80 font-bold text-sm bg-black/30 px-3 py-1 rounded-full border border-white/10">فى انتظاركم</span>
+                        </div>
+                        <h2 class="text-xl md:text-3xl font-extrabold text-white leading-tight drop-shadow-lg">
+                            عشان تقدر تيجي الندوة و اجتماع الجمعية العمومية بسهولة..
+                        </h2>                    
+                        <p class="text-base md:text-xl text-gray-200 font-medium leading-relaxed">
+                            عشان كده عملنالك <span class="bg-[#FFD700] text-[#004d26] px-2 py-0.5 rounded font-black text-lg md:text-2xl mx-1 shadow-glow inline-block transform -rotate-2">خصم 60%</span> 
+                            من يوم الندوة و حتي ٣١-١ لأعضاء نادي الاتحاد من وإلى النادي (الفرعين) عبر Zed’s.
+                        </p>                    
+                        <p class="text-sm md:text-base text-gray-400 border-t border-white/10 pt-4 mt-2">
+                            <i class="fas fa-star text-[#FFD700] ml-1"></i>
+                            خطوة جديدة لدعم الخدمات وتسهيل انتقالات الأعضاء.
+                        </p>
+                    </div>
+                    <div class="relative w-full max-w-sm lg:max-w-md shrink-0 z-10">
+                        <div class="bg-white rounded-2xl p-1 shadow-2xl transform transition hover:-translate-y-2 duration-500">
+                            <div class="border-2 border-dashed border-gray-300 rounded-xl p-5 bg-gray-50 flex flex-col items-center gap-4 relative overflow-hidden">                            
+                                <div class="w-full flex justify-between items-center border-b border-gray-200 pb-3">
+                                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">VOUCHER</span>
+                                    <span class="text-xs font-bold text-red-600 bg-red-100 px-2 py-0.5 rounded">Limited Time</span>
+                                </div>
+                                <div class="w-full">
+                                    <p class="text-sm text-gray-600 font-bold mb-2 text-center">استخدم برومو كود:</p>
+                                    <div class="relative group cursor-pointer" onclick="copyPromoCode()">
+                                        <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-[#FFD700] rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+                                        <div class="relative bg-white flex items-center justify-between p-3 rounded-lg border border-gray-200">
+                                            <code id="promo-text" class="text-2xl font-mono font-black text-[#006633] tracking-wider w-full text-center">Ittahadalex</code>
+                                            <button class="absolute left-2 bg-gray-100 hover:bg-gray-200 p-2 rounded-md text-gray-600 transition">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="copy-feedback" class="h-6 mt-1 text-center text-green-600 font-bold text-sm opacity-0 transition-opacity duration-300">
+                                        تم نسخ الكود بنجاح! ✅
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 w-full bg-gray-200 rounded-lg p-3">
+                                    <img src="https://i.ibb.co/ZRKM9V51/ZED-QR.jpg" alt="ZED QR" class="w-20 h-20 rounded-lg border-2 border-white shadow-sm mix-blend-multiply">
+                                    <div class="flex flex-col items-start">
+                                        <p class="text-xs text-gray-500 font-bold mb-1">حمل التطبيق الآن</p>
+                                        <a href="https://play.google.com/store/apps/details?id=com.zeds.user" target="_blank" class="text-[#006633] font-extrabold text-sm underline hover:text-[#004d26]">Download Zed App</a>
+                                        <div class="flex gap-1 mt-1 text-gray-400">
+                                            <i class="fab fa-apple"></i>
+                                            <i class="fab fa-google-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="animate-fade-in-up" style="animation-delay: 300ms;">
+                <div class="game-card-creative text-white p-8 rounded-2xl shadow-2xl text-center space-y-4">
+                    <h2 class="game-title text-xl sm:text-2xl md:text-4xl font-extrabold text-accent flex items-center justify-center gap-2 leading-tight">
+                        <span class="text-3xl md:text-4xl shrink-0">🎮</span>
+                        <span>"رحلة موسى": اللعبة الانتخابية!</span>
+                    </h2>
+                    <p class="text-xl font-medium text-gray-200 leading-relaxed border-t border-b border-white/20 py-3">
+                        انطلق في مغامرة تفاعلية داخل رؤيتنا! اختبر معرفتك بالملفات، وتعرف على خطتنا الاستثمارية للمستقبل المستدام لنادي الاتحاد.
                     </p>
-                    
-                    <p class="text-sm md:text-base text-gray-400 border-t border-white/10 pt-4 mt-2">
-                        <i class="fas fa-star text-[#FFD700] ml-1"></i>
-                        خطوة جديدة لدعم الخدمات وتسهيل انتقالات الأعضاء.
+                    <a href="https://youhanaebrahiem.github.io/MusaVision/" target="_blank" class="flash-attention inline-block px-6 py-3 md:px-12 md:py-4 bg-accent text-primary-dark font-extrabold rounded-full shadow-2xl hover:shadow-3xl transition duration-300 transform hover:scale-105 text-lg md:text-2xl mt-4 border-4 border-white">
+                        ابدأ التحدي واللعب الآن! 🏆
+                    </a>
+                </div>
+            </section>
+
+             <section class="animate-fade-in-up" style="animation-delay: 400ms;">
+                <div class="hitech-card p-8 rounded-2xl text-center space-y-6">
+                    <div class="flex flex-col items-center justify-center space-y-4">
+                        <span id="hitech-icon" class="text-6xl text-accent hitech-title">
+                            🛰️
+                        </span>
+                        <h2 class="hitech-title text-2xl md:text-4xl font-extrabold">قريبا: اعرف لجنتك الانتخابية </h2>
+                    </div>
+                    <div id="status-display" class="bg-black border border-green-500 p-3 rounded-lg text-lg font-mono text-green-400">
+                        "طريقنا واحد...و رقمنا واحد" - اضغط للفحص
+                    </div>
+                    <div class="w-full h-2 rounded-full mb-4">
+                        <div id="progress-bar" class="scan-bar"></div>
+                    </div>
+                    <p class="text-lg font-medium text-gray-300">
+                        منصة العضوية الرقمية قيد التشغيل التجريبي. اضغط على الزر لتحديث حالة النظام لمعرفة موعد الإطلاق:
                     </p>
+                    <button id="scan-button" onclick="startScanning()" class="hitech-button w-full md:w-3/5 px-8 py-3 font-extrabold rounded-full text-xl">
+                        بدء فحص النظام 📡
+                    </button>
+                </div>
+            </section>
+
+            <section class="bg-white p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-3xl border-t-8 border-accent animate-fade-in-up" style="animation-delay: 500ms;">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-1 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-l pb-6 lg:pb-0 border-gray-200">
+                        <img src="https://i.ibb.co/39KNrsgF/photo.jpg" alt="صورة المرشح أحمد السيد موسى" class="w-48 h-48 rounded-full object-cover golden-frame mb-4">
+                        <h2 class="text-3xl font-extrabold text-gray-900">أحمد السيد موسى</h2>
+                        <p class="text-xl font-medium text-gray-700 mt-1">
+                            اسم الشهرة: <span class="text-accent font-bold">موسى</span>
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 space-y-6">
+                        <h3 class="text-2xl font-bold flex items-center mb-4 text-color-primary">
+                            🎓 المؤهلات العلمية:
+                        </h3>
+                        <ul class="space-y-3 text-lg">
+                            <li class="flex items-center p-2 bg-green-50 rounded-lg shadow-sm list-item-hover-effect border-r-4 border-accent rtl:border-r-0 rtl:border-l-4">
+                                <span class="text-2xl ml-2 rtl:mr-2">🥇</span> دكتوراه في إدارة الأعمال – تخصص موارد بشرية
+                            </li>
+                            <li class="flex items-center p-2 bg-green-50 rounded-lg shadow-sm list-item-hover-effect border-r-4 border-accent rtl:border-r-0 rtl:border-l-4">
+                                <span class="text-2xl ml-2 rtl:mr-2">🥈</span> ماجستير إدارة الأعمال – تخصص موارد بشرية
+                            </li>
+                            <li class="flex items-center p-2 bg-green-50 rounded-lg shadow-sm list-item-hover-effect border-r-4 border-accent rtl:border-r-0 rtl:border-l-4">
+                                <span class="text-2xl ml-2 rtl:mr-2">🥉</span> بكالوريوس تجارة – جامعة الإسكندرية – قسم محاسبة
+                            </li>
+                        </ul>
+                        <h3 class="text-2xl font-bold flex items-center pt-4 text-color-primary">
+                            👨‍👩‍👧‍👦 البيانات الشخصية:
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <p class="text-lg font-medium p-3 bg-yellow-50 rounded-lg shadow-md list-item-hover-effect text-center">
+                                <span class="font-semibold text-gray-800 block text-2xl">44</span>
+                                <span class="text-gray-600 block">سنة (العمر)</span>
+                            </p>
+                            <p class="text-lg font-medium p-3 bg-yellow-50 rounded-lg shadow-md list-item-hover-effect text-center">
+                                <span class="font-semibold text-gray-800 block text-2xl">متزوج</span>
+                                <span class="text-gray-600 block">و لديه 3 أبناء </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section class="animate-fade-in-up bg-white p-8 rounded-3xl shadow-2xl border-t-8 border-accent relative overflow-hidden" style="animation-delay: 700ms;">
+                <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-5">
+                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-green-700 rounded-full blur-3xl"></div>
+                    <div class="absolute top-1/2 left-10 w-48 h-48 bg-yellow-500 rounded-full blur-3xl"></div>
                 </div>
 
-                <div class="relative w-full max-w-sm lg:max-w-md shrink-0 z-10">
-                    <div class="bg-white rounded-2xl p-1 shadow-2xl transform transition hover:-translate-y-2 duration-500">
-                        <div class="border-2 border-dashed border-gray-300 rounded-xl p-5 bg-gray-50 flex flex-col items-center gap-4 relative overflow-hidden">
-                            
-                            <div class="w-full flex justify-between items-center border-b border-gray-200 pb-3">
-                                <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">VOUCHER</span>
-                                <span class="text-xs font-bold text-red-600 bg-red-100 px-2 py-0.5 rounded">Limited Time</span>
-                            </div>
+                <h2 class="text-3xl font-extrabold text-color-primary text-center mb-10 relative z-10">
+                    ⏳ مسيرة من العطاء والنجاح
+                </h2>
+                <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto relative z-10">
+                    رحلة دمجت بين الخبرة المهنية في كبرى الشركات، والعمل التطوعي لخدمة المجتمع ونادي الاتحاد السكندري.
+                </p>
+                
+                <div class="timeline-creative relative max-w-3xl mx-auto z-10">
+                    <div class="timeline-node">
+                        <div class="timeline-icon">🚀</div>
+                        <div class="timeline-card">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">التأسيس وريادة الأعمال</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                البداية بتأسيس "شركة لافانا ناتشورال" للمنتجات الطبية، مما صقل مهارات الإدارة المالية والتخطيط الاستراتيجي في السوق المصري.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="timeline-icon" style="border-color: #006633; color: #FFD700;">🤝</div>
+                        <div class="timeline-card bg-green-50 border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">العمل العام والخدمي</h3>
+                            <ul class="text-gray-700 space-y-2 mt-2 text-sm md:text-base">
+                                <li class="flex items-start"><span class="text-accent ml-2">▪️</span> أمين صندوق اتحاد شباب العمال – الإسكندرية.</li>
+                                <li class="flex items-start"><span class="text-accent ml-2">▪️</span> أمين مساعد أمانة الاتصالات وتكنولوجيا المعلومات.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="timeline-icon">💚</div>
+                        <div class="timeline-card border-r-8 border-green-600">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">خدمة الكيان (الاتحاد السكندري)</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                رئيس لجنة التسويق بنادي الاتحاد السكندري سابقًا 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="timeline-icon">🏢</div>
+                        <div class="timeline-card">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">القيادة المؤسسية (WE)</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                يعمل  بإدارة البيانات بقطاع المبيعات (WE)، وعضو مجلس إدارة صندوق الولاء والانتماء بالشركة المصرية للاتصالات.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="timeline-icon animate-pulse bg-accent text-white" style="background: #FFD700; color: #004d26;">🗳️</div>
+                        <div class="timeline-card bg-yellow-50 border-r-8 border-accent">
+                            <span class="timeline-date-badge bg-white">2025 - المستقبل</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">نحو مجلس إدارة محترف</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                الترشح لمجلس الإدارة برؤية (طريقنا واحد) لتقديم نموذج إداري يجمع بين الخبرة الاقتصادية والروح الجماهيرية.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                            <div class="w-full">
-                                <p class="text-sm text-gray-600 font-bold mb-2 text-center">استخدم برومو كود:</p>
-                                <div class="relative group cursor-pointer" onclick="copyPromoCode()">
-                                    <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-[#FFD700] rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-                                    <div class="relative bg-white flex items-center justify-between p-3 rounded-lg border border-gray-200">
-                                        <code id="promo-text" class="text-2xl font-mono font-black text-[#006633] tracking-wider w-full text-center">Ittahadalex</code>
-                                        <button class="absolute left-2 bg-gray-100 hover:bg-gray-200 p-2 rounded-md text-gray-600 transition">
-                                            <i class="fas fa-copy"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div id="copy-feedback" class="h-6 mt-1 text-center text-green-600 font-bold text-sm opacity-0 transition-opacity duration-300">
-                                    تم نسخ الكود بنجاح! ✅
-                                </div>
-                            </div>
+             <section class="bg-white p-8 rounded-2xl shadow-2xl space-y-10 animate-fade-in-up" style="animation-delay: 800ms;">
+                <div class="border-b pb-6 border-gray-200">
+                    <h3 class="text-2xl font-bold flex items-center mb-4 text-color-primary">
+                        🌟 رؤيتي:
+                    </h3>
+                    <blockquote class="text-xl italic font-serif text-gray-700 bg-green-50 p-4 rounded-lg border-l-4 rtl:border-r-4 border-accent shadow-md">
+                        “إدارة مسؤولة لإنشاء نادي مستدام”
+                    </blockquote>
+                    <p class="mt-4 text-lg text-gray-600">
+                        رؤية تقوم على خطة متوازنة بين دعم الفرق الرياضية وتوسيع الخدمات الاجتماعية والثقافية للأعضاء. هدفنا أن يظل نادي الاتحاد السكندري نموذجًا للنادي الشامل الذي يجمع بين الرياضة – الثقافة – الأسرة – والانتماء.
+                    </p>
+                </div>
+                <div class="border-b pb-6 border-gray-200">
+                    <h3 class="text-2xl font-bold flex items-center mb-4 text-color-primary">
+                        💬 رسالتي للأعضاء:
+                    </h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        أتعهد بأن يكون صوتي داخل المجلس، إذا حظيت بثقتكم، هو صوت الأعضاء في كل قرار. لن أقبل إلا بإدارة تقوم على:
+                    </p>
+                    <ul class="text-xl font-semibold text-green-700 space-y-2 list-none mb-6">
+                        <li class="flex items-center"><span class="text-accent text-2xl ml-2 rtl:mr-2">✅</span> الشفافية</li>
+                        <li class="flex items-center"><span class="text-accent text-2xl ml-2 rtl:mr-2">✅</span> المشاركة</li>
+                        <li class="flex items-center"><span class="text-accent text-2xl ml-2 rtl:mr-2">✅</span> احترام العضو</li>
+                        <li class="flex items-center"><span class="text-accent text-2xl ml-2 rtl:mr-2">✅</span> واستدامة موارد النادي.</li>
+                    </ul>
+                    <button class="w-full md:w-auto px-8 py-3 bg-accent text-gray-900 font-extrabold rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 cta-pulse-animate">
+                        أدعم الإدارة المسؤولة - صوتك ضمان النادي 🗳️
+                    </button>
+                </div>
+            </section>
 
-                            <div class="flex items-center gap-4 w-full bg-gray-200 rounded-lg p-3">
-                                <img src="https://i.ibb.co/ZRKM9V51/ZED-QR.jpg" alt="ZED QR" class="w-20 h-20 rounded-lg border-2 border-white shadow-sm mix-blend-multiply">
-                                <div class="flex flex-col items-start">
-                                    <p class="text-xs text-gray-500 font-bold mb-1">حمل التطبيق الآن</p>
-                                    <a href="https://play.google.com/store/apps/details?id=com.zeds.user" target="_blank" class="text-[#006633] font-extrabold text-sm underline hover:text-[#004d26]">Download Zed App</a>
-                                    <div class="flex gap-1 mt-1 text-gray-400">
-                                        <i class="fab fa-apple"></i>
-                                        <i class="fab fa-google-play"></i>
-                                    </div>
-                                </div>
-                            </div>
+             <section class="animate-fade-in-up bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent text-center mt-8 mb-8" style="animation-delay: 850ms;">
+                <h2 class="text-3xl font-extrabold text-color-primary mb-6">💡 اختر أولوياتك.. وشاهد الحل</h2>
+                <p class="text-gray-600 mb-8 font-medium">ما هو الملف الذي يشغل بالك؟ اضغط على الأيقونة لتعرف تعهدنا المباشر:</p>
+                
+                <div class="priorities-grid">
+                    <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('investment', this)">
+                        <span class="text-3xl mb-2">💵</span>
+                        <span class="font-bold text-gray-800 text-sm md:text-base">1) الموارد والاستثمار</span>
+                    </div>
+                    <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('digital', this)">
+                        <span class="text-3xl mb-2">📱</span>
+                        <span class="font-bold text-gray-800 text-sm md:text-base">2) التحول الرقمي</span>
+                    </div>
+                    <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('social', this)">
+                        <span class="text-3xl mb-2">🏘️</span>
+                        <span class="font-bold text-gray-800 text-sm md:text-base">3) الاجتماعي والخدمي</span>
+                    </div>
+                    <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('sports', this)">
+                        <span class="text-3xl mb-2">🟫</span>
+                        <span class="font-bold text-gray-800 text-sm md:text-base">4) الملف الرياضي</span>
+                    </div>
+                    <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('health', this)">
+                        <span class="text-3xl mb-2">❤️</span>
+                        <span class="font-bold text-gray-800 text-sm md:text-base">5) الصحي</span>
+                    </div>
+                    <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('financial', this)">
+                        <span class="text-3xl mb-2">📈</span>
+                        <span class="font-bold text-gray-800 text-sm md:text-base">6) المالي</span>
+                    </div>
+                    <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('complaints', this)">
+                        <span class="text-3xl mb-2">📩</span>
+                        <span class="font-bold text-gray-800 text-sm md:text-base">7) الشكاوى والمقترحات</span>
+                    </div>
+                </div>
+                
+                <div id="priority-content" class="mt-6 p-6 bg-green-50 rounded-xl border-2 border-dashed border-green-300 text-xl font-bold text-green-800 transition-all shadow-inner">
+                    👈 اضغط على أي أيقونة أعلاه لتعرف خطتنا!
+                </div>
+            </section>
 
+             <section class="animate-fade-in-up" style="animation-delay: 900ms;">
+                <div class="bg-white p-4 rounded-2xl shadow-2xl border-t-8 border-color-primary">
+                    <h2 class="text-2xl font-extrabold text-color-primary text-center mb-4">
+                        📢 طريقنا واحد ...... مكسبنا واحد
+                    </h2>
+                    <div class="w-full">
+                        <img src="https://i.ibb.co/GfnQW6VH/1.jpg" alt="صورة إعلان حملة المرشح أحمد السيد موسى - طريقنا واحد" class="w-full h-auto rounded-xl shadow-xl golden-frame transition-transform duration-500 object-cover">
+                    </div>
+                </div>
+            </section>
+
+             <section class="bg-white p-8 rounded-2xl shadow-2xl space-y-10 animate-fade-in-up" style="animation-delay: 1000ms;">
+                <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-6">
+                    🔰 أولًا: مقدمة
+                </h2>
+                <p class="text-lg text-gray-700 border-b pb-4">
+                    يظل نادي الأتحاد السكندري كيانًا رياضيًا واجتماعيًا وثقافيًا عريقًا… يستحق إدارة واعية، ومؤسسات محترفة، ورؤية واضحة تجعل النادي قادرًا على النمو، وعلى تقديم خدمات تليق بتاريخ الأجيال التي بنَت هذا الصرح العظيم. وترشحي ليس بحثًا عن منصب… بل مسؤولية والتزام تجاه الأعضاء، وحرص على بناء نادي مستدام… يعتمد على موارد قوية، وإدارة اقتصادية، وخدمة ترتقي بالطموح.
+                </p>
+
+                <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-6 pt-4">
+                    🔰 ثانيًا: أسباب الترشح
+                </h2>
+                <ul class="space-y-3 text-lg list-none">
+                    <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
+                        <span class="text-accent text-xl ml-2 rtl:mr-2">💡</span> الإيمان بأن النادي يحتاج إدارة تعتمد على التخطيط العلمي والاستدامة المالية.
+                    </li>
+                    <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
+                        <span class="text-accent text-xl ml-2 rtl:mr-2">🚀</span> السعي لتحقيق نقلة حقيقية في الخدمات الاجتماعية والرياضية المقدمة للأعضاء.
+                    </li>
+                    <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
+                        <span class="text-accent text-xl ml-2 rtl:mr-2">🗣️</span> بناء منظومة تحترم رأي العضو وتضعه في مقدمة الأولويات.
+                    </li>
+                    <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
+                        <span class="text-accent text-xl ml-2 rtl:mr-2">🔄</span> إعادة تشكيل منظومة العمل على أساس: الشفافية – المشاركة – احترام الأعضاء.
+                    </li>
+                    <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
+                        <span class="text-accent text-xl ml-2 rtl:mr-2">🛠️</span> تحويل الأفكار إلى قرارات قابلة للتنفيذ وليس مجرد مقترحات.
+                    </li>
+                </ul>
+            </section>
+
+             <section class="bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-color-primary animate-fade-in-up" style="animation-delay: 1200ms;">
+                <div class="mb-8 p-6 bg-yellow-50 rounded-xl border border-accent shadow-inner">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                        🔰 ثالثًا: الهدف العام للبرنامج
+                    </h3>
+                    <blockquote class="text-xl italic font-serif text-green-800 bg-yellow-100 p-3 rounded-lg border-r-4 rtl:border-l-4 border-green-600">
+                        “نادي الأتحاد هيئة خاصة ذات نفع عام، تدير أموالها وأنشطتها بطريقة استثمارية تحقق موارد مستدامة للنادي.”
+                    </blockquote>
+                    <p class="mt-4 text-lg font-medium text-gray-600">
+                        ✔️ التفسير: النادي يجب أن يعمل بفكر اقتصادي مؤسسي محترف، مش فقط كمكان يصرف، بل كمنشأة تستطيع إنتاج موارد وتنميتها.
+                    </p>
+                </div>
+                <div class="bg-[#1a472a] text-white p-6 md:p-8 rounded-xl shadow-2xl mb-12 border-4 border-accent relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full translate-x-10 -translate-y-10"></div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-center mb-8 text-accent flex items-center justify-center gap-2">
+                        <span>🚀</span> خطة الـ 100 يوم الأولى
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6 relative z-10">
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
+                            <div class="text-4xl mb-2">1️⃣</div>
+                            <h4 class="text-xl font-bold text-accent mb-2">الشهر الأول: تدقيق</h4>
+                            <p class="text-sm md:text-base text-gray-200">مراجعة شاملة لكافة العقود الحالية ووقف أي هدر مالي فوراً، وتشكيل لجنة الحكماء.</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
+                            <div class="text-4xl mb-2">2️⃣</div>
+                            <h4 class="text-xl font-bold text-accent mb-2">الشهر الثاني: إطلاق</h4>
+                            <p class="text-sm md:text-base text-gray-200">البدء في تنفيذ التطبيق الرقمي (App) .</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
+                            <div class="text-4xl mb-2">3️⃣</div>
+                            <h4 class="text-xl font-bold text-accent mb-2">الشهر الثالث: تطوير</h4>
+                            <p class="text-sm md:text-base text-gray-200">حصر كافة مشاكل القطاعات المختلفة للالعاب تمهيدا لتطويرها .</p>
                         </div>
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <section class="animate-fade-in-up" style="animation-delay: 300ms;">
-            <div class="game-card-creative text-white p-8 rounded-2xl shadow-2xl text-center space-y-4">
-                <h2 class="game-title text-xl sm:text-2xl md:text-4xl font-extrabold text-accent flex items-center justify-center gap-2 leading-tight">
-                    <span class="text-3xl md:text-4xl shrink-0">🎮</span>
-                    <span>"رحلة موسى": اللعبة الانتخابية!</span>
+                <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-8">
+                    🔰 رابعا: ملفات البرنامج الانتخابي
                 </h2>
-                <p class="text-xl font-medium text-gray-200 leading-relaxed border-t border-b border-white/20 py-3">
-                    انطلق في مغامرة تفاعلية داخل رؤيتنا! اختبر معرفتك بالملفات، وتعرف على خطتنا الاستثمارية للمستقبل المستدام لنادي الاتحاد.
-                </p>
-                <a href="https://youhanaebrahiem.github.io/MusaVision/" target="_blank" class="flash-attention inline-block px-6 py-3 md:px-12 md:py-4 bg-accent text-primary-dark font-extrabold rounded-full shadow-2xl hover:shadow-3xl transition duration-300 transform hover:scale-105 text-lg md:text-2xl mt-4 border-4 border-white">
-                    ابدأ التحدي واللعب الآن! 🏆
-                </a>
-            </div>
-        </section>
-
-        <section class="animate-fade-in-up" style="animation-delay: 400ms;">
-            <div class="hitech-card p-8 rounded-2xl text-center space-y-6">
-                <div class="flex flex-col items-center justify-center space-y-4">
-                    <span id="hitech-icon" class="text-6xl text-accent hitech-title">
-                        🛰️
-                    </span>
-                    <h2 class="hitech-title text-3xl md:text-4xl font-extrabold">قريبا: اعرف لجنتك الانتخابية </h2>
-                </div>
-                <div id="status-display" class="bg-black border border-green-500 p-3 rounded-lg text-lg font-mono text-green-400">
-                    "طريقنا واحد...و رقمنا واحد" - اضغط للفحص
-                </div>
-                <div class="w-full h-2 rounded-full mb-4">
-                    <div id="progress-bar" class="scan-bar"></div>
-                </div>
-                <p class="text-lg font-medium text-gray-300">
-                    منصة العضوية الرقمية قيد التشغيل التجريبي. اضغط على الزر لتحديث حالة النظام لمعرفة موعد الإطلاق:
-                </p>
-                <button id="scan-button" onclick="startScanning()" class="hitech-button w-full md:w-3/5 px-8 py-3 font-extrabold rounded-full text-xl">
-                    بدء فحص النظام 📡
-                </button>
-            </div>
-        </section>
-
-        <section class="bg-white p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-3xl border-t-8 border-accent animate-fade-in-up" style="animation-delay: 500ms;">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="lg:col-span-1 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-l pb-6 lg:pb-0 border-gray-200">
-                    <img src="https://i.ibb.co/39KNrsgF/photo.jpg" alt="صورة المرشح أحمد السيد موسى" class="w-48 h-48 rounded-full object-cover golden-frame mb-4">
-                    <h2 class="text-3xl font-extrabold text-gray-900">أحمد السيد موسى</h2>
-                    <p class="text-xl font-medium text-gray-700 mt-1">
-                        اسم الشهرة: <span class="text-accent font-bold">موسى</span>
-                    </p>
-                </div>
-                <div class="lg:col-span-2 space-y-6">
-                    <h3 class="text-2xl font-bold flex items-center mb-4 text-color-primary">
-                        🎓 المؤهلات العلمية:
-                    </h3>
-                    <ul class="space-y-3 text-lg">
-                        <li class="flex items-center p-2 bg-green-50 rounded-lg shadow-sm list-item-hover-effect border-r-4 border-accent rtl:border-r-0 rtl:border-l-4">
-                            <span class="text-2xl ml-2 rtl:mr-2">🥇</span> دكتوراه في إدارة الأعمال – تخصص موارد بشرية
-                        </li>
-                        <li class="flex items-center p-2 bg-green-50 rounded-lg shadow-sm list-item-hover-effect border-r-4 border-accent rtl:border-r-0 rtl:border-l-4">
-                            <span class="text-2xl ml-2 rtl:mr-2">🥈</span> ماجستير إدارة الأعمال – تخصص موارد بشرية
-                        </li>
-                        <li class="flex items-center p-2 bg-green-50 rounded-lg shadow-sm list-item-hover-effect border-r-4 border-accent rtl:border-r-0 rtl:border-l-4">
-                            <span class="text-2xl ml-2 rtl:mr-2">🥉</span> بكالوريوس تجارة – جامعة الإسكندرية – قسم محاسبة
-                        </li>
-                    </ul>
-                    <h3 class="text-2xl font-bold flex items-center pt-4 text-color-primary">
-                        👨‍👩‍👧‍👦 البيانات الشخصية:
-                    </h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <p class="text-lg font-medium p-3 bg-yellow-50 rounded-lg shadow-md list-item-hover-effect text-center">
-                            <span class="font-semibold text-gray-800 block text-2xl">44</span>
-                            <span class="text-gray-600 block">سنة (العمر)</span>
-                        </p>
-                        <p class="text-lg font-medium p-3 bg-yellow-50 rounded-lg shadow-md list-item-hover-effect text-center">
-                            <span class="font-semibold text-gray-800 block text-2xl">متزوج</span>
-                            <span class="text-gray-600 block">و لديه 3 أبناء </span>
-                        </p>
+                
+                <div id="accordion-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
+                        <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
+                            <span>💵 1) الموارد والاستثمار</span>
+                            <span class="arrow-icon transition-transform duration-300 transform">▼</span>
+                        </div>
+                        <div class="accordion-content bg-gray-50">
+                            <h4 class="text-xl font-bold mt-4 text-green-700">١) صندوق دعم الأتحاد</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">إنشاء صندوق تبرعات بشفافية كاملة.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">حفل سنوي لتكريم الداعمين.</li>
+                            </ul>
+                            <h4 class="text-xl font-bold mt-4 text-green-700">٢) إعادة تشغيل الأصول غير المستغلة</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">تحويل الأصول “الخاملة” إلى مصادر دخل.</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="animate-fade-in-up bg-white p-8 rounded-3xl shadow-2xl border-t-8 border-accent relative overflow-hidden" style="animation-delay: 700ms;">
-            <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-5">
-                <div class="absolute -top-10 -right-10 w-64 h-64 bg-green-700 rounded-full blur-3xl"></div>
-                <div class="absolute top-1/2 left-10 w-48 h-48 bg-yellow-500 rounded-full blur-3xl"></div>
-            </div>
-
-            <h2 class="text-3xl font-extrabold text-color-primary text-center mb-10 relative z-10">
-                ⏳ مسيرة من العطاء والنجاح
-            </h2>
-            <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto relative z-10">
-                رحلة دمجت بين الخبرة المهنية في كبرى الشركات، والعمل التطوعي لخدمة المجتمع ونادي الاتحاد السكندري.
-            </p>
-            
-            <div class="timeline-creative relative max-w-3xl mx-auto z-10">
-                <div class="timeline-node">
-                    <div class="timeline-icon">🚀</div>
-                    <div class="timeline-card">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">التأسيس وريادة الأعمال</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            البداية بتأسيس "شركة لافانا ناتشورال" للمنتجات الطبية، مما صقل مهارات الإدارة المالية والتخطيط الاستراتيجي في السوق المصري.
-                        </p>
+                    <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
+                        <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
+                            <span>📱 2) التحول الرقمي</span>
+                            <span class="arrow-icon transition-transform duration-300 transform">▼</span>
+                        </div>
+                        <div class="accordion-content bg-gray-50">
+                            <h4 class="text-xl font-bold mt-4 text-green-700">١) تطبيق إلكتروني للأعضاء</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">الدخول والخروج بالباركود.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">حجز الخدمات الحكومية، ودفع الاشتراكات.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">تقييم المدربين ومتابعة الأبناء في فرق الناشئين.</li>
+                            </ul>
+                            <h4 class="text-xl font-bold mt-4 text-green-700">٢) بوابات إلكترونية</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">منع دخول غير الأعضاء، وضبط حالات الإيقاف إلكترونيًا.</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-node">
-                    <div class="timeline-icon" style="border-color: #006633; color: #FFD700;">🤝</div>
-                    <div class="timeline-card bg-green-50 border-gray-200">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">العمل العام والخدمي</h3>
-                        <ul class="text-gray-700 space-y-2 mt-2 text-sm md:text-base">
-                            <li class="flex items-start"><span class="text-accent ml-2">▪️</span> أمين صندوق اتحاد شباب العمال – الإسكندرية.</li>
-                            <li class="flex items-start"><span class="text-accent ml-2">▪️</span> أمين مساعد أمانة الاتصالات وتكنولوجيا المعلومات.</li>
+                    <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
+                        <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
+                            <span>🏘️ 3) الاجتماعي والخدمي</span>
+                            <span class="arrow-icon transition-transform duration-300 transform">▼</span>
+                        </div>
+                        <div class="accordion-content bg-gray-50">
+                            <h4 class="text-xl font-bold mt-4 text-green-700">١) الخدمات الأساسية</h4>
+                            <ul class="list-disc list-inside space-y-3 mt-4 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">إنشاء حضانة الأطفال بأسعار رمزية.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">التعاقد مع شركة نقل خاصة (بروموكود) للأعضاء.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">تطوير الكافيهات والمطاعم ومراقبة الجودة.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">توفير دورات مجانية داخل النادي من أبنائه.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
+                        <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
+                            <span>🟫 4) الملف الرياضي</span>
+                            <span class="arrow-icon transition-transform duration-300 transform">▼</span>
+                        </div>
+                        <div class="accordion-content bg-gray-50">
+                            <h4 class="text-xl font-bold mt-4 text-green-700">١) منظومة تقييم رياضية مستقلة</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">إدارة تقييم رياضي مستقلة تمامًا.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">معايير واضحة للأداء والمستوى.</li>
+                            </ul>
+                            <h4 class="text-xl font-bold mt-4 text-green-700">٢) الاهتمام بالناشئين</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">الناشئ هو رأس مال النادي.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">ادماجهم فى الفريق الأول بشكل تصاعدى لتقليل الاحتراف.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">تسويق الموهوبين لصالح النادي.</li>
+                            </ul>
+                            <h4 class="text-xl font-bold mt-4 text-green-700">٣) الأكاديميات</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">التوسع في الأكاديميات خارج النادي.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">إشراف كامل من النادي.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">مصدر دخل + اكتشاف مواهب.</li>
+                            </ul>
+                            <h4 class="text-xl font-bold mt-4 text-green-700">٤) الرعاية</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">لجنة متخصصة بمساعدة اعضاء مجلس الادارة للبحث عن راعي للفريق الأول فى كل الالعاب.</li>
+                            </ul>
+                            <h4 class="text-xl font-bold mt-4 text-green-700">٥) كرة القدم: فصل النشاط</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">تأسيس شركة لكرة القدم طبقا لقانون الرياضة .</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">النادي يمتلك 51%.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">تمويل مستقل بعيدًا عن ميزانية النادي.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">مضاعفة ميزانية الكرة دون إرهاق النادي.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
+                        <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
+                            <span>❤️ 5) الصحي</span>
+                            <span class="arrow-icon transition-transform duration-300 transform">▼</span>
+                        </div>
+                        <div class="accordion-content bg-gray-50">
+                            <h4 class="text-xl font-bold mt-4 text-green-700">١) الرعاية الطبية</h4>
+                            <ul class="list-disc list-inside space-y-3 mt-4 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">تعاقدات مع المستشفيات والمعامل والصيدليات بخصومات حقيقية.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">ندوات تغذية رياضية.</li>
+                                <li class="list-item-hover-effect p-1 rounded-lg">تطوير العيادة الصحية .</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
+                        <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
+                            <span>📈 6) المالي</span>
+                            <span class="arrow-icon transition-transform duration-300 transform">▼</span>
+                        </div>
+                        <div class="accordion-content bg-gray-50">
+                            <h4 class="text-xl font-bold mt-4 text-green-700">١) زيادة الإيرادات</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">معارض دورية داخل النادي وتأجير الساحات للإعلانات.</li>
+                            </ul>
+                            <h4 class="text-xl font-bold mt-4 text-green-700">٢) خفض التكاليف</h4>
+                            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                                <li class="list-item-hover-effect p-1 rounded-lg">مراجعة العقود ووقف الهدر وتحسين كفاءة الإنفاق.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 mt-8 bg-white p-6 rounded-xl shadow-2xl border-t-8 border-accent">
+                        <h3 class="text-2xl font-bold text-color-primary flex items-center mb-4">
+                            ⚖️ مبادرة لجنة الحكماء
+                        </h3>
+                        <p class="text-lg text-gray-700 mb-3 font-semibold">
+                            منصة حقيقية تجعل صوت العضو مسموعًا، وهي مسؤولة عن الشكاوى والمقترحات.
+                        </p>
+                        <h4 class="text-xl font-bold mt-4 text-green-700">مهام اللجنة:</h4>
+                        <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
+                            <li class="list-item-hover-effect p-1 rounded-lg">استقبال الشكاوى والمقترحات من الأعضاء.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">فرزها واختيار الصالح للتنفيذ.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">رفع التوصيات لمجلس الإدارة.</li>
+                            <li class="list-item-hover-effect p-1 rounded-lg">ضمان الشفافية والمصداقية.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-node">
-                    <div class="timeline-icon">💚</div>
-                    <div class="timeline-card border-r-8 border-green-600">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">خدمة الكيان (الاتحاد السكندري)</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            رئيس لجنة التسويق بنادي الاتحاد السكندري سابقًا 
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-node">
-                    <div class="timeline-icon">🏢</div>
-                    <div class="timeline-card">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">القيادة المؤسسية (WE)</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            يعمل  بإدارة البيانات بقطاع المبيعات (WE)، وعضو مجلس إدارة صندوق الولاء والانتماء بالشركة المصرية للاتصالات.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-node">
-                    <div class="timeline-icon animate-pulse bg-accent text-white" style="background: #FFD700; color: #004d26;">🗳️</div>
-                    <div class="timeline-card bg-yellow-50 border-r-8 border-accent">
-                        <span class="timeline-date-badge bg-white">2025 - المستقبل</span>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">نحو مجلس إدارة محترف</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            الترشح لمجلس الإدارة برؤية (طريقنا واحد) لتقديم نموذج إداري يجمع بين الخبرة الاقتصادية والروح الجماهيرية.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="bg-white p-8 rounded-2xl shadow-2xl space-y-10 animate-fade-in-up" style="animation-delay: 800ms;">
-            <div class="border-b pb-6 border-gray-200">
-                <h3 class="text-2xl font-bold flex items-center mb-4 text-color-primary">
-                    🌟 رؤيتي:
-                </h3>
-                <blockquote class="text-xl italic font-serif text-gray-700 bg-green-50 p-4 rounded-lg border-l-4 rtl:border-r-4 border-accent shadow-md">
-                    “إدارة مسؤولة لإنشاء نادي مستدام”
-                </blockquote>
-                <p class="mt-4 text-lg text-gray-600">
-                    رؤية تقوم على خطة متوازنة بين دعم الفرق الرياضية وتوسيع الخدمات الاجتماعية والثقافية للأعضاء. هدفنا أن يظل نادي الاتحاد السكندري نموذجًا للنادي الشامل الذي يجمع بين الرياضة – الثقافة – الأسرة – والانتماء.
+             <section class="animate-fade-in-up" style="animation-delay: 1400ms;">
+                <div class="bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent">
+                    <h2 class="text-3xl font-extrabold text-color-primary text-center mb-8 flex items-center justify-center gap-3">
+                        📸 ألبوم الصور: جولات ولقاءات
+                    </h2>
+                    <div class="photo-grid">
+<img src="https://i.ibb.co/4wHDnbRv/Whats-App-Image-2025-12-10-at-9-09-31-AM.jpg" alt="صورة من لقاءات المرشح 23" loading="lazy">
+<img src="https://i.ibb.co/hRhMx28R/Whats-App-Image-2025-12-10-at-9-09-32-AM-1.jpg" alt="صورة من لقاءات المرشح 24" loading="lazy">
+<img src="https://i.ibb.co/cKHhCgXN/Whats-App-Image-2025-12-10-at-9-09-32-AM-2.jpg" alt="صورة من لقاءات المرشح 25" loading="lazy">
+<img src="https://i.ibb.co/21kGtLSB/Whats-App-Image-2025-12-10-at-9-09-32-AM-3.jpg" alt="صورة من لقاءات المرشح 26" loading="lazy">
+<img src="https://i.ibb.co/TMygdpBh/Whats-App-Image-2025-12-10-at-9-09-32-AM.jpg" alt="صورة من لقاءات المرشح 27" loading="lazy">
+<img src="https://i.ibb.co/kgkLrmsb/Whats-App-Image-2025-12-10-at-9-09-33-AM-1.jpg" alt="صورة من لقاءات المرشح 28" loading="lazy">
+<img src="https://i.ibb.co/tTZvHXfQ/Whats-App-Image-2025-12-10-at-9-09-33-AM-2.jpg" alt="صورة من لقاءات المرشح 29" loading="lazy">
+<img src="https://i.ibb.co/RGZ699gL/Whats-App-Image-2025-12-10-at-9-09-33-AM-3.jpg" alt="صورة من لقاءات المرشح 30" loading="lazy">
+<img src="https://i.ibb.co/TBdxgn10/Whats-App-Image-2025-12-10-at-9-09-33-AM.jpg" alt="صورة من لقاءات المرشح 31" loading="lazy">
+<img src="https://i.ibb.co/8gSPJZK6/Whats-App-Image-2025-12-10-at-9-09-34-AM-1.jpg" alt="صورة من لقاءات المرشح 32" loading="lazy">
+<img src="https://i.ibb.co/7xXYTrjJ/Whats-App-Image-2025-12-10-at-9-09-34-AM-2.jpg" alt="صورة من لقاءات المرشح 33" loading="lazy">
+<img src="https://i.ibb.co/WWfZSgCn/Whats-App-Image-2025-12-10-at-9-09-34-AM-3.jpg" alt="صورة من لقاءات المرشح 34" loading="lazy">
+<img src="https://i.ibb.co/mVhdsS91/Whats-App-Image-2025-12-10-at-9-09-34-AM.jpg" alt="صورة من لقاءات المرشح 35" loading="lazy">
+<img src="https://i.ibb.co/RTMSVL7b/Whats-App-Image-2025-12-10-at-9-09-35-AM-1.jpg" alt="صورة من لقاءات المرشح 36" loading="lazy">
+<img src="https://i.ibb.co/d012Mqmr/Whats-App-Image-2025-12-10-at-9-09-35-AM.jpg" alt="صورة من لقاءات المرشح 37" loading="lazy">
+                        <img src="https://i.ibb.co/whVpnqxK/25-1.jpg" alt="صورة من لقاءات المرشح 1" loading="lazy">
+                        <img src="https://i.ibb.co/Vcn56NbZ/25-2.jpg" alt="صورة من لقاءات المرشح 2" loading="lazy">
+                        <img src="https://i.ibb.co/qMyR3Fq2/25-3.jpg" alt="صورة من لقاءات المرشح 3" loading="lazy">
+                        <img src="https://i.ibb.co/7xqQXr6y/25-4.jpg" alt="صورة من لقاءات المرشح 4" loading="lazy">
+                        <img src="https://i.ibb.co/5pRx09d/25-5.jpg" alt="صورة من لقاءات المرشح 5" loading="lazy">
+                        <img src="https://i.ibb.co/6c3V45jz/25-6.jpg" alt="صورة من لقاءات المرشح 6" loading="lazy">
+                        <img src="https://i.ibb.co/Kz8VcDnd/25-7.jpg" alt="صورة من لقاءات المرشح 7" loading="lazy">
+                        <img src="https://i.ibb.co/bjCFq50W/25-9.jpg" alt="صورة من لقاءات المرشح 8" loading="lazy">
+                        <img src="https://i.ibb.co/FqCMyJHT/25-10.jpg" alt="صورة من لقاءات المرشح 9" loading="lazy">
+                        <img src="https://i.ibb.co/zT41jBxg/25-11.jpg" alt="صورة من لقاءات المرشح 10" loading="lazy">
+                        <img src="https://i.ibb.co/9HRyw5pV/25-12.jpg" alt="صورة من لقاءات المرشح 11" loading="lazy">
+                        <img src="https://i.ibb.co/jPY9sBM1/25-14.jpg" alt="صورة من لقاءات المرشح 12" loading="lazy">
+                        <img src="https://i.ibb.co/hRMWkQPC/25-15.jpg" alt="صورة من لقاءات المرشح 13" loading="lazy">
+                        <img src="https://i.ibb.co/Xrm8JQG9/25-16.jpg" alt="صورة من لقاءات المرشح 14" loading="lazy">
+                        <img src="https://i.ibb.co/GfxKxwWK/25-17.jpg" alt="صورة من لقاءات المرشح 15" loading="lazy">
+                        <img src="https://i.ibb.co/6797Cc6G/25-19.jpg" alt="صورة من لقاءات المرشح 16" loading="lazy">
+                        <img src="https://i.ibb.co/kV2rDZ3L/25-21.jpg" alt="صورة من لقاءات المرشح 17" loading="lazy">
+                        <img src="https://i.ibb.co/t7DFG1R/25-23.jpg" alt="صورة من لقاءات المرشح 18" loading="lazy">
+                        <img src="https://i.ibb.co/sdmnnNNR/25-24.jpg" alt="صورة من لقاءات المرشح 19" loading="lazy">
+                        <img src="https://i.ibb.co/4HNsSLY/25-25.jpg" alt="صورة من لقاءات المرشح 20" loading="lazy">
+                        <img src="https://i.ibb.co/bjcZdbvv/25-26.jpg" alt="صورة من لقاءات المرشح 21" loading="lazy">
+                        <img src="https://i.ibb.co/RGc4Cv7m/25-27.jpg" alt="صورة من لقاءات المرشح 22" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+             <section id="quiz-section" class="animate-fade-in-up bg-white p-6 md:p-8 rounded-2xl shadow-2xl border-t-8 border-accent relative" style="animation-delay: 1550ms;">
+                <div class="text-center space-y-4 mb-6">
+                    <h2 class="text-3xl font-extrabold text-color-primary flex items-center justify-center gap-2">
+                        <span>🧠</span> مسابقة العباقرة: تاريخ الاتحاد
+                    </h2>
+                    <p class="text-lg text-gray-600">
+                        هل أنت مشجع حقيقي؟ جاوب على أسئلة في تاريخ زعيم الثغر واكتشف مستوى تشجيعك!
+                    </p>
+                </div>
+                
+                <div id="quiz-start-screen" class="text-center py-8">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">جاهز للتحدي؟</h3>
+                    <p class="text-gray-600 mb-6">سيتم اختيار أسئلة عشوائية لاختبار معلوماتك.</p>
+                    <button onclick="startQuiz()" class="flash-attention px-10 py-4 bg-accent text-primary-dark font-extrabold text-xl rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition transform cta-pulse-animate">
+                        ابدأ المسابقة الآن
+                    </button>
+                </div>
+
+                <div id="quiz-interface" class="hidden">
+                    <div class="mb-6">
+                        <div class="flex justify-between text-sm font-bold text-gray-600 mb-1">
+                            <span id="question-counter">سؤال 1 من 10</span>
+                            <span id="score-display">النقاط: 0</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden border border-gray-300">
+                            <div id="quiz-progress-bar" class="bg-gradient-to-r from-green-600 to-green-400 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-inner min-h-[300px] flex flex-col justify-center">
+                        <h3 id="question-text" class="text-2xl font-bold text-center text-gray-800 mb-8 leading-relaxed">
+                            جاري تحميل السؤال...
+                        </h3>
+                        <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz-continue-modal" class="hidden absolute inset-0 bg-white/95 z-20 flex flex-col items-center justify-center rounded-2xl p-6 text-center backdrop-blur-sm">
+                    <div class="text-5xl mb-4">🔥</div>
+                    <h3 class="text-3xl font-extrabold text-color-primary mb-2">أحسنت يا بطل!</h3>
+                    <p class="text-xl text-gray-700 mb-6 font-medium">أنهيت هذه المرحلة بنجاح. هل تريد إثبات أنك "عبقري الاتحاد" وتكمل للمرحلة التالية؟</p>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                        <button onclick="continueQuiz()" class="px-8 py-3 bg-accent text-primary-dark font-bold rounded-full shadow-lg hover:scale-105 transition">
+                            نعم، كمل التحدي 💪
+                        </button>
+                        <button onclick="finishQuizEarly()" class="px-8 py-3 bg-gray-200 text-gray-700 font-bold rounded-full hover:bg-gray-300 transition">
+                            اكتفي بالنتيجة الحالية 🛑
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-result-screen" class="hidden text-center py-8">
+                    <div id="result-icon" class="text-7xl mb-4">🎉</div>
+                    <h3 class="text-3xl font-extrabold text-color-primary mb-2">النتيجة النهائية</h3>
+                    <p id="final-score-text" class="text-4xl font-black text-accent drop-shadow-md mb-4">0 / 10</p>
+                    <p id="result-message" class="text-xl text-gray-700 mb-8 font-medium">رسالة النتيجة...</p>
+                    <button onclick="startQuiz()" class="px-8 py-3 border-2 border-color-primary text-color-primary font-bold rounded-full hover:bg-color-primary hover:text-white transition">
+                        🔄 إعادة المحاولة
+                    </button>
+                </div>
+            </section>
+
+             <section class="animate-fade-in-up bg-gradient-to-r from-green-900 to-green-800 text-white p-8 rounded-2xl shadow-2xl border-4 border-accent text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-accent mb-4">🤝 كن شريكاً في التغيير!</h2>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
+                    الحملة ليست فردية، بل هي جهد جماعي لكل محب للاتحاد. إذا كنت تؤمن برؤيتنا، انضم لفريق المتطوعين أو شارك البرنامج مع أصدقائك.
                 </p>
-            </div>
-            <div class="border-b pb-6 border-gray-200">
-                <h3 class="text-2xl font-bold flex items-center mb-4 text-color-primary">
-                    💬 رسالتي للأعضاء:
-                </h3>
-                <p class="text-lg text-gray-600 mb-6">
-                    أتعهد بأن يكون صوتي داخل المجلس، إذا حظيت بثقتكم، هو صوت الأعضاء في كل قرار. لن أقبل إلا بإدارة تقوم على:
-                </p>
-                <ul class="text-xl font-semibold text-green-700 space-y-2 list-none mb-6">
-                    <li class="flex items-center"><span class="text-accent text-2xl ml-2 rtl:mr-2">✅</span> الشفافية</li>
-                    <li class="flex items-center"><span class="text-accent text-2xl ml-2 rtl:mr-2">✅</span> المشاركة</li>
-                    <li class="flex items-center"><span class="text-accent text-2xl ml-2 rtl:mr-2">✅</span> احترام العضو</li>
-                    <li class="flex items-center"><span class="text-accent text-2xl ml-2 rtl:mr-2">✅</span> واستدامة موارد النادي.</li>
-                </ul>
-                <button class="w-full md:w-auto px-8 py-3 bg-accent text-gray-900 font-extrabold rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 cta-pulse-animate">
-                    أدعم الإدارة المسؤولة - صوتك ضمان النادي 🗳️
-                </button>
-            </div>
-        </section>
-
-        <section class="animate-fade-in-up bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent text-center mt-8 mb-8" style="animation-delay: 850ms;">
-            <h2 class="text-3xl font-extrabold text-color-primary mb-6">💡 اختر أولوياتك.. وشاهد الحل</h2>
-            <p class="text-gray-600 mb-8 font-medium">ما هو الملف الذي يشغل بالك؟ اضغط على الأيقونة لتعرف تعهدنا المباشر:</p>
-            
-            <div class="priorities-grid">
-                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('investment', this)">
-                    <span class="text-3xl mb-2">💵</span>
-                    <span class="font-bold text-gray-800 text-sm md:text-base">1) الموارد والاستثمار</span>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://wa.me/201550550646" target="_blank" class="flex items-center justify-center gap-2 px-8 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-full transition transform hover:scale-105 shadow-lg border-2 border-transparent hover:border-accent">
+                        <span class="text-2xl">📞</span> تواصل معنا عبر واتساب
+                    </a>
+                    <button onclick="shareCampaign()" class="flex items-center justify-center gap-2 px-8 py-3 bg-accent hover:bg-yellow-400 text-green-900 font-bold rounded-full transition transform hover:scale-105 shadow-lg">
+                        <span class="text-2xl">📤</span> شارك البرنامج الانتخابي
+                    </button>
                 </div>
-                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('digital', this)">
-                    <span class="text-3xl mb-2">📱</span>
-                    <span class="font-bold text-gray-800 text-sm md:text-base">2) التحول الرقمي</span>
-                </div>
-                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('social', this)">
-                    <span class="text-3xl mb-2">🏘️</span>
-                    <span class="font-bold text-gray-800 text-sm md:text-base">3) الاجتماعي والخدمي</span>
-                </div>
-                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('sports', this)">
-                    <span class="text-3xl mb-2">🟫</span>
-                    <span class="font-bold text-gray-800 text-sm md:text-base">4) الملف الرياضي</span>
-                </div>
-                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('health', this)">
-                    <span class="text-3xl mb-2">❤️</span>
-                    <span class="font-bold text-gray-800 text-sm md:text-base">5) الصحي</span>
-                </div>
-                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('financial', this)">
-                    <span class="text-3xl mb-2">📈</span>
-                    <span class="font-bold text-gray-800 text-sm md:text-base">6) المالي</span>
-                </div>
-                <div class="priority-btn bg-gray-50 border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center justify-center min-h-[120px]" onclick="showPriority('complaints', this)">
-                    <span class="text-3xl mb-2">📩</span>
-                    <span class="font-bold text-gray-800 text-sm md:text-base">7) الشكاوى والمقترحات</span>
-                </div>
-            </div>
-            
-            <div id="priority-content" class="mt-6 p-6 bg-green-50 rounded-xl border-2 border-dashed border-green-300 text-xl font-bold text-green-800 transition-all shadow-inner">
-                👈 اضغط على أي أيقونة أعلاه لتعرف خطتنا!
-            </div>
-        </section>
+            </section>
 
-        <section class="animate-fade-in-up" style="animation-delay: 900ms;">
-            <div class="bg-white p-4 rounded-2xl shadow-2xl border-t-8 border-color-primary">
-                <h2 class="text-2xl font-extrabold text-color-primary text-center mb-4">
-                    📢 طريقنا واحد ...... مكسبنا واحد
-                </h2>
-                <div class="w-full">
-                    <img src="https://i.ibb.co/GfnQW6VH/1.jpg" alt="صورة إعلان حملة المرشح أحمد السيد موسى - طريقنا واحد" class="w-full h-auto rounded-xl shadow-xl golden-frame transition-transform duration-500 object-cover">
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-white p-8 rounded-2xl shadow-2xl space-y-10 animate-fade-in-up" style="animation-delay: 1000ms;">
-            <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-6">
-                🔰 أولًا: مقدمة
-            </h2>
-            <p class="text-lg text-gray-700 border-b pb-4">
-                يظل نادي الأتحاد السكندري كيانًا رياضيًا واجتماعيًا وثقافيًا عريقًا… يستحق إدارة واعية، ومؤسسات محترفة، ورؤية واضحة تجعل النادي قادرًا على النمو، وعلى تقديم خدمات تليق بتاريخ الأجيال التي بنَت هذا الصرح العظيم. وترشحي ليس بحثًا عن منصب… بل مسؤولية والتزام تجاه الأعضاء، وحرص على بناء نادي مستدام… يعتمد على موارد قوية، وإدارة اقتصادية، وخدمة ترتقي بالطموح.
-            </p>
-
-            <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-6 pt-4">
-                🔰 ثانيًا: أسباب الترشح
-            </h2>
-            <ul class="space-y-3 text-lg list-none">
-                <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
-                    <span class="text-accent text-xl ml-2 rtl:mr-2">💡</span> الإيمان بأن النادي يحتاج إدارة تعتمد على التخطيط العلمي والاستدامة المالية.
-                </li>
-                <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
-                    <span class="text-accent text-xl ml-2 rtl:mr-2">🚀</span> السعي لتحقيق نقلة حقيقية في الخدمات الاجتماعية والرياضية المقدمة للأعضاء.
-                </li>
-                <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
-                    <span class="text-accent text-xl ml-2 rtl:mr-2">🗣️</span> بناء منظومة تحترم رأي العضو وتضعه في مقدمة الأولويات.
-                </li>
-                <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
-                    <span class="text-accent text-xl ml-2 rtl:mr-2">🔄</span> إعادة تشكيل منظومة العمل على أساس: الشفافية – المشاركة – احترام الأعضاء.
-                </li>
-                <li class="flex items-start p-2 bg-green-500/5 rounded-lg shadow-sm list-item-hover-effect">
-                    <span class="text-accent text-xl ml-2 rtl:mr-2">🛠️</span> تحويل الأفكار إلى قرارات قابلة للتنفيذ وليس مجرد مقترحات.
-                </li>
-            </ul>
-        </section>
-
-        
-<section class="bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-color-primary animate-fade-in-up" style="animation-delay: 1200ms;">
-    <div class="mb-8 p-6 bg-yellow-50 rounded-xl border border-accent shadow-inner">
-        <h3 class="text-2xl font-bold text-gray-800 mb-3">
-            🔰 ثالثًا: الهدف العام للبرنامج
-        </h3>
-        <blockquote class="text-xl italic font-serif text-green-800 bg-yellow-100 p-3 rounded-lg border-r-4 rtl:border-l-4 border-green-600">
-            “نادي الأتحاد هيئة خاصة ذات نفع عام، تدير أموالها وأنشطتها بطريقة استثمارية تحقق موارد مستدامة للنادي.”
-        </blockquote>
-        <p class="mt-4 text-lg font-medium text-gray-600">
-            ✔️ التفسير: النادي يجب أن يعمل بفكر اقتصادي مؤسسي محترف، مش فقط كمكان يصرف، بل كمنشأة تستطيع إنتاج موارد وتنميتها.
-        </p>
-    </div>
-    <div class="bg-[#1a472a] text-white p-6 md:p-8 rounded-xl shadow-2xl mb-12 border-4 border-accent relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full translate-x-10 -translate-y-10"></div>
-        <h3 class="text-2xl md:text-3xl font-extrabold text-center mb-8 text-accent flex items-center justify-center gap-2">
-            <span>🚀</span> خطة الـ 100 يوم الأولى
-        </h3>
-        <div class="grid md:grid-cols-3 gap-6 relative z-10">
-            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
-                <div class="text-4xl mb-2">1️⃣</div>
-                <h4 class="text-xl font-bold text-accent mb-2">الشهر الأول: تدقيق</h4>
-                <p class="text-sm md:text-base text-gray-200">مراجعة شاملة لكافة العقود الحالية ووقف أي هدر مالي فوراً، وتشكيل لجنة الحكماء.</p>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
-                <div class="text-4xl mb-2">2️⃣</div>
-                <h4 class="text-xl font-bold text-accent mb-2">الشهر الثاني: إطلاق</h4>
-                <p class="text-sm md:text-base text-gray-200">البدء في تنفيذ التطبيق الرقمي (App) .</p>
-            </div>
-            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20 hover:bg-white/20 transition duration-300">
-                <div class="text-4xl mb-2">3️⃣</div>
-                <h4 class="text-xl font-bold text-accent mb-2">الشهر الثالث: تطوير</h4>
-                <p class="text-sm md:text-base text-gray-200">حصر كافة مشاكل القطاعات المختلفة للالعاب تمهيدا لتطويرها .</p>
-            </div>
-        </div>
-    </div>
-    
-    <h2 class="text-3xl font-extrabold text-color-primary flex items-center mb-8">
-        🔰 رابعا: ملفات البرنامج الانتخابي
-    </h2>
-
-    <div id="accordion-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
-            <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
-                <span>💵 1) الموارد والاستثمار</span>
-                <span class="arrow-icon transition-transform duration-300 transform">▼</span>
-            </div>
-            <div class="accordion-content bg-gray-50">
-                <h4 class="text-xl font-bold mt-4 text-green-700">١) صندوق دعم الأتحاد</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">إنشاء صندوق تبرعات بشفافية كاملة.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">حفل سنوي لتكريم الداعمين.</li>
-                </ul>
-                <h4 class="text-xl font-bold mt-4 text-green-700">٢) إعادة تشغيل الأصول غير المستغلة</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">تحويل الأصول “الخاملة” إلى مصادر دخل.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
-            <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
-                <span>📱 2) التحول الرقمي</span>
-                <span class="arrow-icon transition-transform duration-300 transform">▼</span>
-            </div>
-            <div class="accordion-content bg-gray-50">
-                <h4 class="text-xl font-bold mt-4 text-green-700">١) تطبيق إلكتروني للأعضاء</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">الدخول والخروج بالباركود.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">حجز الخدمات الحكومية، ودفع الاشتراكات.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">تقييم المدربين ومتابعة الأبناء في فرق الناشئين.</li>
-                </ul>
-                <h4 class="text-xl font-bold mt-4 text-green-700">٢) بوابات إلكترونية</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">منع دخول غير الأعضاء، وضبط حالات الإيقاف إلكترونيًا.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
-            <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
-                <span>🏘️ 3) الاجتماعي والخدمي</span>
-                <span class="arrow-icon transition-transform duration-300 transform">▼</span>
-            </div>
-            <div class="accordion-content bg-gray-50">
-                <h4 class="text-xl font-bold mt-4 text-green-700">١) الخدمات الأساسية</h4>
-                <ul class="list-disc list-inside space-y-3 mt-4 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">إنشاء حضانة الأطفال بأسعار رمزية.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">التعاقد مع شركة نقل خاصة (بروموكود) للأعضاء.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">تطوير الكافيهات والمطاعم ومراقبة الجودة.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">توفير دورات مجانية داخل النادي من أبنائه.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
-            <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
-                <span>🟫 4) الملف الرياضي</span>
-                <span class="arrow-icon transition-transform duration-300 transform">▼</span>
-            </div>
-            <div class="accordion-content bg-gray-50">
-                <h4 class="text-xl font-bold mt-4 text-green-700">١) منظومة تقييم رياضية مستقلة</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">إدارة تقييم رياضي مستقلة تمامًا.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">معايير واضحة للأداء والمستوى.</li>
-                </ul>
-                <h4 class="text-xl font-bold mt-4 text-green-700">٢) الاهتمام بالناشئين</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">الناشئ هو رأس مال النادي.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">ادماجهم فى الفريق الأول بشكل تصاعدى لتقليل الاحتراف.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">تسويق الموهوبين لصالح النادي.</li>
-                </ul>
-                <h4 class="text-xl font-bold mt-4 text-green-700">٣) الأكاديميات</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">التوسع في الأكاديميات خارج النادي.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">إشراف كامل من النادي.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">مصدر دخل + اكتشاف مواهب.</li>
-                </ul>
-                <h4 class="text-xl font-bold mt-4 text-green-700">٤) الرعاية</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">لجنة متخصصة بمساعدة اعضاء مجلس الادارة للبحث عن راعي للفريق الأول فى كل الالعاب.</li>
-                </ul>
-                <h4 class="text-xl font-bold mt-4 text-green-700">٥) كرة القدم: فصل النشاط</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">تأسيس شركة لكرة القدم طبقا لقانون الرياضة .</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">النادي يمتلك 51%.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">تمويل مستقل بعيدًا عن ميزانية النادي.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">مضاعفة ميزانية الكرة دون إرهاق النادي.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
-            <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
-                <span>❤️ 5) الصحي</span>
-                <span class="arrow-icon transition-transform duration-300 transform">▼</span>
-            </div>
-            <div class="accordion-content bg-gray-50">
-                <h4 class="text-xl font-bold mt-4 text-green-700">١) الرعاية الطبية</h4>
-                <ul class="list-disc list-inside space-y-3 mt-4 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">تعاقدات مع المستشفيات والمعامل والصيدليات بخصومات حقيقية.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">ندوات تغذية رياضية.</li>
-                    <li class="list-item-hover-effect p-1 rounded-lg">تطوير العيادة الصحية .</li>
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item rounded-lg overflow-hidden shadow-lg border-2 border-accent/50">
-            <div class="block-card-header color-primary text-white p-4 flex justify-between items-center text-lg font-bold">
-                <span>📈 6) المالي</span>
-                <span class="arrow-icon transition-transform duration-300 transform">▼</span>
-            </div>
-            <div class="accordion-content bg-gray-50">
-                <h4 class="text-xl font-bold mt-4 text-green-700">١) زيادة الإيرادات</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">معارض دورية داخل النادي وتأجير الساحات للإعلانات.</li>
-                </ul>
-                <h4 class="text-xl font-bold mt-4 text-green-700">٢) خفض التكاليف</h4>
-                <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                    <li class="list-item-hover-effect p-1 rounded-lg">مراجعة العقود ووقف الهدر وتحسين كفاءة الإنفاق.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="md:col-span-2 mt-8 bg-white p-6 rounded-xl shadow-2xl border-t-8 border-accent">
-            <h3 class="text-2xl font-bold text-color-primary flex items-center mb-4">
-                ⚖️ مبادرة لجنة الحكماء
-            </h3>
-            <p class="text-lg text-gray-700 mb-3 font-semibold">
-                منصة حقيقية تجعل صوت العضو مسموعًا، وهي مسؤولة عن الشكاوى والمقترحات.
-            </p>
-            <h4 class="text-xl font-bold mt-4 text-green-700">مهام اللجنة:</h4>
-            <ul class="list-disc list-inside space-y-2 mt-2 mr-4 rtl:ml-4 text-gray-700">
-                <li class="list-item-hover-effect p-1 rounded-lg">استقبال الشكاوى والمقترحات من الأعضاء.</li>
-                <li class="list-item-hover-effect p-1 rounded-lg">فرزها واختيار الصالح للتنفيذ.</li>
-                <li class="list-item-hover-effect p-1 rounded-lg">رفع التوصيات لمجلس الإدارة.</li>
-                <li class="list-item-hover-effect p-1 rounded-lg">ضمان الشفافية والمصداقية.</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-        <section class="animate-fade-in-up" style="animation-delay: 1400ms;">
-            <div class="bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-accent">
-                <h2 class="text-3xl font-extrabold text-color-primary text-center mb-8 flex items-center justify-center gap-3">
-                    📸 ألبوم الصور: جولات ولقاءات
-                </h2>
-                <div class="photo-grid">
-                    <img src="https://i.ibb.co/whVpnqxK/25-1.jpg" alt="صورة من لقاءات المرشح 1" loading="lazy">
-                    <img src="https://i.ibb.co/Vcn56NbZ/25-2.jpg" alt="صورة من لقاءات المرشح 2" loading="lazy">
-                    <img src="https://i.ibb.co/qMyR3Fq2/25-3.jpg" alt="صورة من لقاءات المرشح 3" loading="lazy">
-                    <img src="https://i.ibb.co/7xqQXr6y/25-4.jpg" alt="صورة من لقاءات المرشح 4" loading="lazy">
-                    <img src="https://i.ibb.co/5pRx09d/25-5.jpg" alt="صورة من لقاءات المرشح 5" loading="lazy">
-                    <img src="https://i.ibb.co/6c3V45jz/25-6.jpg" alt="صورة من لقاءات المرشح 6" loading="lazy">
-                    <img src="https://i.ibb.co/Kz8VcDnd/25-7.jpg" alt="صورة من لقاءات المرشح 7" loading="lazy">
-                    <img src="https://i.ibb.co/bjCFq50W/25-9.jpg" alt="صورة من لقاءات المرشح 8" loading="lazy">
-                    <img src="https://i.ibb.co/FqCMyJHT/25-10.jpg" alt="صورة من لقاءات المرشح 9" loading="lazy">
-                    <img src="https://i.ibb.co/zT41jBxg/25-11.jpg" alt="صورة من لقاءات المرشح 10" loading="lazy">
-                    <img src="https://i.ibb.co/9HRyw5pV/25-12.jpg" alt="صورة من لقاءات المرشح 11" loading="lazy">
-                    <img src="https://i.ibb.co/jPY9sBM1/25-14.jpg" alt="صورة من لقاءات المرشح 12" loading="lazy">
-                    <img src="https://i.ibb.co/hRMWkQPC/25-15.jpg" alt="صورة من لقاءات المرشح 13" loading="lazy">
-                    <img src="https://i.ibb.co/Xrm8JQG9/25-16.jpg" alt="صورة من لقاءات المرشح 14" loading="lazy">
-                    <img src="https://i.ibb.co/GfxKxwWK/25-17.jpg" alt="صورة من لقاءات المرشح 15" loading="lazy">
-                    <img src="https://i.ibb.co/6797Cc6G/25-19.jpg" alt="صورة من لقاءات المرشح 16" loading="lazy">
-                    <img src="https://i.ibb.co/kV2rDZ3L/25-21.jpg" alt="صورة من لقاءات المرشح 17" loading="lazy">
-                    <img src="https://i.ibb.co/t7DFG1R/25-23.jpg" alt="صورة من لقاءات المرشح 18" loading="lazy">
-                    <img src="https://i.ibb.co/sdmnnNNR/25-24.jpg" alt="صورة من لقاءات المرشح 19" loading="lazy">
-                    <img src="https://i.ibb.co/4HNsSLY/25-25.jpg" alt="صورة من لقاءات المرشح 20" loading="lazy">
-                    <img src="https://i.ibb.co/bjcZdbvv/25-26.jpg" alt="صورة من لقاءات المرشح 21" loading="lazy">
-                    <img src="https://i.ibb.co/RGc4Cv7m/25-27.jpg" alt="صورة من لقاءات المرشح 22" loading="lazy">
-                </div>
-            </div>
-        </section>
-
-        <section id="quiz-section" class="animate-fade-in-up bg-white p-6 md:p-8 rounded-2xl shadow-2xl border-t-8 border-accent relative" style="animation-delay: 1550ms;">
-            <div class="text-center space-y-4 mb-6">
-                <h2 class="text-3xl font-extrabold text-color-primary flex items-center justify-center gap-2">
-                    <span>🧠</span> مسابقة العباقرة: تاريخ الاتحاد
-                </h2>
-                <p class="text-lg text-gray-600">
-                    هل أنت مشجع حقيقي؟ جاوب على أسئلة في تاريخ زعيم الثغر واكتشف مستوى تشجيعك!
-                </p>
-            </div>
-
-            <div id="quiz-start-screen" class="text-center py-8">
-                <div class="text-6xl mb-4">🏆</div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">جاهز للتحدي؟</h3>
-                <p class="text-gray-600 mb-6">سيتم اختيار أسئلة عشوائية لاختبار معلوماتك.</p>
-                <button onclick="startQuiz()" class="flash-attention px-10 py-4 bg-accent text-primary-dark font-extrabold text-xl rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition transform cta-pulse-animate">
-                    ابدأ المسابقة الآن
-                </button>
-            </div>
-
-            <div id="quiz-interface" class="hidden">
-                <div class="mb-6">
-                    <div class="flex justify-between text-sm font-bold text-gray-600 mb-1">
-                        <span id="question-counter">سؤال 1 من 10</span>
-                        <span id="score-display">النقاط: 0</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden border border-gray-300">
-                        <div id="quiz-progress-bar" class="bg-gradient-to-r from-green-600 to-green-400 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-inner min-h-[300px] flex flex-col justify-center">
-                    <h3 id="question-text" class="text-2xl font-bold text-center text-gray-800 mb-8 leading-relaxed">
-                        جاري تحميل السؤال...
+             <section class="animate-fade-in-up" style="animation-delay: 1600ms;">
+                <div class="color-primary text-white p-8 rounded-2xl shadow-3xl text-center border-b-8 border-accent">
+                    <h3 class="text-3xl font-extrabold mb-4 text-accent">
+                        🏆 كلمة ختامية:
                     </h3>
-                    <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <p class="text-xl md:text-2xl font-medium leading-loose mb-6">
+                        "طريقنا واحد… مكسبنا واحد" ليست مجرد شعار، بل إيمان بأن الاتحاد السكندري لا ينهض إلا بتكاتف أبنائه المخلصين.
+                    </p>
+                    <div class="bg-accent text-primary-dark font-extrabold text-2xl md:text-3xl p-3 rounded-full shadow-2xl badge-shine mx-auto inline-block">
+                        لنتحد... لننتصر... لنبني
+                    </div>
+                    <p class="text-lg mt-6">
+                        معًا نصنع إدارة جديدة… قوية… محترفة… تعمل من أجل الأعضاء أولًا. التحدي الحقيقي هو مين يقدر ينفذ... ومين فعلًا يقدر يشتغل لخدمة النادي والأعضاء.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+
+
+<div id="content-swimming" class="tab-content-section hidden animate-fade-in-up">
+    
+    <div class="swimming-wrapper rounded-3xl shadow-2xl">
+        <div class="water-texture"></div>
+
+        <section class="swim-hero p-6 md:p-8 mb-8">
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <div class="lg:w-7/12 space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-[#006633] leading-tight">
+                        <i class="fas fa-swimmer text-[#FFD700] ml-2"></i>
+                        رؤيتى بخصوص تطوير قطاع السباحة للعرض على مجلس الادارة
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                        <div class="stat-box border-r-4 border-yellow-400">
+                            <span class="block text-xs font-bold text-gray-400 uppercase">الهدف</span>
+                            <p class="font-bold text-gray-800 text-sm md:text-base">تحسين السلامة + تقليل التكلفة التشغيلية + رفع مستوى التدريب.</p>
+                        </div>
+                        <div class="stat-box border-r-4 border-blue-500">
+                            <span class="block text-xs font-bold text-gray-400 uppercase">وقت التنفيذ</span>
+                            <p class="font-bold text-gray-800 text-sm md:text-base">كل البنود سريعة التنفيذ وممكن تبدأ خلال أسبوعين فقط.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-3 rounded-lg border border-green-200 mt-2">
+                        <span class="font-bold text-[#006633] text-sm"><i class="fas fa-coins ml-1"></i> إجمالي التكلفة الكاملة:</span>
+                        <span class="text-gray-600 text-sm">يتم تحديدها حسب المواصفات، و لكن هو َضرورى مقارنة بتأثيره المباشر على جودة المجمع.</span>
+                    </div>
+                </div>
+                
+                <div class="lg:w-5/12 relative">
+                    <div class="absolute inset-0 bg-[#FFD700] rounded-full filter blur-3xl opacity-20"></div>
+                    <img src="https://i.ibb.co/Qvjb95sT/Swimming1.png" alt="Swimming Pool" class="relative rounded-2xl shadow-lg border-4 border-white transform rotate-2 hover:rotate-0 transition duration-500 object-cover h-64 w-full">
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-card-bg p-6 md:p-8 mb-8">
+            <div class="radar-sweep"></div> <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2 text-right">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="animate-pulse h-3 w-3 bg-red-500 rounded-full"></span>
+                        <h3 class="text-2xl font-black text-cyan-400">امن و امان السباح</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 text-sm md:text-lg border-l-4 border-cyan-500 pl-4">
+                        منظومة ذكاء اصطناعى : كاميرات عالية الجودة – يو بى اس تامين انقطاع تيار – وصلة انترنت – نموذج ذكاء اصطناعى – السيستم حيتربط بانذار كل 20 ثانية
+                    </p>
+                    
+                    <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10">
+                        <h4 class="text-lg font-bold text-white mb-2">1) تركيب جهاز مراقبة إلكتروني (Online)</h4>
+                        <ul class="swim-list tech text-gray-300 text-sm space-y-2">
+                            <li>مراقبة استهلاك الكلور – الـ pH – درجة الحرارة – العكارة (Turbidity).</li>
+                            <li>تنبيه فوري لأي خلل لمنع إيقاف التدريب أو حدوث إصابة.</li>
+                            <li>يساعد في ضبط التكلفة التشغيلية لأن الجرعات تُصبح دقيقة.</li>
+                            <li>يقلّل الاعتماد على العنصر البشري ويمنع الأعطال المفاجئة.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="https://i.ibb.co/JRyPnfQ8/Swimming12.png" alt="AI Monitoring" class="rounded-xl shadow-2xl border border-cyan-500/30 opacity-90 hover:opacity-100 transition">
+                    <div class="absolute top-4 right-4 bg-black/70 text-cyan-400 text-xs px-2 py-1 font-mono rounded">
+                        AI MONITORING: ACTIVE
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="text-xl font-bold text-[#006633] mb-4 pr-2 border-r-4 border-[#FFD700]">التجهيزات والمعدات</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            
+            <div class="swim-card p-6">
+                <div class="card-badge">02</div>
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-[#006633] text-xl mb-4">
+                    <i class="fas fa-grip-lines-vertical"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">شراء دفعة أولى من “حبال الحارات”</h4>
+                <ul class="swim-list text-gray-600 text-sm">
+                    <li>تقسيم الحوض بشكل احترافي طبقًا لقواعد البطولات.</li>
+                    <li>تقليل الاحتكاك بين السباحين أثناء التدريب.</li>
+                    <li>امتلاك قطع غيار يمنع توقف التدريب لو حصل تلف.</li>
+                </ul>
+            </div>
+
+            <div class="swim-card p-6">
+                <div class="card-badge">03</div>
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-xl mb-4">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">شراء “حبال مانعة للأمواج – Wave Anti”</h4>
+                <p class="text-xs text-blue-600 font-bold mb-2">مع جدول إحلال كل عامين</p>
+                <ul class="swim-list text-gray-600 text-sm">
+                    <li>تقليل الاضطراب الناتج عن حركة السباحين وبالتالي تحسين الأداء.</li>
+                    <li>مطلوبة في بطولات المناطق والبطولات الرسمية.</li>
+                    <li>جودتها العالية تحافظ على استقرار مستوى المياه.</li>
+                </ul>
+            </div>
+
+            <div class="swim-card p-6">
+                <div class="card-badge">04</div>
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-600 text-xl mb-4">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">توريد وتركيب “أعلام الظهر”</h4>
+                <ul class="swim-list text-gray-600 text-sm">
+                    <li>علامة إنذار للسباحين قبل الوصول للحائط لمنع الإصابات.</li>
+                    <li>شرط أساسي في أي تدريب لمحترفي سباحة الظهر.</li>
+                    <li>تُركّب في أقل من أسبوعين وتكلفتها منخفضة جدًا.</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="swim-card medical-zone p-6 md:p-8 mb-8">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/3 flex flex-col items-center justify-center text-center">
+                    <div class="medical-icon-float text-6xl text-red-500 mb-4 drop-shadow-lg">
+                        <i class="fas fa-kit-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-red-700">الرعاية الطبية والإسعافات</h3>
+                    <p class="text-sm text-red-500 mt-2">الأمان أولاً في المسبح</p>
+                </div>
+                <div class="md:w-2/3 grid grid-cols-1 gap-6">
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-red-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                            <span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">05</span>
+                            تجهيز غرفة إسعافات بميزانية اقتصادية
+                        </h4>
+                        <ul class="swim-list medical text-gray-600 text-sm">
+                            <li>توفير نقطة إسعاف أولي سريعة لخفض زمن الاستجابة لأي إصابة.</li>
+                            <li>وجود سرير علاج طبيعي + جهاز TENS أو Compex منخفض التكلفة يرفع جودة الخدمة الطبية.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-red-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                            <span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">06</span>
+                            توفير حقيبة إسعاف كاملة جاهزة
+                        </h4>
+                        <ul class="swim-list medical text-gray-600 text-sm">
+                            <li>إتاحة أدوات إسعاف سريعة للمدربين.</li>
+                            <li>التعامل مع الجروح – الشد العضلي – الكدمات – الدوخة – الخدوش.</li>
+                            <li>مع امكانية عمل تعاقد مع احد المستشفيات للتدريب على اسعافات السباحين ( لمن يهمه الامر )</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <div class="swim-card p-6 bg-gradient-to-br from-purple-50 to-white">
+                <div class="card-badge" style="background: #6b21a8; color: white;">07</div>
+                <div class="flex items-start gap-4">
+                    <img src="https://i.ibb.co/kVw5FJPH/Swimming15.png" alt="Fitness" class="w-20 h-20 rounded-lg object-cover shadow-md">
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-2">تخصيص الممر الخلفى للاطالات و اضافة تمرين الفتنس</h4>
+                        <ul class="swim-list text-gray-600 text-sm">
+                            <li>رفع كفاءة الأداء البدني للسباح وتنظيم أفضل للحمام.</li>
+                            <li>معظم الأندية المحترفة دمجت الفتنس ضمن خطة السباحة.</li>
+                            <li>تقليل الإصابات ودعم المدرب في التحكم في جرعة التدريب.</li>
+                            <li>تحسين مظهر المكان أمام أولياء الأمور.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div id="quiz-continue-modal" class="hidden absolute inset-0 bg-white/95 z-20 flex flex-col items-center justify-center rounded-2xl p-6 text-center backdrop-blur-sm">
-                <div class="text-5xl mb-4">🔥</div>
-                <h3 class="text-3xl font-extrabold text-color-primary mb-2">أحسنت يا بطل!</h3>
-                <p class="text-xl text-gray-700 mb-6 font-medium">أنهيت هذه المرحلة بنجاح. هل تريد إثبات أنك "عبقري الاتحاد" وتكمل للمرحلة التالية؟</p>
-                <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                    <button onclick="continueQuiz()" class="px-8 py-3 bg-accent text-primary-dark font-bold rounded-full shadow-lg hover:scale-105 transition">
-                        نعم، كمل التحدي 💪
-                    </button>
-                    <button onclick="finishQuizEarly()" class="px-8 py-3 bg-gray-200 text-gray-700 font-bold rounded-full hover:bg-gray-300 transition">
-                        اكتفي بالنتيجة الحالية 🛑
-                    </button>
-                </div>
+            <div class="swim-card p-6 bg-gradient-to-br from-gray-50 to-white">
+                <div class="card-badge" style="background: #374151; color: white;">08</div>
+                <h4 class="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                    <i class="fas fa-scale-balanced text-gray-600"></i> اللائحة التنظيمية للقطاع
+                </h4>
+                <ul class="swim-list text-gray-600 text-sm">
+                    <li>تعليق اللائحة التنظيمية الخاصة بالقطاع في مكان بارز ومتاح لجميع الأعضاء لضمان وضوح الواجبات والحقوق والمسؤوليات على كل الأطراف.</li>
+                    <li>التأكيد على أن اللائحة تُحدِّد العلاقة بين النادي والأعضاء، وتضمن تطبيق قواعد عادلة وموحدة لجميع الحالات.</li>
+                </ul>
             </div>
+        </div>
 
-            <div id="quiz-result-screen" class="hidden text-center py-8">
-                <div id="result-icon" class="text-7xl mb-4">🎉</div>
-                <h3 class="text-3xl font-extrabold text-color-primary mb-2">النتيجة النهائية</h3>
-                <p id="final-score-text" class="text-4xl font-black text-accent drop-shadow-md mb-4">0 / 10</p>
-                <p id="result-message" class="text-xl text-gray-700 mb-8 font-medium">رسالة النتيجة...</p>
-                <button onclick="startQuiz()" class="px-8 py-3 border-2 border-color-primary text-color-primary font-bold rounded-full hover:bg-color-primary hover:text-white transition">
-                    🔄 إعادة المحاولة
-                </button>
+        <section class="gov-card p-6 md:p-8 relative overflow-hidden">
+            <div class="absolute right-0 bottom-0 text-9xl text-white opacity-10 transform translate-y-10 translate-x-10">
+                <i class="fas fa-users-gear"></i>
             </div>
-        </section>
-
-        <section class="animate-fade-in-up bg-gradient-to-r from-green-900 to-green-800 text-white p-8 rounded-2xl shadow-2xl border-4 border-accent text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-accent mb-4">🤝 كن شريكاً في التغيير!</h2>
-            <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
-                الحملة ليست فردية، بل هي جهد جماعي لكل محب للاتحاد. إذا كنت تؤمن برؤيتنا، انضم لفريق المتطوعين أو شارك البرنامج مع أصدقائك.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/201550550646" target="_blank" class="flex items-center justify-center gap-2 px-8 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-full transition transform hover:scale-105 shadow-lg border-2 border-transparent hover:border-accent">
-                    <span class="text-2xl">📞</span> تواصل معنا عبر واتساب
-                </a>
-                <button onclick="shareCampaign()" class="flex items-center justify-center gap-2 px-8 py-3 bg-accent hover:bg-yellow-400 text-green-900 font-bold rounded-full transition transform hover:scale-105 shadow-lg">
-                    <span class="text-2xl">📤</span> شارك البرنامج الانتخابي
-                </button>
-            </div>
-        </section>
-
-        <section class="animate-fade-in-up" style="animation-delay: 1600ms;">
-            <div class="color-primary text-white p-8 rounded-2xl shadow-3xl text-center border-b-8 border-accent">
-                <h3 class="text-3xl font-extrabold mb-4 text-accent">
-                    🏆 كلمة ختامية:
+            
+            <div class="relative z-10">
+                <h3 class="text-2xl font-bold text-[#FFD700] mb-4 flex items-center gap-2">
+                    <span class="bg-white/20 text-white text-sm px-3 py-1 rounded-full">09</span>
+                    منظومة الشكاوى والمقترحات
                 </h3>
-                <p class="text-xl md:text-2xl font-medium leading-loose mb-6">
-                    "طريقنا واحد… مكسبنا واحد" ليست مجرد شعار، بل إيمان بأن الاتحاد السكندري لا ينهض إلا بتكاتف أبنائه المخلصين.
-                </p>
-                <div class="bg-accent text-primary-dark font-extrabold text-2xl md:text-3xl p-3 rounded-full shadow-2xl badge-shine mx-auto inline-block">
-                    لنتحد... لننتصر... لنبني
+                
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-2/3">
+                        <p class="text-lg font-medium mb-4">
+                            إضافة رمز QR Code رسمي يتيح للأعضاء تقديم الشكاوى والمقترحات بسهولة عبر هواتفهم.
+                        </p>
+                        <div class="bg-black/20 p-4 rounded-xl">
+                            <h5 class="font-bold text-white mb-2">دور لجنة الحكماء:</h5>
+                            <div class="flex flex-wrap gap-2 text-sm">
+                                <span class="bg-white text-[#006633] px-3 py-1 rounded-full font-bold">فرز الشكاوى</span>
+                                <span class="bg-white text-[#006633] px-3 py-1 rounded-full font-bold">تصنيف الحالات</span>
+                                <span class="bg-white text-[#006633] px-3 py-1 rounded-full font-bold">دراسة بشفافية</span>
+                                <span class="bg-[#FFD700] text-[#004d26] px-3 py-1 rounded-full font-bold">رفع التوصيات لمجلس الإدارة</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 flex items-center justify-center">
+                        <div class="bg-white p-4 rounded-xl shadow-lg transform rotate-3 hover:rotate-0 transition duration-300">
+                            <i class="fas fa-qrcode text-8xl text-gray-800"></i>
+                            <p class="text-center text-xs font-bold text-gray-500 mt-2">Scan Me</p>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-lg mt-6">
-                    معًا نصنع إدارة جديدة… قوية… محترفة… تعمل من أجل الأعضاء أولًا. التحدي الحقيقي هو مين يقدر ينفذ... ومين فعلًا يقدر يشتغل لخدمة النادي والأعضاء.
-                </p>
             </div>
         </section>
 
+    </div>
+</div>
+
+
+
+
+
+
+
+<div id="content-gymnastics" class="tab-content-section hidden animate-fade-in-up">
+            
+            <div class="gymnastics-wrapper rounded-3xl shadow-2xl overflow-hidden">
+                
+                <section class="gym-hero-section">
+                    <div class="gym-hero-bg"></div>
+                    <div class="gym-hero-content">
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-[#FFD700] mb-4 leading-tight drop-shadow-lg">
+                            أولًا: مقدمة
+                        </h2>
+                        <p class="text-lg md:text-2xl text-white font-medium leading-relaxed">
+                            يُعتبر الجمباز إحدى الألعاب الأساسية في نادي الأتحاد السكندري، وهي لعبة تعتمد على التأسيس القوي والانضباط والدقة. وأبناؤنا في هذه اللعبة هم ثروة حقيقية للنادي وتحتاج إلى تطوير يتناسب مع قدراتهم وتاريخ النادي.
+                        </p>
+                    </div>
+                </section>
+
+                <div class="max-w-5xl mx-auto px-4">
+                    
+                    <h3 class="gym-section-title">
+                        <i class="fas fa-triangle-exclamation ml-2"></i>
+                        ثانيًا: المشكلات الحالية
+                        <span class="block text-sm text-gray-400 font-normal mt-1">(كما وردت من أولياء الأمور)</span>
+                    </h3>
+                    
+                    <div class="gym-problems-container">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="problem-list-item">
+                                <i class="fas fa-circle-xmark problem-icon"></i>
+                                <p>عدم وجود صالة قانونية مجهزة لتدريبات الجمباز.</p>
+                            </div>
+                            <div class="problem-list-item">
+                                <i class="fas fa-circle-xmark problem-icon"></i>
+                                <p>عدم انتظام مستحقات المدربين بما يؤثر على جودة التدريب.</p>
+                            </div>
+                            <div class="problem-list-item">
+                                <i class="fas fa-circle-xmark problem-icon"></i>
+                                <p>نقص بعض الأدوات والمعدات الأساسية.</p>
+                            </div>
+                            <div class="problem-list-item">
+                                <i class="fas fa-circle-xmark problem-icon"></i>
+                                <p>ضعف التواصل بين النادي وأولياء الأمور.</p>
+                            </div>
+                            <div class="problem-list-item">
+                                <i class="fas fa-circle-xmark problem-icon"></i>
+                                <p>غياب نظام تقييم واضح للناشئين في مراحل التصعيد.</p>
+                            </div>
+                             <div class="problem-list-item">
+                                <i class="fas fa-circle-xmark problem-icon"></i>
+                                <p>تطوير العيادة والنظافة.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="gym-section-title mb-12">
+                        <i class="fas fa-road ml-2"></i>
+                        ثالثًا: خطة التطوير المقترحة
+                        <span class="block text-sm text-[#43e97b] font-normal mt-1">(قابلة للتنفيذ)</span>
+                    </h3>
+
+                    <div class="roadmap-container">
+
+                        <div class="plan-step">
+                            <div class="plan-marker">1</div>
+                            <div class="plan-content-box">
+                                <h4 class="plan-title">
+                                    <i class="fas fa-building-circle-check"></i>
+                                    توفير صالة قانونية لتدريبات الجمباز
+                                </h4>
+                                <ul class="plan-list text-right">
+                                    <li>إعادة تخصيص إحدى الصالات الموجودة داخل النادي بفرع سموحة بمساعدة رئيس مجلس الادارة.</li>
+                                    <li>تجهيزها بالمواصفات المطلوبة (سجاد قانوني – بار – بيم – فولت – إسفنج).</li>
+                                    <li>التنفيذ يتم خلال 60–90 يوم فقط بدون إنشاءات جديدة أو تكاليف ضخمة.</li>
+                                    <li>وضع جدول تدريبات معتمد ومنظم.</li>
+                                </ul>
+                                <div class="plan-image-container">
+                                    <img src="https://i.ibb.co/xqJV35Rx/Gymnastics12.png" alt="صالة الجمباز المقترحة">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="plan-step">
+                            <div class="plan-marker">2</div>
+                            <div class="plan-content-box">
+                                <h4 class="plan-title">
+                                    <i class="fas fa-hand-holding-dollar"></i>
+                                    إنشاء “وحدة مالية مستقلة للجمباز”
+                                </h4>
+                                <p class="mb-3 text-sm text-[#FFD700] font-bold">لضمان حقوق المدربين تهدف إلى:</p>
+                                <ul class="plan-list text-right">
+                                    <li>صرف مستحقات المدربين شهريًا دون تأخير.</li>
+                                    <li>وضع نظام مكافآت للمدربين عند تحقيق بطولات.</li>
+                                </ul>
+                                <p class="mt-4 mb-2 font-bold text-[#43e97b]">تمويل الوحدة من:</p>
+                                <div class="flex flex-wrap gap-2 justify-end">
+                                    <span class="bg-white/10 px-3 py-1 rounded-full text-sm border border-white/20">✔ نسبة من اشتراكات اللاعبين</span>
+                                    <span class="bg-white/10 px-3 py-1 rounded-full text-sm border border-white/20">✔ نسبة من الأكاديميات</span>
+                                    <span class="bg-white/10 px-3 py-1 rounded-full text-sm border border-white/20">✔ رعاية خاصة للعبة</span>
+                                    <span class="bg-white/10 px-3 py-1 rounded-full text-sm border border-white/20">✔ دعم من صندوق النادي</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="plan-step">
+                            <div class="plan-marker">3</div>
+                            <div class="plan-content-box">
+                                <h4 class="plan-title">
+                                    <i class="fas fa-chart-line"></i>
+                                    منظومة تقييم عادلة وشفافة للناشئين
+                                </h4>
+                                <p class="mb-3 font-bold">تعتمد على أربعة محاور:</p>
+                                <div class="grid grid-cols-2 gap-2 mb-4 text-center">
+                                    <div class="bg-[#FFD700] text-[#004d26] p-2 rounded-lg font-bold text-sm">القدرات البدنية</div>
+                                    <div class="bg-[#FFD700] text-[#004d26] p-2 rounded-lg font-bold text-sm">المهارات الفنية</div>
+                                    <div class="bg-[#FFD700] text-[#004d26] p-2 rounded-lg font-bold text-sm">الذكاء التكتيكي</div>
+                                    <div class="bg-[#FFD700] text-[#004d26] p-2 rounded-lg font-bold text-sm">السلوك والالتزام</div>
+                                </div>
+                                <p class="mb-2 font-bold text-[#43e97b]">مع ضمان:</p>
+                                <ul class="plan-list text-right">
+                                    <li>تقييم من ثلاثة مدربين وليس مدربًا واحدًا.</li>
+                                    <li>تصوير الاختبارات وحفظها بملف كل لاعب للرجوع اليها عند الحاجة.</li>
+                                    <li>تقرير واضح يُسلّم لولي الأمر.</li>
+                                </ul>
+                                <div class="plan-image-container" style="max-height: 250px;">
+                                    <img src="https://i.ibb.co/Qj8Jq5tq/Gymnastics13.png" alt="ناشئات الجمباز" style="object-position: top;">
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="plan-step">
+                            <div class="plan-marker">4</div>
+                            <div class="plan-content-box">
+                                <h4 class="plan-title">
+                                    <i class="fas fa-comments"></i>
+                                    تحسين التواصل مع أولياء الأمور
+                                </h4>
+                                <ul class="plan-list text-right">
+                                    <li>اجتماع رسمي كل 3 أشهر لعرض التطور.</li>
+                                    <li>تقرير شهري عن مستوى كل لاعب.</li>
+                                    <li>قناة رسمية لاستقبال الشكاوى والمقترحات (ورقيًا أو إلكترونيًا).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="plan-step">
+                            <div class="plan-marker">5</div>
+                            <div class="plan-content-box">
+                                <h4 class="plan-title">
+                                    <i class="fas fa-screwdriver-wrench"></i>
+                                    دعم البنية التحتية والمعدات
+                                </h4>
+                                <ul class="plan-list text-right">
+                                    <li>توفير الأدوات المميزة للجمباز وفق المعايير المطلوبة.</li>
+                                    <li>التأكد من سلامة الأجهزة وصيانتها الدورية.</li>
+                                    <li>تحديث المعدات سنويًا حسب الاحتياج.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div> <section class="final-pledge-box mt-16 mb-12">
+                        <h3 class="text-3xl font-extrabold text-white mb-6">
+                            <i class="fas fa-medal text-[#FFD700] ml-2"></i>
+                            سادسًا: الرسالة النهائية
+                        </h3>
+                        <p class="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
+                            هذه الخطة ليست وعودًا انتخابية، بل برنامج تطوير عملي وقابل للتنفيذ يهدف إلى:
+                        </p>
+                        <div class="pledge-grid">
+                            <div class="pledge-item">حماية مستقبل أولادنا</div>
+                            <div class="pledge-item">رفع مستوى اللعبة</div>
+                            <div class="pledge-item">تحسين بيئة التدريب</div>
+                            <div class="pledge-item">إعادة الجمباز لمكانته الطبيعية</div>
+                        </div>
+                        <div class="mt-8 inline-block bg-[#FFD700] text-[#004d26] font-black text-xl px-8 py-3 rounded-full shadow-lg cta-pulse-animate">
+                            داخل نادي الأتحاد السكندري
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="color-primary text-white text-center p-6 mt-12 space-y-4">
