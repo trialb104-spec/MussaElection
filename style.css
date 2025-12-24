@@ -197,18 +197,6 @@ body {
 }
 .golden-frame:hover { transform: scale(1.03); }
 
-/* Announcement Card Style */
-.announcement-card {
-    background: linear-gradient(135deg, #004d26 0%, #006633 100%);
-    border: 4px solid #FFD700; position: relative; overflow: hidden;
-}
-.announcement-card::before {
-    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
-    animation: rotate-bg 10s linear infinite;
-}
-@keyframes rotate-bg { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
 /* Accordion */
 .block-card-header {
     cursor: pointer; transition: background-color 0.3s ease, transform 0.2s;
@@ -313,28 +301,13 @@ body {
 .quiz-option-btn.wrong { background-color: #fee2e2 !important; border-color: #dc2626 !important; color: #991b1b !important; }
 .quiz-option-btn:disabled { cursor: default; }
 
-/* HiTech & Live Manifesto */
+/* Game Cards & Live Manifesto */
 .game-card-creative {
     background: linear-gradient(160deg, #004d26 0%, #006633 60%, #008040 100%);
     border: 5px solid #FFD700; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 215, 0, 0.6);
     transition: all 0.3s ease;
 }
 .game-card-creative:hover { transform: translateY(-5px) scale(1.01); }
-
-.hitech-card {
-    background-color: #1a1a1a; border: 3px solid #006633; box-shadow: 0 0 20px #006633;
-    color: #f0fdf4; transition: all 0.4s ease;
-}
-@keyframes scan-animation { 0% { background-position: right; } 100% { background-position: left; } }
-.scan-bar {
-    height: 10px; background: linear-gradient(90deg, #006633 5%, #FFD700 50%, #006633 95%);
-    background-size: 200% 100%; filter: drop-shadow(0 0 3px #FFD700); border-radius: 5px;
-}
-.hitech-button {
-    border: 2px solid #FFD700; box-shadow: 0 0 10px #FFD700;
-    background: #006633; color: #FFD700; transition: all 0.2s;
-}
-.hitech-button:hover:not(:disabled) { background: #FFD700; color: #006633; box-shadow: 0 0 15px #FFD700; }
 
 .live-manifesto-card {
     border: 1px solid rgba(255, 215, 0, 0.3); transition: all 0.4s ease;
@@ -360,35 +333,67 @@ body {
     transform: skewX(-20deg); z-index: -1; animation: card-flash 4s infinite cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none;
 }
 
-
 /* =========================================
-   4. SWIMMING SECTION (NEW AQUATIC THEME)
+   NEW: COMMITTEE SEARCH & MODAL ANIMATIONS
    ========================================= */
 
-/* Main Wrapper Background (Light Blue Water) */
+/* Search Input Focus Effect */
+#membership-input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.3);
+}
+
+/* Modal Entry Animations */
+#committee-modal.flex {
+    animation: fadeInModal 0.3s ease-out forwards;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#committee-modal-content {
+    animation: popUpModal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popUpModal {
+    from { transform: scale(0.8) translateY(20px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Result Number Bounce Animation */
+.committee-number-animate {
+    animation: bounceNumber 1s infinite;
+}
+
+@keyframes bounceNumber {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+
+/* =========================================
+   4. SWIMMING SECTION
+   ========================================= */
+
+/* Main Wrapper Background */
 .swimming-wrapper {
     background: linear-gradient(180deg, #ecfeff 0%, #cffafe 100%) !important;
     position: relative; overflow: hidden; padding: 2rem 1rem;
 }
 
-/* Water Texture Overlay (Cyan Tint) */
+/* Water Texture Overlay */
 .water-texture {
     position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2306b6d4' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E") !important;
 }
 
-/* Hero Section (White Box with Blue Border) */
+/* Hero Section */
 .swim-hero {
     position: relative; z-index: 10; overflow: hidden; border-radius: 24px;
     background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%) !important;
-    border-right: 6px solid #0891b2 !important; /* Cyan 600 */
+    border-right: 6px solid #0891b2 !important; 
     box-shadow: 0 10px 30px -10px rgba(8, 145, 178, 0.2) !important;
-}
-
-/* Hero Main Title (Dark Blue) */
-.swim-hero h2 {
-    color: #155e75 !important; /* Dark Ocean Blue */
-    font-family: 'Tajawal', sans-serif !important;
 }
 
 /* Stat Box in Hero */
@@ -399,12 +404,10 @@ body {
 }
 .stat-box:hover { transform: translateY(-5px); }
 
-/* --- DARK CARDS STYLING --- */
-
-/* "Safety of Swimmer" Card */
+/* Dark Cards Styling */
 .tech-card-bg {
     border-radius: 20px; position: relative; overflow: hidden; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); padding: 2rem;
-    background: #164e63 !important; /* Very Dark Cyan */
+    background: #164e63 !important; 
     border: 1px solid #155e75 !important;
 }
 /* Radar Animation */
@@ -416,38 +419,14 @@ body {
 }
 @keyframes radar-spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
 
-/* "Complaints System" Card */
+/* Gov Card */
 .gov-card {
     border-radius: 20px; color: white; padding: 2rem; position: relative; overflow: hidden;
     background: #155e75 !important;
     background-image: radial-gradient(circle at top right, #0e7490 0%, transparent 40%) !important;
 }
 
-/* --- TEXT FIX: FORCE PURE WHITE HEADERS --- */
-.tech-card-bg h3 {
-    color: #ffffff !important;             /* PURE WHITE */
-    font-family: 'Tajawal', sans-serif !important;
-    font-weight: 900 !important;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6) !important;
-}
-
-.gov-card h3 {
-    color: #ffffff !important;             /* PURE WHITE */
-    font-family: 'Tajawal', sans-serif !important;
-    font-weight: 900 !important;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6) !important;
-    display: flex !important; align-items: center !important;
-}
-
-/* Paragraphs in dark cards */
-.tech-card-bg p, .tech-card-bg ul li, .gov-card p {
-    color: #f0f9ff !important; /* Very light white-blue */
-}
-.tech-card-bg .bg-white\/10 h4 {
-    color: #ffffff !important;
-}
-
-/* --- ACCENTS (Blue Theme) --- */
+/* Swim Accents */
 .swim-card {
     background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
     border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.5);
@@ -456,7 +435,7 @@ body {
 }
 .card-badge {
     position: absolute; top: 0; right: 0; padding: 0.25rem 0.75rem; border-bottom-left-radius: 12px; font-weight: 800; font-size: 0.9rem; z-index: 5;
-    background: #0891b2 !important; /* Cyan 600 */
+    background: #0891b2 !important; 
     color: #ffffff !important;
 }
 .swim-card:hover {
@@ -471,13 +450,11 @@ body {
 .swim-list li { position: relative; padding-right: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; }
 .swim-list li::before {
     content: '🌊'; position: absolute; right: 0; font-size: 0.8rem; top: 0.2rem;
-    filter: hue-rotate(20deg); /* Shift to blue */
+    filter: hue-rotate(20deg);
 }
 .swim-list.medical li::before { content: '❤️'; filter: none; }
 .swim-list.tech li::before { content: '⚡'; filter: none; }
 
-.swim-hero .bg-green-50 { background-color: #f0f9ff !important; border-color: #bae6fd !important; }
-.swim-hero .text-[#006633] { color: #0369a1 !important; }
 .medical-zone { background: linear-gradient(135deg, #fff1f2 0%, #fff 100%); border: 2px dashed #fda4af; }
 .medical-icon-float { animation: float-y 3s ease-in-out infinite; }
 @keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -564,7 +541,7 @@ body {
 }
 
 /* =========================================
-   6. SPECIAL NEEDS SECTION (People of Determination)
+   6. SPECIAL NEEDS SECTION
    ========================================= */
 .special-wrapper {
     background: #ffffff;
@@ -624,4 +601,21 @@ body {
     color: #4b5563;
     font-weight: 500;
     line-height: 1.6;
+}
+/* Flashing Button Animation */
+@keyframes flash-gold-btn {
+    0%, 100% { 
+        filter: brightness(1); 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transform: scale(1);
+    }
+    50% { 
+        filter: brightness(1.3); 
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4);
+        transform: scale(1.05);
+    }
+}
+
+.animate-flash-button {
+    animation: flash-gold-btn 1.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
